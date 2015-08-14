@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:background="@color/content_bg"
+    android:layout_height="64dp">
+
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/Text.Gray.Slight"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:text="现货黄金"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/tv_sale"
+        style="@style/Text.Green.Slight"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:text="2366"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/tv_buy"
+        style="@style/Text.Green.Slight"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:text="2366"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_high"
+            style="@style/Text.Gray.Slight"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:text="2366"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_low"
+            style="@style/Text.Gray.Slight"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="2366"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_size_num"
+            style="@style/Text.White.Slight"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:text="+0.86"
+            android:minWidth="50dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/btn_rect_green"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_size_pre"
+            style="@style/Text.Green.Slight"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:text="23%"
+            android:drawablePadding="5dp"
+            android:drawableLeft="@mipmap/price_low"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

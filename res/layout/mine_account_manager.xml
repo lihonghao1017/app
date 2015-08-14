@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:layout_marginTop="8dp"
+                style="@style/horizontal_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="133dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_user_avtar"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginTop="18dp"
+                        android:src="@mipmap/default_normal_avatar" />
+
+                    <TextView
+                        android:id="@+id/tv_user_level"
+                        android:text="一级会"
+                        android:gravity="center|top"
+                        android:layout_marginTop="19dp"
+                        style="@style/rl_rect_set_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <View style="@style/vertical_line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingLeft="13dp"
+                            android:paddingRight="23dp"
+                            style="@style/Text.Black.General"
+                            android:gravity="center"
+                            android:text="姓名:" />
+
+                        <TextView
+                            android:id="@+id/tv_account_username"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="left|center"
+                            style="@style/Text.Black.General" />
+                    </LinearLayout>
+
+                    <View style="@style/horizontal_line" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingLeft="13dp"
+                            android:paddingRight="23dp"
+                            style="@style/Text.Black.General"
+                            android:gravity="center"
+                            android:text="昵称:" />
+
+                        <TextView
+                            android:id="@+id/tv_account_nickname"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="left|center"
+                            style="@style/Text.Black.General" />
+
+                    </LinearLayout>
+
+                    <View style="@style/horizontal_line" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingLeft="13dp"
+                            android:paddingRight="23dp"
+                            style="@style/Text.Black.General"
+                            android:gravity="center"
+                            android:text="性别:" />
+
+                        <TextView
+                            android:id="@+id/tv_account_sex"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="left|center"
+                            style="@style/Text.Black.General" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/horizontal_line" />
+
+            <View
+                style="@style/horizontal_line"
+                android:layout_marginTop="8dp" />
+
+            <LinearLayout style="@style/account_manage_ll">
+
+                <TextView
+                    style="@style/account_manage_ll_left"
+                    android:text="邮箱:" />
+
+                <TextView
+                    android:id="@+id/tv_account_email"
+                    style="@style/account_manage_ll_right"
+
+                    />
+            </LinearLayout>
+
+            <View style="@style/horizontal_line" />
+
+            <LinearLayout style="@style/account_manage_ll">
+
+                <TextView
+                    style="@style/account_manage_ll_left"
+                    android:text="手机:" />
+
+                <TextView
+                    android:id="@+id/tv_account_phone"
+                    style="@style/account_manage_ll_right"
+
+                    />
+            </LinearLayout>
+
+            <View style="@style/horizontal_line" />
+
+            <LinearLayout style="@style/account_manage_ll">
+
+                <TextView
+                    style="@style/account_manage_ll_left"
+                    android:text="模拟账号1:" />
+
+                <TextView
+                    android:id="@+id/tv_simulate_account1"
+                    style="@style/account_manage_ll_right"
+
+                    />
+            </LinearLayout>
+
+            <View style="@style/horizontal_line" />
+
+            <LinearLayout style="@style/account_manage_ll">
+
+                <TextView
+                    style="@style/account_manage_ll_left"
+                    android:text="模拟账号2:" />
+
+                <TextView
+                    android:id="@+id/tv_simulate_account2"
+                    style="@style/account_manage_ll_right"
+
+                    />
+            </LinearLayout>
+
+            <View style="@style/horizontal_line" />
+
+            <LinearLayout style="@style/account_manage_ll">
+
+                <TextView
+                    style="@style/account_manage_ll_left"
+                    android:text="实盘账户:" />
+
+                <TextView
+                    android:id="@+id/tv_actual_account"
+                    style="@style/account_manage_ll_right"
+
+                    />
+            </LinearLayout>
+
+            <View style="@style/horizontal_line" />
+
+            <View
+                style="@style/horizontal_line"
+                android:layout_marginTop="8dp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_modify_pass"
+                style="@style/account_manage_rl">
+
+                <TextView
+                    android:id="@+id/tv_modifyorset_pass"
+                    style="@style/account_manage_ll_left"
+                    android:text="修改密码" />
+
+                <ImageView style="@style/rl_rect_set_arrow" />
+            </RelativeLayout>
+
+            <View style="@style/horizontal_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_account_logout"
+                style="@style/account_manage_rl">
+
+                <TextView
+                    style="@style/account_manage_ll_left"
+                    android:text="账户注销" />
+
+                <ImageView style="@style/rl_rect_set_arrow" />
+            </RelativeLayout>
+
+            <View style="@style/horizontal_line" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

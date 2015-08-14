@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="AppTheme.Base" />
+
+    <!--如果使用到了toolbar就使用这个主题Base.V7.Theme.AppCompat-->
+    <style name="AppTheme.Base" parent="android:Theme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/content_bg</item>
+        <item name="android:windowAnimationStyle">@style/activityAnimation</item>
+    </style>
+
+    <!-- animation 样式 -->
+    <style name="activityAnimation" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/in_from_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/out_to_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/out_to_right</item>
+        <item name="android:taskOpenEnterAnimation">@null</item>
+        <item name="android:taskOpenExitAnimation">@null</item>
+        <item name="android:taskCloseEnterAnimation">@null</item>
+        <item name="android:taskCloseExitAnimation">@null</item>
+        <item name="android:taskToFrontEnterAnimation">@null</item>
+        <item name="android:taskToFrontExitAnimation">@null</item>
+        <item name="android:taskToBackEnterAnimation">@null</item>
+        <item name="android:taskToBackExitAnimation">@null</item>
+    </style>
+
+    <style name="CustomDialogTheme" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+    </style>
+
+    <style name="ListDialogTheme"  parent="android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <!-- CustomDialogTheme  分享 -->
+    <style name="CustomDialogTheme_Anim" parent="android:Animation">
+        <item name="@android:windowEnterAnimation">@anim/widget_list_dialog_anim_in</item>
+        <item name="@android:windowExitAnimation">@anim/widget_list_dialog_anim_out</item>
+    </style>
+</resources>

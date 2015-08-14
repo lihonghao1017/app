@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tv_theme_name"
+        style="@style/Text.Gray.Yellow.General"
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="fdsfsdf" />
+
+    <TextView
+        android:id="@+id/tv_theme_content"
+        style="@style/Text.Black.General"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="fdsfsdfsdfsdfsf"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/tv_theme_contentmore"
+        style="@style/Text.Gray.Blue.Slight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="全文"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/tv_notice_time"
+        style="@style/Text.Deep.Gray.Slight"
+        android:text="2015-5-11"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <GridView
+        android:id="@+id/gv_them_imgs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:verticalSpacing="10dip"
+        android:numColumns="3"
+        android:listSelector="@null"
+        android:background="@null"
+        android:layout_toRightOf="@id/in_direct_avatar"
+        android:cacheColorHint="@color/transparent"
+        android:horizontalSpacing="10dip" />
+</LinearLayout>

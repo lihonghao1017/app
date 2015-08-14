@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/in_img_avatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        layout="@layout/common_avatar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/in_img_avatar"
+        android:layout_marginLeft="10dp"
+
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp">
+
+            <TextView
+                android:id="@+id/tv_replyteacher_name"
+                style="@style/Text.Gray.Yellow.General"
+                android:singleLine="true"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|left"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/iv_exchange_comment"
+                android:text="fdsfsfdfsdfdf" />
+
+            <ImageView
+                android:id="@+id/iv_exchange_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:paddingTop="10dp"
+                android:src="@mipmap/exchange_comment" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_reply_time"
+            style="@style/Text.Deep.Gray.Slight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="7dp"
+            android:text="2分种前" />
+
+
+        <TextView
+            android:id="@+id/tv_reply_content"
+            style="@style/Text.Black.General"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="7dp"
+            android:text="fdsfdsfsdfsdfdsfsf"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_sugtext_more"
+            style="@style/Text.Gray.Blue.Slight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="全文"
+            android:layout_marginBottom="7dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_reply_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/counselor_reply_list_item"
+            android:paddingTop="12dp"
+            android:paddingLeft="7dp"
+            android:paddingBottom="7dp"
+            android:paddingRight="7dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_ask_time"
+                android:layout_alignParentRight="true"
+                style="@style/Text.Deep.Gray.Slight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2分种" />
+
+            <TextView
+                android:id="@+id/tv_ask_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="fdsfsdf"
+                android:singleLine="true"
+                android:layout_toLeftOf="@id/tv_ask_time"
+                style="@style/Text.Gray.Blue.General" />
+
+            <TextView
+                android:id="@+id/tv_ask_content"
+                android:layout_below="@id/tv_ask_nickname"
+                android:text="fdskfddddddddddddddddddddddddddddddjd\nskjkfd"
+                style="@style/Text.Black.General"
+                android:layout_marginTop="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <GridView
+            android:id="@+id/gv_reply_imgs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:verticalSpacing="10dip"
+            android:numColumns="3"
+            android:listSelector="@null"
+            android:background="@null"
+            android:cacheColorHint="@color/transparent"
+            android:horizontalSpacing="10dip"
+            android:layout_marginBottom="10dp"/>
+    </LinearLayout>
+</RelativeLayout>

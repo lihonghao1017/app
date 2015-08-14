@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginTop="25dp"
+                android:text="@string/protocol_top"
+                style="@style/Text.Gray.Yellow.General"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="20dp"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/Text.Black.Slight"
+                android:text="@string/protocol_mid"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="20dp"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_protcol_phone"
+                android:layout_marginTop="25dp"
+                android:text="@string/protocol_tel"
+                style="@style/Text.Gray.Yellow.General"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

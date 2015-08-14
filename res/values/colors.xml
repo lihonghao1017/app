@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 透明色 -->
+    <color name="transparent">#00000000</color>
+    <!-- 半透明色 -->
+    <color name="half_transparent">#e0000000</color>
+
+    <!--黑色-->
+    <color name="black">#000000</color>
+    <color name="persent_zero">#968916</color>
+
+    <color name="content_bg">#F5F7FA</color>
+
+    <!--标题的背景颜色-->
+    <color name="title_bg">#16171A</color>
+    <!--鲜红-->
+    <color name="red">#F34F4F</color>
+    <!--深红-->
+    <color name="deep_red">#FFF3201C</color>
+    <!--浅绿-->
+    <color name="green">#5AC485</color>
+    <!--灰色-->
+    <color name="gray">#333333</color>
+    <!--深灰色-->
+    <color name="deep_gray">#7E8086</color>
+
+    <!--浅灰-->
+    <color name="light_gray">#ffdcdee0</color>
+    <!-- 白色 -->
+    <color name="white">#ffffff</color>
+
+    <!--浅紫色-->
+    <color name="light_purple">#333E66</color>
+    <!-- 白色-灰 -->
+    <color name="white_gray">#FEFEFE</color>
+    <!---listview  divider lint-->
+    <color name="listview_divider_line">#CDCED1</color>
+    <!--二级title的没有选中颜色-->
+    <color name="nav_title_unsel">#737880</color>
+    <color name="nav_title_bg">#DCDEE0</color>
+    <color name="nav_title_unline">#B4B8BE</color>
+
+    <!--橙色-->
+    <color name="orange">#D83A3E</color>
+    <color name="orange_gray">#EBAB94</color>
+
+    <!--灰蓝-->
+    <color name="gray_blue">#507DAF</color>
+    <color name="light_blue">#CFE3F5</color>
+
+    <!--倒计时-->
+    <color name="count_down_bg">#e1e6eb</color>
+    <color name="tv_count_down_color">#97a6b5</color>
+
+    <!--文字hint的颜色-->
+    <color name="hint_color">#A8AEB8</color>
+
+    <!--黄色-->
+    <color name="yellow">#D8793A</color>
+    <!--********************chart***********************************-->
+    <color name="chart_bg_color">#1f1d1e</color>
+    <color name="chart_line_white">#ffffff</color>
+    <color name="chart_line_gray">#000000</color>
+    <color name="chart_line_yellow">#f0ac18</color>
+    <color name="chart_line_purple">#9900ff</color>
+    <color name="chart_line_green">#66ff00</color>
+    <color name="chart_line_red">#ff0000</color>
+</resources>

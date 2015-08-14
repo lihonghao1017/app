@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/titles"
+        layout="@layout/price_list_item_title" />
+     <Button
+        android:id="@+id/bianjizixuan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="11dp"
+        android:layout_marginTop="11dp"
+        android:layout_centerHorizontal="true"
+        android:background="@mipmap/add_border"
+        android:drawableLeft="@mipmap/add_plus"
+        android:paddingLeft="8dp"
+        android:gravity="center"
+        android:textColor="#F34F4F"
+        android:text="编辑自选"
+        android:visibility="gone" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bianjizixuan"
+        android:layout_below="@id/titles"
+        android:dividerHeight="10dp" />
+
+    <Button
+        android:id="@+id/tianjiazixuan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titles"
+        android:layout_centerHorizontal="true"
+        android:drawableTop="@mipmap/add_self_selection_icon"
+        android:drawablePadding="8dp"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="20dp"
+         android:textColor="#F34F4F"
+        android:gravity="center"
+        android:text="添加自选"
+        android:visibility="gone" />
+
+   
+
+</RelativeLayout>

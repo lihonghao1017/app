@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/in_price_detail_title"
+        layout="@layout/layout_title" />
+
+    <LinearLayout
+        android:layout_below="@id/in_price_detail_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rb_bottom_nav"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/nav_title_bg">
+
+            <TextView
+                android:id="@+id/tv_price_time"
+                style="@style/Text.Gray.General"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="日线"
+                android:paddingLeft="12dp"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/tv_cycle"
+                style="@style/Text.Gray.General"
+                android:text="周期"
+                android:drawableLeft="@mipmap/price_cycle"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:background="@drawable/btn_rect_gray"
+                android:drawablePadding="7dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/tv_indicator"
+                style="@style/Text.Gray.General"
+                android:text="指标"
+                android:drawableLeft="@mipmap/price_indicator"
+                android:gravity="center"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:background="@drawable/btn_rect_gray"
+                android:drawablePadding="7dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="13dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:weightSum="5">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1.4">
+
+                <TextView
+                    android:text="买价"
+                    style="@style/Text.Deep.Gray.General"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_price_buy"
+                    style="@style/Text.Red.General"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                style="@style/vertical_line" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1.4">
+
+                <TextView
+                    android:text="卖价"
+                    style="@style/Text.Deep.Gray.General"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_price_sell"
+                    style="@style/Text.Green.General"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                style="@style/vertical_line" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:text="最高"
+                    style="@style/Text.Deep.Gray.Slight"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:text=""
+                    android:id="@+id/tv_price_maxvalue"
+                    style="@style/Text.Red.Slight"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:text="最低"
+                    style="@style/Text.Deep.Gray.Slight"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:text=""
+                    android:id="@+id/tv_price_minvalue"
+                    style="@style/Text.Green.Slight"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                style="@style/vertical_line" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:text="涨价"
+                    style="@style/Text.Deep.Gray.Slight"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:text=""
+                    android:id="@+id/tv_price_rise"
+                    style="@style/Text.Black.Slight"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:text="涨幅"
+                    style="@style/Text.Deep.Gray.Slight"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:text=""
+                    android:id="@+id/tv_price_range"
+                    style="@style/Text.Black.Slight"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="13dp"
+            android:background="@color/nav_title_bg"
+            android:paddingLeft="13dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp">
+
+            <TextView
+                android:id="@+id/tv_open_price"
+                style="@style/Text.Gray.Slight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="开盘:" />
+
+            <TextView
+                android:id="@+id/tv_yest_price"
+                style="@style/Text.Gray.Slight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="昨收:" />
+
+            <TextView
+                android:id="@+id/tv_price_shake"
+                style="@style/Text.Gray.Slight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="振幅:" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_top_tip1"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="3dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_tip_open"
+                android:text="开:"
+                style="@style/Text.Gray.Smail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_tip_yest"
+                android:text="收:"
+                android:layout_marginLeft="15dp"
+                style="@style/Text.Gray.Smail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_tip_high"
+                android:text="高:"
+                android:layout_marginLeft="15dp"
+                style="@style/Text.Gray.Smail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_tip_low"
+                android:text="低:"
+                android:layout_marginLeft="15dp"
+                style="@style/Text.Gray.Smail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_top_tip2"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_width="match_parent"
+            android:paddingTop="1dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_tip_ind5"
+                android:text="MA5:"
+                style="@style/Text.Gray.Smail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_tip_ind10"
+                android:text="MA10:"
+                android:layout_marginLeft="15dp"
+                style="@style/Text.Gray.Smail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_tip_ind20"
+                android:text="MA20:"
+                android:layout_marginLeft="15dp"
+                style="@style/Text.Gray.Smail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="10">
+
+
+            <RelativeLayout
+                android:id="@+id/rl_price_k_content"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                android:visibility="visible">
+
+                <cn.limc.androidcharts.view.BOLLMASlipCandleStickChart
+                    android:id="@+id/bollmaslipcandlestickchart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:id="@+id/tv_k_date"
+                    android:gravity="right"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="30dp"
+                    style="@style/Text.White.Slight"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2015/6" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_bottom_tip"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:layout_width="match_parent"
+                android:paddingTop="1dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_tip_bottom1"
+                    android:text="MACD:"
+                    style="@style/Text.Gray.Smail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_tip_bottom2"
+                    android:text="DIFF:"
+                    android:layout_marginLeft="15dp"
+                    style="@style/Text.Gray.Smail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_tip_bottom3"
+                    android:text="DEA:"
+                    android:layout_marginLeft="15dp"
+                    style="@style/Text.Gray.Smail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <cn.limc.androidcharts.view.MACDChart
+                android:id="@+id/macdchart"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:visibility="visible" />
+
+            <cn.limc.androidcharts.view.SlipLineChart
+                android:id="@+id/sliplinechart"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ll_time_top"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:layout_width="match_parent"
+                android:paddingTop="1dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:text="run121"
+                    android:id="@+id/tv_time_top_run"
+                    style="@style/Text.Black.Slight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="run121"
+                    android:id="@+id/tv_time_date"
+                    style="@style/Text.Black.Slight"
+                    android:gravity="right"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <cn.limc.androidcharts.view.SlipLineChart
+                android:id="@+id/slipLineChart_time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <View style="@style/horizontal_line" />
+    </LinearLayout>
+
+
+    <RadioGroup
+        android:id="@+id/rb_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+
+        <RadioButton
+            android:id="@+id/rb_time_pic"
+            android:text="分时图"
+            style="@style/price_bottom_nav" />
+
+        <View style="@style/vertical_line" />
+
+        <RadioButton
+            android:id="@+id/rb_k_line"
+            android:text="K线"
+            android:checked="true"
+            style="@style/price_bottom_nav" />
+
+        <View style="@style/vertical_line" />
+
+        <Button
+            android:id="@+id/rb_nav_locale"
+            android:text="报价提醒"
+            style="@style/price_bottom_nav" />
+
+        <View style="@style/vertical_line" />
+
+        <Button
+            android:id="@+id/rb_nav_acttrad"
+            android:text="实盘交易"
+            style="@style/price_bottom_nav" />
+    </RadioGroup>
+
+</RelativeLayout>

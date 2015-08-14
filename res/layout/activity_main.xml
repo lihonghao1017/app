@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/content_bg">
+
+
+    <include layout="@layout/layout_title" />
+
+    <com.jin91.preciousmetal.customview.ViewPaggerNoScoll
+        android:id="@+id/view_pagger"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0">
+
+    </com.jin91.preciousmetal.customview.ViewPaggerNoScoll>
+
+
+    <View style="@style/horizontal_line"></View>
+
+    <RadioGroup
+        android:id="@+id/rg_main_radio"
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
+        android:gravity="center_vertical"
+        android:background="#FEFEFE"
+        android:orientation="horizontal">
+
+        <com.jin91.preciousmetal.customview.DrawableSubscriptButton
+            android:id="@+id/rb_price"
+            style="@style/open_account_nav"
+            android:checked="true"
+            android:layout_gravity="center"
+            android:paddingTop="5dp"
+            android:drawableTop="@drawable/icon_price_selector"
+            android:text="@string/price" />
+
+
+        <com.jin91.preciousmetal.customview.DrawableSubscriptButton
+            android:id="@+id/rb_trade"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/icon_trade_selector"
+            android:text="@string/trade" />
+
+
+        <com.jin91.preciousmetal.customview.DrawableSubscriptButton
+            android:id="@+id/rb_news"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/icon_news_selector"
+            android:text="@string/news" />
+
+
+        <com.jin91.preciousmetal.customview.DrawableSubscriptButton
+            android:id="@+id/rb_service"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/icon_service_selector"
+            android:text="@string/service" />
+
+
+        <com.jin91.preciousmetal.customview.DrawableSubscriptButton
+            android:id="@+id/rb_personal"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/icon_personal_selector"
+            android:text="@string/personal" />
+    </RadioGroup>
+
+</LinearLayout>

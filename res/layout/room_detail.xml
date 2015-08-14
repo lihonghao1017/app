@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_title" />
+
+    <View
+        style="@style/horizontal_line"
+        android:layout_marginTop="10dp" />
+
+    <LinearLayout style="@style/account_manage_ll">
+
+        <ImageView
+            android:id="@+id/iv_roomdetail_img"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/default_normal_avatar" />
+
+        <TextView
+            style="@style/Text.Black.General"
+            android:id="@+id/tv_room_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginRight="15dp"
+            android:text="在市场中赚钱主要靠都是等出来的" />
+    </LinearLayout>
+
+    <View style="@style/horizontal_line" />
+
+    <View
+        style="@style/horizontal_line"
+        android:layout_marginTop="10dp" />
+
+    <LinearLayout style="@style/account_manage_ll">
+
+        <TextView
+            style="@style/Text.Black.General"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="20dp"
+            android:text="主播" />
+
+        <TextView
+            style="@style/Text.Black.General"
+            android:id="@+id/tv_room_playname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginRight="15dp"
+            android:text=""
+            />
+    </LinearLayout>
+
+    <View style="@style/horizontal_line" />
+
+
+    <LinearLayout style="@style/account_manage_ll">
+
+        <TextView
+            style="@style/Text.Black.General"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="20dp"
+            android:text="成员" />
+
+        <TextView
+            style="@style/Text.Black.General"
+            android:id="@+id/tv_room_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginRight="15dp"
+            android:text="在市场中赚钱主要靠都是等出来的" />
+    </LinearLayout>
+
+    <View style="@style/horizontal_line" />
+    <LinearLayout
+        android:minHeight="44dp"
+        android:layout_height="wrap_content"
+        style="@style/account_manage_ll">
+
+        <TextView
+            style="@style/Text.Black.General"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="20dp"
+            android:text="风格" />
+
+        <TextView
+            style="@style/Text.Black.General"
+            android:id="@+id/tv_room_style"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginRight="15dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:text="在市场中是要靠都是来的" />
+    </LinearLayout>
+
+    <View style="@style/horizontal_line" />
+</LinearLayout>

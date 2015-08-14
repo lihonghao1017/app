@@ -1,0 +1,115 @@
+<resources>
+    <string name="app_name">国鑫贵金属</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="trade_type">
+        <item>自选</item>
+        <item>天交所</item>
+        <item>国际现货</item>
+        <item>金交所</item>
+        <item>外汇</item>
+        <item>国际原油</item>
+        <item>美股指数</item>
+        <item>上海期货</item>
+        <item>COMEX</item>
+    </string-array>
+    <string-array name="news_type">
+        <item>国鑫日评</item>
+        <item>分析研究</item>
+        <item>机构观点</item>
+        <item>资讯导读</item>
+        <item>市场动态</item>
+    </string-array>
+
+    <string name="cancel">取消</string>
+    <string name="save">保存</string>
+    <string name="new_alert">新提醒</string>
+    <string name="error_message">网络不稳定，加载失败</string>
+    <string name="empty_message">暂无数据</string>
+
+    <!--标题-->
+    <string name="setting">设置</string>
+    <!--首页-->
+    <string name="price">行情</string>
+    <string name="trade">交易</string>
+    <string name="news">资讯</string>
+    <string name="service">服务</string>
+    <string name="personal">我的</string>
+    <string name="open_account">快捷开户</string>
+    <string name="my_open_account">我要开户</string>
+    <string name="jin_message">国鑫消息</string>
+    <string name="immde_message">即时建议</string>
+    <string name="counselor_reply">顾问回复</string>
+    <string name="finance_calcenda">财经日历</string>
+
+    <!--分享到-->
+    <string name="wechat_friend">微信好友</string>
+    <string name="friends">朋友圈</string>
+    <string name="sina_weibo">新浪微博</string>
+    <string name="QQ_weibo">腾讯微博</string>
+    <string name="weixin_not_install">未安装微信，请安装后使用</string>
+    <string name="errcode_success">发送成功</string>
+    <string name="errcode_cancel">发送取消</string>
+    <string name="errcode_deny">发送被拒绝</string>
+    <string name="errcode_unknown">发送返回</string>
+    <string name="share_success">分享成功</string>
+    <string name="share_cancel">分享取消</string>
+    <string name="share_fail">分享失败</string>
+
+    <!--********************设置里面的**********************************-->
+
+    <string name="protocol_top">国鑫黄金提醒您全面了解使用本产品可能存在的风险。</string>
+    <string name="protocol_mid">1. 由于可能受到通信状况、服务系统繁忙或故障、用户使用移动互联网设备的性能及故障，黑客攻击，以及互联网上其他不可预测因素的影响，有可能造成报价资讯信息的延迟、中断、错误的风险。\n\n2. 国鑫黄金提供所有文字，数据，仅作为您的参考之用，不构成任何的投资建议，用户据此操作造成的任何风险和后果，均有用户自行负责。
+\n\n3. 使用国鑫黄金贵金属软件过程中所产生的数据流量费用由当地运营商收取。与国鑫黄金无关。具体可以拨打10086（移动）、10010（联通）、10000（电信）免费客服电话咨询流量费用。
+\n\n4. 其他因投资者个人原因或不可抗力原因导致的风险。\n\n若您在使用软件过程中遇到任何的问题，可拨打客服电话咨询。</string>
+    <string name="official_tel">4006101155</string>
+    <string name="phond_order_tel">4006101155</string>
+    <string name="phond_order_tel_title">400-610-1155</string>
+    <string name="official_website">http://www.91jin.com</string>
+    <string name="official_email">marker@91jin.com</string>
+    <string name="protocol_tel">客服电话:400 610 1155</string>
+    <string name="android_version">Android 2.1.2</string>
+    <!--******************************************************-->
+    <string name="desc_shrinkup">收起</string>
+    <string name="desc_spread">全文</string>
+    <string name="net_error">网络错误</string>
+    <string name="no_more_data">没有更多数据</string>
+    <string name="idea_stopLoss">止损价</string>
+    <string name="idea_targetPrice">目标价</string>
+    <string name="idea_position">仓位</string>
+    <!--******************************************************-->
+    <string name="N">N</string>
+
+    <string name="price_chart_open">&#160;开:</string>
+    <string name="price_chart_high">&#160;高:</string>
+    <string name="price_chart_low">&#160;低:</string>
+    <string name="price_chart_close">&#160;收:</string>
+    <string name="price_chart_maFirst">&#160;MA5:</string>
+    <string name="price_chart_maMid">&#160;MA10:</string>
+    <string name="price_chart_maLast">&#160;MA20:</string>
+    <string name="price_chart_time">分时图</string>
+    <!--*************************消息消息消息消息消息*****************************-->
+    <string name="message_live">即时建议</string>
+    <string name="message_live_no">暂无即时建议</string>
+    <string name="message_reply">顾问回复</string>
+    <string name="message_reply_no">暂无顾问回复</string>
+    <string name="message_guoxin">国鑫消息</string>
+    <string name="message_guoxin_no">暂无国鑫消息</string>
+    <string name="message_study">资讯</string>
+    <string name="message_price">行情推送</string>
+    <string name="direction_no">无</string>
+    <string name="direction_more">现价做多</string>
+    <string name="direction_more_g">挂单做多</string>
+    <string name="direction_empty">现价做空</string>
+    <string name="direction_empty_g">挂单做空</string>
+
+
+    <!--******************************************************-->
+    <string name="version">2.1</string>
+    <string name="dialog_title">温馨提示</string>
+    <string name="dialog_ok">确定</string>
+    <string name="update">新版本已发布，为了保证您更好的使用，请您升级</string>
+    <string name="begin_down">开始下载</string>
+    <string name="down_comple">下载完成</string>
+</resources>

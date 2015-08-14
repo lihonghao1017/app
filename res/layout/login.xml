@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_title" />
+
+    <RadioGroup
+        android:id="@+id/rg_mine_login"
+        style="@style/open_account_nav_group">
+
+        <RadioButton
+            android:id="@+id/rb_account_login"
+            style="@style/open_account_nav"
+            android:checked="true"
+            android:text="账号登录" />
+
+        <RadioButton
+            android:id="@+id/rb_account_phone"
+            style="@style/open_account_nav"
+            android:text="手机验证登录" />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/iv_login_cursor"
+        style="@style/nav_cursor" />
+
+    <View style="@style/nav_title_unline" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_title" />
+
+    <RadioGroup
+        android:id="@+id/rg_alarm"
+        style="@style/open_account_nav_group">
+
+        <RadioButton
+            android:id="@+id/rb_local_alarm"
+            style="@style/open_account_nav"
+            android:checked="true"
+            android:text="本地提醒" />
+
+        <RadioButton
+            android:id="@+id/rb_sms_alarm"
+            style="@style/open_account_nav"
+            android:text="短信提醒" />
+
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/iv_account_cursor"
+        style="@style/nav_cursor" />
+
+    <View style="@style/nav_title_unline" />
+
+    <com.jin91.preciousmetal.customview.ViewPagerNoScroll
+        android:id="@+id/viewpagerNoScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.jin91.preciousmetal.customview.ViewPagerNoScroll>
+
+</LinearLayout>

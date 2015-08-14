@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/btn_rect_white">
+
+    <TextView
+        android:id="@+id/tv_dialog_title"
+        style="@style/Text.Black.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="400-610-1155" />
+    <TextView
+        android:id="@+id/tv_dialog_content"
+        style="@style/Text.Black.General"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+
+        android:layout_marginBottom="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        android:text="fdsssssssssssssssssssssssssssssssssssssssss" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_dialog_cancel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            style="@style/Text.White.General"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn_rect_gray_selector"
+            android:text="取消" />
+
+        <TextView
+            android:id="@+id/tv_dialog_ok"
+            style="@style/Text.White.General"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="呼叫"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/btn_rect_green_selector" />
+    </LinearLayout>
+</LinearLayout>

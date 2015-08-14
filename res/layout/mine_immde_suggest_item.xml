@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/in_img_avatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        layout="@layout/common_avatar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/in_img_avatar"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_sugteacher_name"
+            style="@style/Text.Gray.Yellow.General"
+            android:singleLine="true"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fdsfsdf" />
+
+        <TextView
+            android:id="@+id/tv_suggest_time"
+            style="@style/Text.Deep.Gray.Slight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="2分种前" />
+
+        <TextView
+            android:id="@+id/tv_suggest_content"
+            android:layout_marginTop="8dp"
+            style="@style/Text.Black.General"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="10dp"
+            android:text="fdsfdsfsdfsdfdsfsf"
+            android:maxLines="5"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_sugtext_more"
+            style="@style/Text.Gray.Blue.Slight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="全文"
+             />
+    </LinearLayout>
+</RelativeLayout>

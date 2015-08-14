@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--*********************************这里面定义的是针对某一个view的样式*********************************-->
+    <!--首页底部样式-->
+    <style name="main_tab_bottom">
+        <item name="android:textSize">@dimen/bottom_tab_font_size</item>
+        <item name="android:textColor">@color/bottom_text_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:paddingTop">@dimen/bottom_tab_padding_up</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:button">@null</item>
+        <item name="android:drawablePadding">@dimen/bottom_tab_padding_drawable</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <!--行情底部的导航-->
+    <style name="price_bottom_nav">
+        <item name="android:textSize">@dimen/bottom_tab_font_size</item>
+        <item name="android:textColor">@color/bottom_text_color</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/price_nav_bottom_selector</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--我要开户导航上面的样式-->
+    <style name="open_account_nav_group">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/nav_title_bg</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <!--我要开户里面的item样式-->
+    <style name="open_account_nav">
+        <item name="android:textSize">@dimen/bottom_tab_font_size</item>
+        <item name="android:textColor">@color/bottom_text_color</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/transparent</item>
+
+    </style>
+    <!--水平的线-->
+    <style name="horizontal_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/listview_divider_line</item>
+    </style>
+    <!--二级导航栏下面的线-->
+    <style name="nav_title_unline">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/nav_title_unline</item>
+    </style>
+
+    <!--二级导航选择的-->
+    <style name="nav_cursor">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:src">@color/red</item>
+        <item name="android:layout_marginTop">-3dp</item>
+        <item name="android:scaleType">matrix</item>
+    </style>
+
+    <style name="vertical_line">
+        <item name="android:layout_width">1px</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/listview_divider_line</item>
+    </style>
+    <!--**************************首页里面的设置框样式**************-->
+    <style name="main_rl_rect_set">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/rl_rect_gray_selector</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingTop">7dp</item>
+        <item name="android:paddingBottom">7dp</item>
+        <item name="android:paddingLeft">13dp</item>
+    </style>
+
+    <!--************************************用户设置框的样式******************-->
+    <style name="rl_rect_set">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:background">@drawable/rl_rect_gray_selector</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingTop">7dp</item>
+        <item name="android:paddingBottom">7dp</item>
+        <item name="android:paddingLeft">13dp</item>
+    </style>
+
+    <style name="rl_rect_set_text" parent="@style/Text.Black.General">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center|left</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:drawablePadding">20dp</item>
+    </style>
+    <!--设置框的样式里面的箭头-->
+    <style name="rl_rect_set_arrow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:background">@mipmap/icon_arrows_right</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <!--**************************输入框里面的样式******************************-->
+    <style name="account_input">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textColorHint">@color/hint_color</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/title_bg</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_height">44dp</item>
+    </style>
+
+    <style name="account_error_msg">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="account_btn">
+        <item name="android:background">@drawable/btn_rect_red_selector</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_height">40dp</item>
+    </style>
+
+    <!--**********************************账户管理里面的***************************-->
+    <style name="account_manage_ll">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="account_manage_ll_left" parent="@style/Text.Black.General">
+        <item name="android:layout_width">88dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">right|center</item>
+    </style>
+
+    <style name="account_manage_ll_right" parent="@style/Text.Black.General">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">left|center</item>
+        <item name="android:layout_marginLeft">34dp</item>
+    </style>
+
+    <style name="account_manage_rl">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:background">@drawable/rl_rect_gray_selector</item>
+    </style>
+    <!--**********************************发送验证码的***************************-->
+
+    <style name="send_phone_code" parent="@style/Text.Gray.Blue.Slight">
+        <item name="android:background">@color/light_blue</item>
+        <item name="android:layout_width">140dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">"获取验证码"</item>
+    </style>
+</resources>

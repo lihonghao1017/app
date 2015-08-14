@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tv_alarm_name"
+        style="@style/Text.Black.General"
+        android:text="现货白银"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:singleLine="true"
+        android:paddingTop="10dp" />
+
+    <TextView
+        android:id="@+id/tv_alarm_price"
+        android:text="价格"
+        style="@style/Text.Deep.Gray.Slight"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_alarm_addtime"
+        android:text="2015-10-14"
+        style="@style/Text.Deep.Gray.Slight"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_alarm_failime"
+        android:text="2015-10-14"
+        style="@style/Text.Deep.Gray.Slight"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_marginTop="8dp"
+        style="@style/horizontal_line" />
+</LinearLayout>

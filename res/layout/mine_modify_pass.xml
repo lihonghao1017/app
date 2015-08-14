@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_title" />
+
+    <View
+        android:layout_marginTop="8dp"
+        style="@style/horizontal_line" />
+    <LinearLayout
+        android:id="@+id/ll_pass_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_pass_code"
+            android:hint="请输入手机验证码"
+            android:inputType="number"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            style="@style/account_input" />
+
+        <TextView
+            android:id="@+id/tv_get_pass_code"
+            style="@style/send_phone_code" />
+    </LinearLayout>
+    <EditText
+        android:id="@+id/et_old_pass"
+        android:inputType="textPassword"
+        android:hint="旧密码"
+        style="@style/account_input" />
+
+    <View style="@style/horizontal_line" />
+
+    <View
+        android:layout_marginTop="8dp"
+        style="@style/horizontal_line" />
+
+    <EditText
+        android:id="@+id/et_new_pass"
+        android:hint="新密码"
+        android:inputType="textPassword"
+        style="@style/account_input" />
+
+    <View
+
+        style="@style/horizontal_line" />
+
+    <View
+        android:layout_marginTop="8dp"
+        style="@style/horizontal_line" />
+
+    <EditText
+        android:id="@+id/et_new_repass"
+        android:hint="确认密码"
+        android:inputType="textPassword"
+        style="@style/account_input" />
+
+    <View style="@style/horizontal_line" />
+
+    <TextView
+        style="@style/account_error_msg"
+        android:id="@+id/tv_pass_msg" />
+
+    <TextView
+        android:id="@+id/tv_confirm_modify"
+        android:text="确 定"
+        style="@style/account_btn" />
+</LinearLayout>

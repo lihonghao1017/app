@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/view_phone_login"
+        android:layout_marginTop="10dp"
+        style="@style/horizontal_line" />
+
+    <LinearLayout
+        android:id="@+id/ll_account_phone"
+        android:layout_below="@id/view_phone_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:hint="请输入手机号"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            style="@style/account_input" />
+
+        <TextView
+            android:id="@+id/tv_phone_code"
+            style="@style/send_phone_code" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_phone_code_below"
+        android:layout_below="@id/ll_account_phone"
+        style="@style/horizontal_line" />
+
+    <View
+        android:id="@+id/view_phone_login_middel"
+        android:layout_below="@id/view_phone_code_below"
+        android:layout_marginTop="10dp"
+        style="@style/horizontal_line" />
+
+    <EditText
+
+        android:id="@+id/et_val_code"
+        style="@style/account_input"
+        android:layout_below="@id/view_phone_login_middel"
+
+        android:inputType="number"
+        android:hint="请输入验证码" />
+
+    <View
+        android:layout_below="@id/et_val_code"
+        style="@style/horizontal_line" />
+
+    <TextView
+        style="@style/account_error_msg"
+        android:layout_below="@id/et_val_code"
+        android:id="@+id/tv_phone_msg" />
+
+    <TextView
+        android:id="@+id/tv_phone_login"
+        android:text="登录"
+        android:layout_below="@+id/tv_phone_msg"
+        style="@style/account_btn" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_marginBottom="40dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_free_regitster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Text.Gray.Blue.Slight"
+            android:layout_marginRight="15dp"
+            android:padding="8dp"
+            android:text="免费注册" />
+
+        <View
+            style="@style/vertical_line"
+            android:layout_height="15dp"
+            android:background="@color/gray_blue"/>
+
+        <TextView
+            android:id="@+id/tv_forget_pwd"
+            style="@style/Text.Gray.Blue.Slight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginLeft="15dp"
+            android:text="忘记密码" />
+    </LinearLayout>
+</RelativeLayout>

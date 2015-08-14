@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:background="@color/content_bg"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Black.General"
+                android:background="@color/nav_title_bg"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="顾问直播" />
+
+            <Gallery
+                android:id="@+id/ad_gallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/ll_current_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="bottom">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="1dp"
+                    android:layout_gravity="bottom"
+                    android:background="@color/red" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/service_play_room_line" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="1dp"
+                    android:layout_gravity="bottom"
+                    android:background="@color/red" />
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_play_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp">
+
+                <TextView
+                    android:id="@+id/tv_play_status"
+                    style="@style/Text.White.Slight"
+                    android:background="@drawable/btn_rect_red"
+                    android:text="正在直播"
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_play_teachername"
+                    android:text="大家好 是城是"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:layout_toRightOf="@id/tv_play_status"
+                    style="@style/Text.Deep.Gray.Slight"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_play_number"
+                    android:text="直播人气"
+                    style="@style/Text.Red.Slight"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:layout_alignParentRight="true"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@mipmap/arrows_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_service_replycontent"
+                android:text="今天可以做多吗"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                style="@style/Text.Black.General"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_service_askcontent"
+                android:text="今天城池错哦"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Text.Black.General"
+                android:gravity="center_vertical"
+                android:background="@drawable/service_ask_text_bg" />
+
+            <View
+                style="@style/horizontal_line"
+                android:layout_marginTop="8dp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_calendar"
+                style="@style/main_rl_rect_set">
+
+                <TextView
+                    style="@style/rl_rect_set_text"
+                    android:text="财经日历"
+                    android:drawableLeft="@mipmap/service_icon_calendar" />
+
+                <ImageView style="@style/rl_rect_set_arrow" />
+            </RelativeLayout>
+
+            <View style="@style/horizontal_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_alert"
+                style="@style/main_rl_rect_set">
+
+                <TextView
+                    style="@style/rl_rect_set_text"
+                    android:text="报价提醒"
+                    android:drawableLeft="@mipmap/service_icon_alert" />
+
+                <ImageView style="@style/rl_rect_set_arrow" />
+            </RelativeLayout>
+
+            <View style="@style/horizontal_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_call_phone"
+                style="@style/main_rl_rect_set">
+
+                <TextView
+                    style="@style/rl_rect_set_text"
+                    android:text="电话下单"
+                    android:drawableLeft="@mipmap/service_icon_call_phone" />
+
+                <ImageView style="@style/rl_rect_set_arrow" />
+            </RelativeLayout>
+
+            <View style="@style/horizontal_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_account"
+                style="@style/main_rl_rect_set">
+
+                <TextView
+                    style="@style/rl_rect_set_text"
+                    android:text="我要开户"
+                    android:drawableLeft="@mipmap/service_icon_account" />
+
+                <ImageView style="@style/rl_rect_set_arrow" />
+            </RelativeLayout>
+
+            <View style="@style/horizontal_line" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

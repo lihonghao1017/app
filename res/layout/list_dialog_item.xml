@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_listdialog"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:background="@drawable/rl_rect_gray_selector"
+    android:gravity="center">
+
+
+    <TextView
+        android:id="@+id/tv_listdialog_item"
+        style="@style/Text.Black.General"
+        android:layout_width="match_parent"
+        android:paddingLeft="20dp"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/iv_listdialog_selected"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="5分钏" />
+
+    <ImageView
+        android:id="@+id/iv_listdialog_selected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/list_item_selected"
+        android:layout_centerVertical="true"
+        android:clickable="false"
+        android:focusable="false"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp" />
+
+</RelativeLayout>

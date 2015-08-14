@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View style="@style/horizontal_line" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:gravity="bottom">
+
+        <ImageView
+            android:id="@+id/iv_text_emo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_emo_selector" />
+
+        <EditText
+            android:id="@+id/et_comment_content"
+            android:hint="顾问咨询..."
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/Text.Black.General"
+            android:textColorHint="@color/hint_color"
+            android:text=""
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/comment_input_bg"
+            android:maxLines="4"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/btn_send"
+            android:text="发送"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_send_selector" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp" />
+
+    <com.jin91.preciousmetal.customview.emo.EmoGridView
+        android:id="@+id/emoGrideView"
+        android:visibility="gone"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

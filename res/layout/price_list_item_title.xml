@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:background="#C3C4C7"
+    android:gravity="center"
+    android:layout_height="20dp">
+
+    <TextView
+        style="@style/Text.Gray.Slight"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="类型" />
+
+    <TextView
+        style="@style/Text.Gray.Slight"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="卖出" />
+
+    <TextView
+        style="@style/Text.Gray.Slight"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="买入" />
+
+    <TextView
+        style="@style/Text.Gray.Slight"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="高低" />
+
+    <TextView
+        style="@style/Text.Gray.Slight"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="跌涨幅" />
+</LinearLayout>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:gravity="center_vertical"
+            android:background="#282A2E">
+
+            <ImageView
+                android:id="@+id/iv_user_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/default_normal_avatar" />
+
+            <TextView
+                android:id="@+id/tv_nickname"
+                android:text=""
+                style="@style/Text.White.Slight"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_mine_email"
+                android:text=""
+                style="@style/Text.White.Slight"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:drawableRight="@mipmap/icon_arrows_right"
+                android:drawablePadding="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_mine_login"
+                style="@style/Text.White.General"
+                android:text="登录"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:background="@drawable/btn_rect_red_selector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+        <View
+            style="@style/horizontal_line"
+            android:layout_marginTop="8dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_advise"
+            style="@style/main_rl_rect_set">
+
+            <TextView
+                style="@style/rl_rect_set_text"
+                android:text="即时建议"
+                android:drawableLeft="@mipmap/mine_icon_advise"
+                android:drawablePadding="20dp" />
+
+            <ImageView
+                android:id="@+id/iv_advise_arrow"
+                style="@style/rl_rect_set_arrow" />
+
+            <ImageView
+                android:id="@+id/iv_advise_newMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/iv_advise_arrow"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/new_msg_tip" />
+        </RelativeLayout>
+
+        <View style="@style/horizontal_line" />
+
+        <RelativeLayout
+            android:id="@+id/rl_advise_reply"
+            style="@style/main_rl_rect_set">
+
+            <TextView
+                style="@style/rl_rect_set_text"
+                android:text="顾问回复"
+                android:drawableLeft="@mipmap/mine_icon_reply"
+                android:drawablePadding="20dp" />
+
+            <ImageView
+                android:id="@+id/iv_reply_arrow"
+                style="@style/rl_rect_set_arrow" />
+
+            <ImageView
+                android:id="@+id/iv_reply_newMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/iv_reply_arrow"
+                android:src="@mipmap/new_msg_tip"
+                android:layout_marginRight="10dp" />
+
+        </RelativeLayout>
+
+        <View style="@style/horizontal_line" />
+
+        <RelativeLayout
+            android:id="@+id/rl_message"
+            style="@style/main_rl_rect_set">
+
+            <TextView
+                style="@style/rl_rect_set_text"
+                android:text="国鑫消息"
+                android:drawableLeft="@mipmap/mine_icon_messages"
+                android:drawablePadding="20dp" />
+
+            <ImageView
+                android:id="@+id/iv_guoxin_arrow"
+                style="@style/rl_rect_set_arrow" />
+
+            <ImageView
+                android:id="@+id/iv_guoxin_newMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/iv_guoxin_arrow"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/new_msg_tip"
+                android:layout_marginRight="10dp" />
+
+        </RelativeLayout>
+
+        <View style="@style/horizontal_line" />
+
+        <View
+            style="@style/horizontal_line"
+            android:layout_marginTop="8dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_setting"
+            style="@style/main_rl_rect_set">
+
+            <TextView
+                android:id="@+id/tv_set_tip"
+                style="@style/rl_rect_set_text"
+                android:text="设置"
+                android:drawableLeft="@mipmap/mine_icon_setting"
+                android:drawablePadding="20dp" />
+
+            <ImageView
+                android:id="@+id/iv_set_arrow"
+                style="@style/rl_rect_set_arrow" />
+
+            <ImageView
+                android:id="@+id/iv_set_newMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/iv_set_arrow"
+                android:src="@mipmap/new_msg_tip"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+
+                />
+
+        </RelativeLayout>
+
+        <View style="@style/horizontal_line" />
+    </LinearLayout>
+</ScrollView>

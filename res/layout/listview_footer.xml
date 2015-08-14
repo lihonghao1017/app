@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/content_bg"
+    android:gravity="center" >
+
+    <!-- 箭头图像、进度条 -->
+
+    <ImageView
+        android:id="@+id/head_arrowImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/arrow_down" />
+
+    <!-- 提示、最近更新 -->
+
+
+    <!-- 进度条 -->
+
+    <ProgressBar
+        android:id="@+id/head_progressBar"
+        android:indeterminateDrawable="@anim/update_loading_progressbar_anim"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:visibility="gone" />
+
+    <!-- 提示 -->
+
+    <TextView
+        android:id="@+id/foot_tipsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="上拉刷新"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="12sp" />
+
+</LinearLayout>

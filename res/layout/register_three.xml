@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_title" />
+
+    <View
+        android:layout_marginTop="10dp"
+        style="@style/horizontal_line" />
+
+    <EditText
+        android:id="@+id/et_reg_pwd"
+        android:hint="请输入密码"
+        android:inputType="textPassword"
+        android:maxLength="32"
+        style="@style/account_input" />
+
+    <View
+
+        style="@style/horizontal_line" />
+
+    <View
+        android:layout_marginTop="10dp"
+        style="@style/horizontal_line" />
+
+    <EditText
+        android:id="@+id/et_reg_repwd"
+        android:hint="请确认密码"
+        android:inputType="textPassword"
+        android:maxLength="32"
+        style="@style/account_input" />
+
+    <View
+
+        style="@style/horizontal_line" />
+
+    <TextView
+        style="@style/account_error_msg"
+        android:id="@+id/tv_reg_msg" />
+
+    <TextView
+        android:id="@+id/tv_reg_comple"
+        android:text="完成"
+        style="@style/account_btn" />
+</LinearLayout>

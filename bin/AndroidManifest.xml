@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jin91.preciousmetal"
+    android:versionCode="4150601"
+    android:versionName="4.150601" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <application
+        android:name=".ui.PreciousMetalAplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:persistent="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".ui.WelcomeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/PageIndicatorDefaults" />
+        <activity
+            android:name=".ui.service.PriceAlarmActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
+        <activity
+            android:name=".ui.price.SelectPriceActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/PageIndicatorDefaults" />
+        <activity
+            android:name=".ui.price.PriceAlertActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
+        <activity
+            android:name=".ui.service.ViewPagerPhotoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
+        <activity
+            android:name=".ui.service.play.RoomNoticeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
+        <activity
+            android:name=".ui.service.RoomDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
+        <activity
+            android:name=".ui.mine.CounselorReplyActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
+        <activity
+            android:name=".ui.mine.ImmedSuggestActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
+        <activity
+            android:name=".ui.mine.ModifyPassActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity
+            android:name=".ui.mine.AccountMangerActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
+        <activity
+            android:name=".ui.mine.RegisterOneActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity
+            android:name=".ui.mine.RegisterTwoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity
+            android:name=".ui.mine.RegisterThreeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity
+            android:name=".ui.mine.UserProtocolActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
+        <activity
+            android:name=".ui.mine.FeedBackActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
+        <activity
+            android:name=".ui.mine.AboutJinActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
+        <activity
+            android:name=".ui.mine.SettingActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
+        <activity
+            android:name=".ui.mine.LoginActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
+        <activity
+            android:name=".ui.service.FinanceCalenActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
+        <activity
+            android:name=".ui.service.ServiceDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.mine.GuoXinMessageActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
+        <activity
+            android:name=".ui.news.NewsDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
+        <activity
+            android:name=".ui.price.PriceDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
+        <activity
+            android:name=".ui.mine.OpenAccountActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
+        <activity
+            android:name=".wxapi.ShareSinaActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" >
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
+
+        <!-- 微博 -->
+        <activity
+            android:name="com.tencent.weibo.sdk.android.component.Authorize"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <!-- 必须注册在微博授权，分享微博时候用到 -->
+        <activity
+            android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- ************************************交易模块 ***************************** -->
+        <activity
+            android:name="com.bloomplus.tradev2.Main"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.bloomplus.tradev2.NetSet"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
+        <activity
+            android:name="com.bloomplus.tradev2.Enter"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.jin91.preciousmetal.ui.price.ZiXuanActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base"
+            android:windowSoftInputMode="adjustPan" />
+        <!-- *************************service************************ -->
+        <service
+            android:name=".services.MqttService"
+            android:label="pushService"
+            android:process=":pushService" >
+            <intent-filter android:priority="1000" >
+                <action android:name="com.jin91.preciousmetal.services.MqttService" />
+            </intent-filter>
+        </service>
+        <service android:name=".services.DownLoadService" />
+
+        <!-- *************************receiver************************ -->
+        <receiver android:name=".receiver.BootNetReceiver" >
+            <intent-filter android:priority="1000" >
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.AllReceiver" >
+            android:priority="1000" >
+            <intent-filter>
+
+                <!-- 手机唤醒解锁 -->
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <!-- 关闭屏幕 -->
+                <action android:name="android.intent.action.CLOSE_SYSTEM_DIALOGS" />
+                <!-- 电话相关权限 -->
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+                <!-- 系统壁纸更换 -->
+                <action android:name="android.intent.action.WALLPAPER_CHANGED" />
+                <!-- 设备进入 USB 大容量存储模式 -->
+                <action android:name="android.intent.action.UMS_CONNECTED" />
+                <!-- 设备从 USB 大容量存储模式退出。 -->
+                <action android:name="android.intent.action.UMS_DISCONNECTED" />
+                <!-- 屏幕已经被打开 3.0以下有效 -->
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <!-- 屏幕已经被关闭 3.0以下有效 -->
+                <action android:name="android.intent.action.SCREEN_OFF" />
+                <!-- 充电状态，或者电池的电量发生变化。 -->
+                <action android:name="android.intent.action.BATTERY_CHANGED" />
+                <!-- 表示电池电量低。 -->
+                <action android:name="android.intent.action.BATTERY_LOW" />
+                <!-- 表示电池电量充足，即从电池电量低变化到饱满时会发出广播 -->
+                <action android:name="android.intent.action.BATTERY_OKAY" />
+                <!-- 插上外部电源时发出的广播 -->
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <!-- 已断开外部电源连接时发出的广播 -->
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+                <!-- 设备的配置信息已经改变，参见 Resources.Configuration. -->
+                <action android:name="android.intent.action.CONFIGURATION_CHANGED" />
+                <!-- 在耳机口上插入耳机时发出的广播 -->
+                <action android:name="android.intent.action.HEADSET_PLUG" />
+                <!-- 改变输入法时发出的广播 -->
+                <action android:name="android.intent.action.INPUT_METHOD_CHANGED" />
+                <!-- 移动APP完成之后，发出的广播(移动是指:APP2SD) -->
+                <action android:name="android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE" />
+                <!-- 正在移动APP时，发出的广播(移动是指:APP2SD) -->
+                <action android:name="android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE" />
+                <!-- 按下照相时的拍照按键(硬件按键)时发出的广播 -->
+                <action android:name="android.intent.action.ACTION_CAMERA_BUTTON" />
+                <!-- 关闭或打开飞行模式时的广播 -->
+                <action android:name="android.intent.action.AIRPLANE_MODE" />
+                <!-- 屏日期被改变。 -->
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <!-- 用户按下了“Media Button -->
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+                <!-- 扩展介质（扩展卡）已经从 SD 卡插槽拔出，但是挂载点 (mount point) 还没解除 (unmount)。 -->
+                <action android:name="android.intent.action.MEDIA_BAD_REMOVAL" />
+                <!-- 用户想要移除扩展介质（拔掉扩展卡）。 -->
+                <action android:name="android.intent.action.MEDIA_EJECT" />
+                <!-- 扩展介质被插入，而且已经被挂载。 -->
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <!-- 扩展介质被移除。 -->
+                <action android:name="android.intent.action.MEDIA_REMOVED" />
+                <!-- 已经扫描完介质的一个目录。 -->
+                <action android:name="android.intent.action.MEDIA_SCANNER_FINISHED" />
+                <!-- 扩展介质的挂载被解除 (unmount)，因为它已经作为 USB 大容量存储被共享。 -->
+                <action android:name="android.intent.action.MEDIA_SHARED" />
+                <!-- 扩展介质存在，但是还没有被挂载 (mount)。 -->
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED" />
+                <!-- 更新将要（真正）被安装。 -->
+                <action android:name="android.intent.action.PROVIDER_CHANGED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

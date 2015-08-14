@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    >
+
+    <ImageView
+        android:id="@+id/iv_play_img"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/default_normal_avatar" />
+    <TextView
+        android:id="@+id/tv_play_name"
+        android:text="未绑定"
+        android:layout_marginTop="3dp"
+        style="@style/Text.Black.Slight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_bind_status"
+        android:text="未绑定"
+        android:layout_marginTop="3dp"
+        style="@style/Text.Deep.Gray.Slight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

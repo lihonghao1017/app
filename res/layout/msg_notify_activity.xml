@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+      <include layout="@layout/layout_title" />
+      
+      
+       <View
+        style="@style/horizontal_line"
+        android:layout_marginTop="10dp" />
+     <RelativeLayout
+        android:id="@+id/rl_msg_notify"
+        style="@style/rl_rect_set" >
+
+        <TextView
+            style="@style/rl_rect_set_text"
+            android:text="声音" />
+
+        <com.zcw.togglebutton.ToggleButton
+             android:id="@+id/shengyin_tb"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="13dp"
+         android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+       <View
+        style="@style/horizontal_line" />
+        <RelativeLayout
+        style="@style/rl_rect_set" >
+
+        <TextView
+            style="@style/rl_rect_set_text"
+            android:text="震动" />
+
+        <com.zcw.togglebutton.ToggleButton
+            android:id="@+id/zhengdong_tb"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="13dp"
+        android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+      
+ 
+</LinearLayout>

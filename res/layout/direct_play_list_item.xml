@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/in_direct_avatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="10dp"
+        layout="@layout/common_avatar" />
+
+    <LinearLayout
+        android:id="@+id/ll_reply_direct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/in_direct_avatar"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_directrepte_name"
+            style="@style/Text.Gray.Yellow.General"
+            android:singleLine="true"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fdsfsdf" />
+
+        <TextView
+            android:id="@+id/tv_directrep_time"
+            style="@style/Text.Deep.Gray.Slight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="2分种前" />
+
+        <TextView
+            android:id="@+id/tv_directrep_content"
+            android:layout_marginTop="8dp"
+            style="@style/Text.Black.General"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="7dp"
+            android:text="fdsfdsfsdfsdfdsfsf"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_reply_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/in_direct_avatar"
+        android:layout_below="@id/ll_reply_direct"
+        android:orientation="vertical"
+        android:layout_marginBottom="7dp"/>
+
+
+    <GridView
+        android:id="@+id/gv_directrep_imgs"
+        android:layout_width="match_parent"
+        android:layout_below="@id/ll_reply_content"
+        android:layout_height="match_parent"
+        android:verticalSpacing="10dip"
+        android:numColumns="3"
+        android:listSelector="@null"
+        android:background="@null"
+        android:layout_toRightOf="@id/in_direct_avatar"
+        android:cacheColorHint="@color/transparent"
+        android:horizontalSpacing="10dip"
+        android:layout_marginBottom="10dp"/>
+</RelativeLayout>

@@ -1,0 +1,119 @@
+<resources>
+
+
+    <style name="Text">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <!--******************灰色字体***********************-->
+    <style name="Text.Gray.Large" parent="Text">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Text.Gray.General" parent="Text">
+        <item name="android:textSize">16.0sp</item>
+    </style>
+
+    <style name="Text.Gray.Slight" parent="Text">
+        <item name="android:textSize">14.0sp</item>
+    </style>
+
+    <style name="Text.Gray.Smail" parent="Text">
+        <item name="android:textSize">12.0sp</item>
+    </style>
+
+    <style name="Text.Gray.Min.Smail" parent="Text">
+        <item name="android:textSize">9.0sp</item>
+    </style>
+
+    <!--**********************白色字体*****************-->
+    <style name="Text.White.Large" parent="Text">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.White.General" parent="Text.White.Large">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text.White.Slight" parent="Text.White.Large">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text.White.Smail" parent="Text.White.Large">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Text.White.Min.Smail" parent="Text.White.Large">
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <!--********************红色************-->
+    <style name="Text.Red.General" parent="Text">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text.Red.Slight" parent="Text">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!--********************绿色************-->
+    <style name="Text.Green.General" parent="Text">
+        <item name="android:textColor">@color/green</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="Text.Green.Slight" parent="Text">
+        <item name="android:textColor">@color/green</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+    <!--**************黑色**************-->
+    <style name="Text.Black.Large" parent="Text">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Text.Black.General" parent="Text">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text.Black.Slight" parent="Text">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="Text.Black.Smail" parent="Text">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!--******************深灰***************-->
+    <style name="Text.Deep.Gray.General" parent="Text">
+        <item name="android:textColor">@color/deep_gray</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="Text.Deep.Gray.Slight" parent="Text">
+        <item name="android:textColor">@color/deep_gray</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!--******************灰蓝***************-->
+    <style name="Text.Gray.Blue.General" parent="Text">
+        <item name="android:textColor">@color/gray_blue</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="Text.Gray.Blue.Slight" parent="Text">
+        <item name="android:textColor">@color/gray_blue</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!--******************黄色***************-->
+    <style name="Text.Gray.Yellow.General" parent="Text">
+        <item name="android:textColor">@color/yellow</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+</resources>

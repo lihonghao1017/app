@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_title" />
+
+    <RelativeLayout
+        android:id="@+id/rl_select_trade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="13dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:id="@+id/tv_trade_type"
+            style="@style/Text.Gray.General"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="行情选择" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="19dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/tv_trade_type">
+
+            <TextView
+                android:id="@+id/tr_trade_name"
+                style="@style/Text.Gray.General"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="现货白银" />
+
+            <TextView
+                android:id="@+id/tv_trade_sellprice"
+                style="@style/Text.Gray.General"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/tr_trade_name"
+                android:text="3157" />
+
+            <TextView
+                android:id="@+id/tv_trade_pre"
+                style="@style/Text.Gray.General"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/tr_trade_name"
+                android:layout_marginLeft="12dp"
+                android:layout_toRightOf="@id/tv_trade_sellprice"
+                android:text="20%" />
+        </RelativeLayout>
+
+        <ImageView
+            style="@style/rl_rect_set_arrow"
+            android:layout_marginRight="0dp" />
+    </RelativeLayout>
+
+    <View style="@style/horizontal_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="13dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Text.Gray.General"
+            android:layout_gravity="center_vertical"
+            android:text="方式" />
+
+        <RadioGroup
+            android:id="@+id/rg_alert_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="19dp">
+
+            <RadioButton
+                android:id="@+id/rb_local_alert"
+                style="@style/Text.Gray.General"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/rb_green_selector"
+                android:paddingLeft="22dp"
+                android:text="本地提醒" />
+
+            <RadioButton
+                android:id="@+id/rb_msg_alert"
+                style="@style/Text.Gray.General"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/rb_green_selector"
+                android:layout_marginLeft="25dp"
+                android:paddingLeft="22dp"
+                android:background="@color/transparent"
+                android:text="短信提醒" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <View style="@style/horizontal_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="13dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Text.Gray.General"
+            android:layout_gravity="center_vertical"
+            android:text="方向" />
+
+        <RadioGroup
+            android:id="@+id/rg_oper_direction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="19dp">
+
+            <RadioButton
+                android:id="@+id/rb_lt_equal"
+                style="@style/Text.Gray.General"
+                android:checked="true"
+                android:paddingLeft="22dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/rb_green_selector"
+                android:text="小于等于" />
+
+            <RadioButton
+                android:id="@+id/rb_gt_equal"
+                style="@style/Text.Gray.General"
+                android:paddingLeft="22dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/rb_green_selector"
+                android:layout_marginLeft="25dp"
+                android:text="大于等于" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <View style="@style/horizontal_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="13dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Text.Gray.General"
+            android:layout_gravity="center_vertical"
+            android:text="价格" />
+
+        <EditText
+            android:id="@+id/et_price"
+            android:textColor="@color/gray"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="19dp"
+            android:singleLine="true"
+            android:numeric="decimal"
+            android:text=""
+            android:background="@drawable/et_input_bg"
+            android:layout_gravity="center_vertical" />
+
+    </LinearLayout>
+
+    <View style="@style/horizontal_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="13dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Text.Gray.General"
+            android:layout_gravity="center_vertical"
+            android:text="时效" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="19dp">
+
+            <RadioGroup
+                android:id="@+id/rg_valid_time_2448"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <RadioButton
+                    android:id="@+id/rb_valid_24"
+                    style="@style/Text.Gray.General"
+                    android:checked="true"
+                    android:paddingLeft="22dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/rb_green_selector"
+                    android:text="24时" />
+
+                <RadioButton
+                    android:id="@+id/rb_valid_48"
+                    style="@style/Text.Gray.General"
+                    android:paddingLeft="22dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/rb_green_selector"
+                    android:text="48时" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/rg_valid_time_7296"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_valid_72"
+                    style="@style/Text.Gray.General"
+                    android:paddingLeft="22dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/rb_green_selector"
+                    android:text="72时" />
+
+                <RadioButton
+                    android:id="@+id/rb_valid_96"
+                    style="@style/Text.Gray.General"
+                    android:paddingLeft="22dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/rb_green_selector"
+                    android:text="96时" />
+            </RadioGroup>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View style="@style/horizontal_line" />
+</LinearLayout>

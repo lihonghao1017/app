@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.jin91.preciousmetal.customview.ExpandListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mListView"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@null"
+    android:cacheColorHint="#00000000"
+    android:divider="@color/listview_divider_line"
+    android:dividerHeight="1px"
+    android:listSelector="@color/transparent"
+    android:scrollbars="vertical"
+    android:scrollingCache="false">
+<!--android:listSelector="@drawable/listview_item_selector"-->
+</com.jin91.preciousmetal.customview.ExpandListView>

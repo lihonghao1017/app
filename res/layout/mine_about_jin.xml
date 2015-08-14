@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_title" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_abount_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="25dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/about_us_logo" />
+
+        <TextView
+            android:id="@+id/tv_preciousmetal_version"
+            android:text="@string/android_version"
+            style="@style/Text.Gray.General"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@id/ll_abount_icon"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <View style="@style/horizontal_line" />
+
+        <TextView
+            android:id="@+id/tv_about_callphone"
+            style="@style/Text.Black.General"
+            android:text="客户电话:  400-610-1155"
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:padding="15dp"
+            android:layout_height="wrap_content" />
+
+        <View style="@style/horizontal_line" />
+
+        <TextView
+            android:id="@+id/tv_about_net"
+            style="@style/Text.Black.General"
+            android:text="官网:  www.91jin.com"
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:padding="15dp"
+            android:layout_height="wrap_content" />
+
+        <View style="@style/horizontal_line" />
+
+        <TextView
+            android:id="@+id/tv_about_email"
+            style="@style/Text.Black.General"
+            android:text="邮箱:  marker@91jin.com"
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:padding="15dp"
+            android:layout_height="wrap_content" />
+
+        <View style="@style/horizontal_line" />
+    </LinearLayout>
+
+    <TextView
+        android:text="国鑫黄金@2015版权所有"
+        android:gravity="center"
+        style="@style/Text.Gray.Slight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp" />
+</LinearLayout>

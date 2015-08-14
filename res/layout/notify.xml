@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@color/nav_title_bg">
+
+    <ImageView
+        android:id="@+id/iv_notify_icon"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="5dp"
+        android:src="@mipmap/notify" />
+
+    <TextView
+        android:id="@+id/tv_notify_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/iv_notify_icon"
+        android:layout_toLeftOf="@+id/tv_notify_time"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="aaaaaaaaaaaaaaaaaa"
+        style="@style/Text.Black.General"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_notify_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="10:30"
+        style="@style/Text.Deep.Gray.Slight" />
+
+    <TextView
+        android:id="@+id/tv_notify_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_notify_icon"
+        android:layout_below="@id/tv_notify_time"
+        android:layout_marginTop="8dp"
+        style="@style/Text.Black.Slight"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="200000" />
+</RelativeLayout>
