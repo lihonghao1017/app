@@ -16,8 +16,6 @@ public abstract class BaseRegisterActivity extends BaseActivity implements Regis
 
     protected RegisterPresenter presenter;
     protected LoadingDialog loadingDialog;
-    @ViewInject(R.id.tv_reg_msg)
-    TextView tv_reg_msg;
 
     protected  int type;
     @Override
@@ -42,7 +40,7 @@ public abstract class BaseRegisterActivity extends BaseActivity implements Regis
 
     @Override
     public void showNetError() {
-        tv_reg_msg.setText(getString(R.string.net_error));
+        ((TextView)findViewById(R.id.tv_reg_msg)).setText(getString(R.string.net_error));
     }
 
     @Override
@@ -54,7 +52,7 @@ public abstract class BaseRegisterActivity extends BaseActivity implements Regis
 
     @Override
     public void showErrorMsg(String errMsg) {
-        tv_reg_msg.setText(errMsg);
+    	 ((TextView)findViewById(R.id.tv_reg_msg)).setText(errMsg);
     }
 
     @Override

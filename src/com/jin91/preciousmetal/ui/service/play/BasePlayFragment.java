@@ -24,12 +24,12 @@ import com.lidroid.xutils.view.annotation.ViewInject;
  */
 public abstract class BasePlayFragment<T> extends BaseFragment implements PlayView<T> {
 
-    @ViewInject(R.id.fl_price_content)
-    FrameLayout fl_price_content;
-    @ViewInject(R.id.id_stickynavlayout_innerscrollview)
-    ExpandListView mListView;
-    @ViewInject(R.id.swipeRereshLayout)
-    SwipeRefreshLayout swipeRereshLayout;
+//    @ViewInject(R.id.fl_price_content)
+//    FrameLayout fl_price_content;
+//    @ViewInject(R.id.id_stickynavlayout_innerscrollview)
+//    ExpandListView mListView;
+//    @ViewInject(R.id.swipeRereshLayout)
+//    SwipeRefreshLayout swipeRereshLayout;
 
     protected EmptyLayout emptyLayout;
     protected PlayPresenter presenter;
@@ -56,7 +56,7 @@ public abstract class BasePlayFragment<T> extends BaseFragment implements PlayVi
 
     @Override
     public void initialize() {
-        emptyLayout = new EmptyLayout(mContext, fl_price_content);
+        emptyLayout = new EmptyLayout(mContext,  ((FrameLayout)getActivity().findViewById(R.id.fl_price_content)));
         presenter = new PlayPresenterImpl<T>(this, roomId);
     }
 
@@ -85,7 +85,7 @@ public abstract class BasePlayFragment<T> extends BaseFragment implements PlayVi
     @Override
     public void hideLoading() {
         emptyLayout.hideLoadinAnim();
-        fl_price_content.setVisibility(View.GONE);
+        ((FrameLayout)getActivity().findViewById(R.id.fl_price_content)).setVisibility(View.GONE);
     }
 
     @Override
@@ -156,8 +156,10 @@ public abstract class BasePlayFragment<T> extends BaseFragment implements PlayVi
 
     @Override
     public void setRefreshComplete() {
-        mListView.setRefreshFootComplet();
-        swipeRereshLayout.setRefreshing(false);
+    	
+    	    SwipeRefreshLayout swipeRereshLayout;
+    	    ((ExpandListView)getActivity().findViewById(R.id.id_stickynavlayout_innerscrollview)).setRefreshFootComplet();
+    	    ((SwipeRefreshLayout)getActivity().findViewById(R.id.swipeRereshLayout)).setRefreshing(false);
         threadStart = false;
         startThreadGetList();
 

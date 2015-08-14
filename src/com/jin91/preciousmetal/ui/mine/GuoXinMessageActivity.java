@@ -10,6 +10,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.google.gson.reflect.TypeToken;
@@ -37,7 +38,12 @@ public class GuoXinMessageActivity extends BaseMineMessageActivity<GuoXinMessage
     public TextView tv_title_option;
     @ViewInject(R.id.tv_title_title)
     public TextView tv_title_title;
-
+    @ViewInject(R.id.fl_price_content)
+    FrameLayout fl_price_content;
+    @ViewInject(R.id.mListView)
+    ExpandListView mListView;
+    @ViewInject(R.id.swipeRereshLayout)
+    SwipeRefreshLayout swipeRereshLayout;
     private List<GuoXinMessage> mList;
     private GuoXinMessageAdapter adapter;
     TypeToken<MessageAll<GuoXinMessage>> type = new TypeToken<MessageAll<GuoXinMessage>>() {

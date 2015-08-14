@@ -28,6 +28,8 @@ import com.lidroid.xutils.view.annotation.event.OnClick;
 public class RegisterTwoActivity extends BaseRegisterActivity {
 
     public final static String TAG = "RegisterTwoActivity";
+    @ViewInject(R.id.tv_reg_msg)
+    TextView tv_reg_msg;
     @ViewInject(R.id.et_msg_code)
     EditText et_msg_code;
     @ViewInject(R.id.tv_again_code)

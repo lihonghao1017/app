@@ -20,6 +20,8 @@ import com.lidroid.xutils.view.annotation.event.OnClick;
 public class RegisterThreeActivity extends BaseRegisterActivity {
 
     public static final String TAG = "RegisterThreeActivity";
+    @ViewInject(R.id.tv_reg_msg)
+    TextView tv_reg_msg;
     @ViewInject(R.id.et_reg_pwd)
     EditText et_reg_pwd;
     @ViewInject(R.id.et_reg_repwd)

@@ -27,6 +27,8 @@ import com.lidroid.xutils.view.annotation.event.OnClick;
 public class RegisterOneActivity extends BaseRegisterActivity {
 
     public static final String TAG = "RegisterOneActivity";
+    @ViewInject(R.id.tv_reg_msg)
+    TextView tv_reg_msg;
     @ViewInject(R.id.et_reg_phone)
     EditText et_reg_phone;
     @ViewInject(R.id.et_img_code)

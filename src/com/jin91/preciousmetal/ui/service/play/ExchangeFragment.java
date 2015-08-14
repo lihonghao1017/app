@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.FrameLayout;
 
 import com.google.gson.reflect.TypeToken;
 import com.jin91.preciousmetal.R;
@@ -23,6 +24,7 @@ import com.jin91.preciousmetal.customview.ExpandListView;
 import com.jin91.preciousmetal.ui.Constants;
 import com.jin91.preciousmetal.ui.service.ServiceDetailActivity;
 import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.view.annotation.ViewInject;
 
 /**
  * Created by lijinhua on 2015/5/14.
@@ -32,6 +34,13 @@ public class ExchangeFragment extends BasePlayFragment<Exchange> implements View
 
     public static final String type = "1";
     public static final String action = "getspeaksdata";
+    @ViewInject(R.id.fl_price_content)
+    FrameLayout fl_price_content;
+    @ViewInject(R.id.id_stickynavlayout_innerscrollview)
+    ExpandListView mListView;
+    @ViewInject(R.id.swipeRereshLayout)
+    SwipeRefreshLayout swipeRereshLayout;
+
     ExchangeAdapter adapter;
     List<Exchange> mList;
     TypeToken<LiveRoom<Exchange>> firstTypeToken = new TypeToken<LiveRoom<Exchange>>() {

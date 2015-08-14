@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.FrameLayout;
 
 import com.google.gson.reflect.TypeToken;
 import com.jin91.preciousmetal.R;
@@ -24,6 +25,7 @@ import com.jin91.preciousmetal.ui.Constants;
 import com.jin91.preciousmetal.ui.service.ServiceDetailActivity;
 import com.jin91.preciousmetal.util.InputUtil;
 import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.view.annotation.ViewInject;
 
 /**
  * Created by lijinhua on 2015/5/12.
@@ -32,6 +34,13 @@ public class DirectPlayFragment extends BasePlayFragment<DirectPlay> implements 
 
     public static final String type = "0";
     public static final String action = "getlivedata";
+    @ViewInject(R.id.fl_price_content)
+    FrameLayout fl_price_content;
+    @ViewInject(R.id.id_stickynavlayout_innerscrollview)
+    ExpandListView mListView;
+    @ViewInject(R.id.swipeRereshLayout)
+    SwipeRefreshLayout swipeRereshLayout;
+
 
     protected String replyType; // 回复的类型 // 2--回复或者交流 1 提问
     protected String replyToId; // 回复的id  如果是交流传0,回复传回复的id,提问的时候不传

@@ -98,7 +98,7 @@ public class ZiXuanActivity extends Activity implements OnClickListener ,OnItemC
 			ArrayList<Price> itemList = (ArrayList<Price>) map.get(entry
 					.getKey());
 			for (int i = 0; i < itemList.size(); i++) {
-				if (itemList.get(i).ischecked)
+				if (itemList.get(i).isCheched)
 					ziXuanList.add(itemList.get(i));
 			}
 			mListPages.add(new ItemPricePage(this, itemList, entry.getKey(),

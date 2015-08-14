@@ -19,12 +19,12 @@ import com.lidroid.xutils.view.annotation.ViewInject;
  */
 public abstract class BaseMineMessageActivity<T> extends BaseActivity implements GuoXinMsgView<T> {
 
-    @ViewInject(R.id.fl_price_content)
-    FrameLayout fl_price_content;
-    @ViewInject(R.id.mListView)
-    ExpandListView mListView;
-    @ViewInject(R.id.swipeRereshLayout)
-    SwipeRefreshLayout swipeRereshLayout;
+//    @ViewInject(R.id.fl_price_content)
+//    FrameLayout fl_price_content;
+//    @ViewInject(R.id.mListView)
+//    ExpandListView mListView;
+//    @ViewInject(R.id.swipeRereshLayout)
+//    SwipeRefreshLayout swipeRereshLayout;
 
     protected EmptyLayout emptyLayout;
     protected GuoXinMsgPresenter presenter;
@@ -35,10 +35,9 @@ public abstract class BaseMineMessageActivity<T> extends BaseActivity implements
         super.onCreate(savedInstanceState);
 
     }
-
     @Override
     public void initialize() {
-        emptyLayout = new EmptyLayout(mContext, fl_price_content);
+        emptyLayout = new EmptyLayout(mContext, ((FrameLayout)findViewById(R.id.fl_price_content)));
         presenter = new GuoXinMsgPresenterImpl<T>(this);
     }
 
@@ -55,7 +54,7 @@ public abstract class BaseMineMessageActivity<T> extends BaseActivity implements
     @Override
     public void hideLoading() {
         emptyLayout.hideLoadinAnim();
-        fl_price_content.setVisibility(View.GONE);
+        ((FrameLayout)findViewById(R.id.fl_price_content)).setVisibility(View.GONE);
     }
 
     @Override
@@ -65,16 +64,18 @@ public abstract class BaseMineMessageActivity<T> extends BaseActivity implements
 
     @Override
     public void showToastNetErr() {
+    	
+    	 
         MessageToast.showToast(R.string.net_error, 0);
-        swipeRereshLayout.setRefreshing(false);
-        mListView.setRefreshFootComplet();
+        ((ExpandListView)findViewById(R.id.mListView)).setRefreshFootComplet();
+        ((SwipeRefreshLayout)findViewById(R.id.swipeRereshLayout)).setRefreshing(false);
     }
 
     @Override
     public void showToastNoMoreData() {
         MessageToast.showToast(R.string.no_more_data, 0);
-        swipeRereshLayout.setRefreshing(false);
-        mListView.setRefreshFootComplet();
+        ((ExpandListView)findViewById(R.id.mListView)).setRefreshFootComplet();
+        ((SwipeRefreshLayout)findViewById(R.id.swipeRereshLayout)).setRefreshing(false);
     }
 
     @Override
