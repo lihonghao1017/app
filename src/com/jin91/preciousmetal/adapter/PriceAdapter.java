@@ -117,6 +117,8 @@ public class PriceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 						if (!price.isCheched) {
 							price.isCheched=true;
 							notifyDataSetChanged();
+							mList.remove(price);
+							notifyDataSetChanged();
 							((ZiXuanActivity)mContext).ziXuanList.add(price);
 							((ZiXuanActivity)mContext).ziXuanAdapter.notifyDataSetChanged();
 						}

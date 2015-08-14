@@ -1,21 +1,15 @@
 package com.jin91.preciousmetal.ui.price;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import org.json.JSONArray;
-import org.json.JSONException;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -23,7 +17,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.google.gson.Gson;
 import com.jin91.preciousmetal.R;
 import com.jin91.preciousmetal.adapter.PriceAdapter;
 import com.jin91.preciousmetal.common.api.entity.Price;
@@ -46,7 +39,7 @@ public class ItemPricePage implements PriceAdapter.OnItemClickListener,
 	private Button bianjiBut;
 	private Map<String, List<Price>> map;
 
-	public ItemPricePage(Context mContext, List<Price> mList, String excode,Map<String, List<Price>> map,int tag) {
+	public ItemPricePage(Context mContext, ArrayList<Price> mList, String excode,Map<String, List<Price>> map,int tag) {
 		this.mContext = mContext;
 		this.mList = mList;
 		this.map=map;
