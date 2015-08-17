@@ -6,6 +6,7 @@
     <string-array name="trade_type">
         <item>自选</item>
         <item>天交所</item>
+        <item>深油所</item>
         <item>国际现货</item>
         <item>金交所</item>
         <item>外汇</item>

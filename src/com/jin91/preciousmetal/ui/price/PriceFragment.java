@@ -126,6 +126,7 @@ public class PriceFragment extends BaseFragment implements PriceView, View.OnCli
         category_map = new LinkedHashMap<String, String>();
         category_map.put("ZIXUAN", "自选");
         category_map.put("TJPME", "天交所");
+        category_map.put("SSY", "深油所");
         category_map.put("WGJS", "国际现货");
         category_map.put("SGE", "金交所");
         category_map.put("FOREX", "外汇");

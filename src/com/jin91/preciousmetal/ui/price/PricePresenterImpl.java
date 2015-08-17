@@ -66,6 +66,14 @@ public class PricePresenterImpl implements PricePresenter {
                                 tjpmeList.add(price);
                                 map.put("TJPME", tjpmeList);
                                 break;
+                            case "SSY": // 天交所
+                                List<Price> ssyList = map.get("SSY");
+                                if (ssyList == null) {
+                                	ssyList = new ArrayList<Price>();
+                                }
+                                ssyList.add(price);
+                                map.put("SSY", ssyList);
+                                break;
                             case "WGJS": // 国际现货
                                 List<Price> wgjsList = map.get("WGJS");
                                 if (wgjsList == null) {

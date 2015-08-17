@@ -107,9 +107,9 @@ public class PriceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 GridViewHolder gridHolder = (GridViewHolder) holder;
                 gridHolder.tv_name.setText(price.name);
                 String json=((ZiXuanActivity)mContext).zixuanJson;
-                if(json!=null&&json.contains(price.name)&&json.contains(price.code))
-                	price.isCheched=true;
-                gridHolder.tv_name.setBackgroundColor(price.isCheched?0xFFFF4500:0xFFFF83FA);
+//                if(json!=null&&json.contains(price.name)&&json.contains(price.code))
+//                	price.isCheched=true;
+//                gridHolder.tv_name.setBackgroundColor(price.isCheched?0xFFFF4500:0xFFFF83FA);
                 gridHolder.tv_name.setOnClickListener(new OnClickListener() {
 					
 					@Override

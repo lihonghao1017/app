@@ -27,7 +27,8 @@ import com.jin91.preciousmetal.customview.pagerindicator.TabPageIndicator;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 
-public class ZiXuanActivity extends Activity implements OnClickListener ,OnItemClickListener{
+public class ZiXuanActivity extends Activity implements OnClickListener,
+		OnItemClickListener {
 
 	private GridView gridView;
 	public GridViewAdapter ziXuanAdapter;
@@ -47,33 +48,46 @@ public class ZiXuanActivity extends Activity implements OnClickListener ,OnItemC
 	@ViewInject(R.id.tv_title_title)
 	public TextView tv_title_title;
 	public String zixuanJson;
+	private boolean isFirst=true;
 
 	@Override
 	protected void onCreate(android.os.Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		initView();
+		initData();
+		setData();
+		notifyAdapter();
+	}
+
+	private void initView() {
 		setContentView(R.layout.zixuangridview);
 		ViewUtils.inject(this);
 		tv_title_title.setText("编辑自选");
 		tv_title_option.setText("保存");
 		tv_title_option.setOnClickListener(this);
 		tv_title_back.setOnClickListener(this);
+		gridView = (GridView) findViewById(R.id.ZiXuanGrid);
+		gridView.setOnItemClickListener(this);
+	}
+
+	private void initData() {
 		map = (Map<String, List<Price>>) getIntent().getBundleExtra("data")
 				.getSerializable("data");
-		SharedPreferences sp=getSharedPreferences("Price", Context.MODE_PRIVATE);
-		zixuanJson=sp.getString("cave_price", null);
-        
-        ziXuanList=new Gson().fromJson(zixuanJson, new TypeToken<List<Price>>(){}.getType());  ;
-		if(ziXuanList==null){
-			ziXuanList = new ArrayList<>();
-		}
-        gridView = (GridView) findViewById(R.id.ZiXuanGrid);
-        gridView.setOnItemClickListener(this);
-		ziXuanAdapter = new GridViewAdapter(this, ziXuanList);
-		gridView.setAdapter(ziXuanAdapter);
+		SharedPreferences sp = getSharedPreferences("Price",
+				Context.MODE_PRIVATE);
+		zixuanJson = sp.getString("cave_price", null);
 
+//		ziXuanList = new Gson().fromJson(zixuanJson,
+//				new TypeToken<List<Price>>() {
+//				}.getType());
+//		;
+//		if (ziXuanList == null) {
+			ziXuanList = new ArrayList<>();
+//		}
 		mListPages = new ArrayList<ItemPricePage>();
 		category_map = new LinkedHashMap<String, String>();
 		category_map.put("TJPME", "天交所");
+		category_map.put("SSY", "深油所");
 		category_map.put("WGJS", "国际现货");
 		category_map.put("SGE", "金交所");
 		category_map.put("FOREX", "外汇");
@@ -81,15 +95,21 @@ public class ZiXuanActivity extends Activity implements OnClickListener ,OnItemC
 		category_map.put("STOCKINDEX", "美股指数");
 		category_map.put("SHQH", "上海期货");
 		category_map.put("COMEX", "COMEX");
-		String[] asArray = { "天交所", "国际现货", "金交所", "外汇", "国际原油", "美股指数",
+		String[] asArray = { "天交所","深油所", "国际现货", "金交所", "外汇", "国际原油", "美股指数",
 				"上海期货", "COMEX" };
 		pagerAdapter = new PriceViewPageAdapter(mListPages, asArray);
+		ziXuanAdapter = new GridViewAdapter(this, ziXuanList);
+	}
 
+	private void setData() {
+		gridView.setAdapter(ziXuanAdapter);
 		view_pager.setAdapter(pagerAdapter);
 		tab_pageindicator.setViewPager(view_pager);
 		view_pager.setCurrentItem(0);
 		tab_pageindicator.setCurrentItem(0);
-
+	}
+	private void notifyAdapter(){
+		mListPages.clear();
 		Iterator<Entry<String, String>> iter = category_map.entrySet()
 				.iterator();
 		while (iter.hasNext()) {
@@ -97,9 +117,19 @@ public class ZiXuanActivity extends Activity implements OnClickListener ,OnItemC
 					.next();
 			ArrayList<Price> itemList = (ArrayList<Price>) map.get(entry
 					.getKey());
-			for (int i = 0; i < itemList.size(); i++) {
-				if(zixuanJson!=null&&zixuanJson.contains(itemList.get(i).name)&&zixuanJson.contains(itemList.get(i).code))
-							itemList.remove(i--);
+			if(isFirst){
+				for (int i = 0; i < itemList.size(); i++) {
+					if (zixuanJson != null&& zixuanJson.contains(itemList.get(i).name)&& zixuanJson.contains(itemList.get(i).code)){
+						ziXuanList.add(itemList.get(i));
+						itemList.remove(i--);
+					}
+				}
+				isFirst=false;
+			}else {
+//				for (int i = 0; i < itemList.size(); i++) {
+//					if (ziXuanList.contains(itemList.get(i)))
+//						itemList.remove(i--);
+//				}
 			}
 			mListPages.add(new ItemPricePage(this, itemList, entry.getKey(),
 					map, 1));
@@ -107,7 +137,6 @@ public class ZiXuanActivity extends Activity implements OnClickListener ,OnItemC
 		pagerAdapter.notifyDataSetChanged();
 		tab_pageindicator.notifyDataSetChanged();
 		ziXuanAdapter.notifyDataSetChanged();
-
 	}
 
 	@Override
@@ -133,7 +162,7 @@ public class ZiXuanActivity extends Activity implements OnClickListener ,OnItemC
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
 		ziXuanList.remove(position);
-		ziXuanAdapter.notifyDataSetChanged();
+		notifyAdapter();
 	}
 
 }

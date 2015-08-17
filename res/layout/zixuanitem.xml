@@ -14,7 +14,7 @@
         android:textSize="18px"
         android:textColor="#ffffff"
         android:gravity="center"
-        android:background="#555a61"
+        android:background="@drawable/zixuan_textview_bj_style"
         android:layout_gravity="center"/>
 
 </LinearLayout>
