@@ -28,11 +28,11 @@ public class FinanceCalenPreImpl implements FinanceCalenPre {
     }
 
     @Override
-    public void getFinCalList(String tag) {
+    public void getFinCalList(String tag,String date) {
         if (!isLoadSuccess) {
             view.showLoading();
         }
-        ServiceApi.getEconomicList(tag, new ResultCallback() {
+        ServiceApi.getEconomicLists(tag,date, new ResultCallback() {
             @Override
             public void onEntitySuccess(String json) {
                 Finance finance = JsonUtil.parse(json, Finance.class);

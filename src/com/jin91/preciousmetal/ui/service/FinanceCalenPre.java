@@ -10,7 +10,7 @@ public interface FinanceCalenPre {
     /**
      * 得到财经日历的列表
      */
-    public   void getFinCalList(String tag);
+    public   void getFinCalList(String tag,String date);
 
     /**分享
      * @param url

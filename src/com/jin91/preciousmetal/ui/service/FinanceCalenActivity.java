@@ -6,6 +6,8 @@ import java.util.List;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,6 +17,7 @@ import android.widget.TextView;
 
 import com.jin91.preciousmetal.R;
 import com.jin91.preciousmetal.adapter.FinanceCalenAdapter;
+import com.jin91.preciousmetal.adapter.FragmentsPagerAdapter;
 import com.jin91.preciousmetal.common.Config;
 import com.jin91.preciousmetal.common.api.entity.FinanceCalen;
 import com.jin91.preciousmetal.customview.EmptyLayout;
@@ -45,6 +48,11 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
     public TextView tv_title_option;
     @ViewInject(R.id.tv_title_title)
     public TextView tv_title_title;
+    @ViewInject(R.id.FinanceCalenActivity_pager)
+    private ViewPager FinanceCalenActivity_pager;
+    
+    private FinanceDataFragment fdf;
+    private FinanceEventFragment fef;
 
     FinanceCalenAdapter adapter;
     List<FinanceCalen> mList;
@@ -79,10 +87,10 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
                     loadingDialog = new LoadingDialog(mContext, false);
                 }
                 loadingDialog.show();
-                financeCalenPre.getFinCalList(TAG);
+                financeCalenPre.getFinCalList(TAG,"20150808");
                 break;
             case R.id.ll_view_error:
-                financeCalenPre.getFinCalList(TAG);
+                financeCalenPre.getFinCalList(TAG,"20150808");
                 break;
         }
     }
@@ -95,6 +103,12 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
 
     @Override
     public void initialize() {
+    	ArrayList<Fragment> fragments=new ArrayList<Fragment>();
+    	fdf=new FinanceDataFragment();
+    	fef=new FinanceEventFragment();
+    	fragments.add(fdf);
+    	fragments.add(fef);
+    	FinanceCalenActivity_pager.setAdapter(new FragmentsPagerAdapter(getSupportFragmentManager(), fragments));
         financeCalenPre = new FinanceCalenPreImpl(this);
         mList = new ArrayList<>();
         adapter = new FinanceCalenAdapter(mList, mContext);
@@ -104,11 +118,11 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
         tv_title_title.setText(getString(R.string.finance_calcenda));
         listview.setDivider(null);
         tv_title_option.setBackgroundResource(R.drawable.btn_refresh_selecter);
-        financeCalenPre.getFinCalList(TAG);
+        financeCalenPre.getFinCalList(TAG,"20150808");
         swipeRereshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                financeCalenPre.getFinCalList(TAG);
+                financeCalenPre.getFinCalList(TAG,"20150808");
             }
         });
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
