@@ -39,7 +39,7 @@ public class FinanceCalenPreImpl implements FinanceCalenPre {
                 if (!isLoadSuccess) {
                     view.hideLoading();
                 }
-                view.setItems(finance.Finance);
+                view.setItems(finance);
                 isLoadSuccess = true;
                 view.hideProcessDialog();
             }

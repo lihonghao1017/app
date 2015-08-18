@@ -410,7 +410,7 @@ public final class R {
 		public static final int back = 0x7f080050;
 		public static final int backBtn = 0x7f08016e;
 		public static final int backbuild = 0x7f080121;
-		public static final int bankname = 0x7f08031a;
+		public static final int bankname = 0x7f08031d;
 		public static final int bar = 0x7f080078;
 		public static final int baseLayout = 0x7f080107;
 		public static final int bb = 0x7f080122;
@@ -565,7 +565,7 @@ public final class R {
 		public static final int listView_detial = 0x7f0800aa;
 		public static final int listView_trust = 0x7f0801d0;
 		public static final int listview = 0x7f0801a3;
-		public static final int listview_bank = 0x7f080319;
+		public static final int listview_bank = 0x7f08031c;
 		public static final int ll = 0x7f0801aa;
 		public static final int ll1 = 0x7f0801d7;
 		public static final int ll2 = 0x7f0801da;

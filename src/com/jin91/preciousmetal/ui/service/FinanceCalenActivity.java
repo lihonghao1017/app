@@ -8,10 +8,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -19,7 +24,9 @@ import com.jin91.preciousmetal.R;
 import com.jin91.preciousmetal.adapter.FinanceCalenAdapter;
 import com.jin91.preciousmetal.adapter.FragmentsPagerAdapter;
 import com.jin91.preciousmetal.common.Config;
+import com.jin91.preciousmetal.common.api.entity.Finance;
 import com.jin91.preciousmetal.common.api.entity.FinanceCalen;
+import com.jin91.preciousmetal.common.api.entity.FinanceEvent;
 import com.jin91.preciousmetal.customview.EmptyLayout;
 import com.jin91.preciousmetal.customview.LoadingDialog;
 import com.jin91.preciousmetal.ui.base.BaseActivity;
@@ -31,15 +38,13 @@ import com.lidroid.xutils.view.annotation.event.OnClick;
  * Created by lijinhua on 2015/5/4.
  * 财经日历
  */
-public class FinanceCalenActivity extends BaseActivity implements FinanceCalenView, View.OnClickListener {
+public class FinanceCalenActivity extends BaseActivity implements FinanceCalenView, View.OnClickListener,OnPageChangeListener {
 
     public static final String TAG = "FinanceCalenActivity";
     @ViewInject(R.id.fl_price_content)
     FrameLayout fl_price_content;
     @ViewInject(R.id.swipeRereshLayout)
     SwipeRefreshLayout swipeRereshLayout;
-    @ViewInject(R.id.mListView)
-    ListView listview;
     @ViewInject(R.id.tv_current_date)
     TextView tv_current_date;
     @ViewInject(R.id.tv_title_back)
@@ -50,15 +55,22 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
     public TextView tv_title_title;
     @ViewInject(R.id.FinanceCalenActivity_pager)
     private ViewPager FinanceCalenActivity_pager;
+    @ViewInject(R.id.FinanceCalenActivity_data_tv)
+    private TextView data_tv;
+    @ViewInject(R.id.FinanceCalenActivity_event_tv)
+    private TextView event_tv;
+    @ViewInject(R.id.FinanceCalenActivity_index)
+    private View indexView;
     
     private FinanceDataFragment fdf;
     private FinanceEventFragment fef;
 
-    FinanceCalenAdapter adapter;
-    List<FinanceCalen> mList;
+    public List<FinanceCalen> Finances;
+    public List<FinanceEvent> Events;
     FinanceCalenPre financeCalenPre;
     EmptyLayout emptyLayout;
     LoadingDialog loadingDialog;
+    private int indexWidth,currentIndex;
 
     /**
      * @param context
@@ -73,8 +85,16 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.finance_calenda_list);
         ViewUtils.inject(this);
+        initLineWidth();
         initialize();
     }
+    public void initLineWidth() {
+		DisplayMetrics dm = new DisplayMetrics();
+		getWindowManager().getDefaultDisplay().getMetrics(dm);
+		indexWidth = dm.widthPixels / 2;
+		indexView.getLayoutParams().width=indexWidth;
+		indexView.setLayoutParams(indexView.getLayoutParams());
+	}
 
     @OnClick({R.id.tv_title_back, R.id.tv_title_option})
     public void onClick(View v) {
@@ -101,7 +121,8 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
         return TAG;
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public void initialize() {
     	ArrayList<Fragment> fragments=new ArrayList<Fragment>();
     	fdf=new FinanceDataFragment();
@@ -110,13 +131,11 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
     	fragments.add(fef);
     	FinanceCalenActivity_pager.setAdapter(new FragmentsPagerAdapter(getSupportFragmentManager(), fragments));
         financeCalenPre = new FinanceCalenPreImpl(this);
-        mList = new ArrayList<>();
-        adapter = new FinanceCalenAdapter(mList, mContext);
-        listview.setAdapter(adapter);
+        Finances = new ArrayList<>();
+        Events=new ArrayList<>();
         emptyLayout = new EmptyLayout(mContext, fl_price_content);
         emptyLayout.setErrorButtonClickListener(this);
         tv_title_title.setText(getString(R.string.finance_calcenda));
-        listview.setDivider(null);
         tv_title_option.setBackgroundResource(R.drawable.btn_refresh_selecter);
         financeCalenPre.getFinCalList(TAG,"20150808");
         swipeRereshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -125,24 +144,30 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
                 financeCalenPre.getFinCalList(TAG,"20150808");
             }
         });
-        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                FinanceCalen financeCalen = mList.get(position);
-                financeCalenPre.shareDialog(FinanceCalenActivity.this, Config.JIN91_HOST, getString(R.string.finance_calcenda), financeCalen.Event);
-            }
-        });
+        FinanceCalenActivity_pager.setOnPageChangeListener(this);
+//        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                FinanceCalen financeCalen = Finances.get(position);
+//                financeCalenPre.shareDialog(FinanceCalenActivity.this, Config.JIN91_HOST, getString(R.string.finance_calcenda), financeCalen.Event);
+//            }
+//        });
     }
 
     @Override
-    public void setItems(List<FinanceCalen> list) {
-        if (list != null && list.size() > 0) {
-            tv_current_date.setText(list.get(0).Date);
-        }
+    public void setItems(Finance list) {
+//        if (list != null && list.size() > 0) {
+//            tv_current_date.setText(list.get(0).Date);
+//        }
         swipeRereshLayout.setRefreshing(false);
-        mList.clear();
-        mList.addAll(list);
-        adapter.notifyDataSetChanged();
+        Finances.clear();
+        Finances.addAll(list.Finance);
+        Events.clear();
+        Events.addAll(list.Events);
+        
+        fdf.adapter.notifyDataSetChanged();
+        fef.adapter.notifyDataSetChanged();
+        
     }
 
     @Override
@@ -168,4 +193,28 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
             loadingDialog.dismiss();
         }
     }
+
+	@Override
+	public void onPageScrollStateChanged(int arg0) {
+		
+	}
+
+	@Override
+	public void onPageScrolled(int arg0, float arg1, int arg2) {
+		
+	}
+
+	@Override
+	public void onPageSelected(int arg0) {
+		setTabText(arg0);
+		currentIndex=arg0;
+	}
+	private void setTabText( int flag) {
+		data_tv.setTextColor(flag == 0 ? 0xFFF34F4F : 0xFF737880);
+		event_tv.setTextColor(flag == 1 ? 0xFFF34F4F : 0xFF737880);
+		Animation animation  = new TranslateAnimation(indexWidth*currentIndex, indexWidth*flag, 0,0);;
+		animation.setFillAfter(true);
+		animation.setDuration(300);
+		indexView.startAnimation(animation);
+	}
 }

@@ -1,5 +1,6 @@
 package com.jin91.preciousmetal.ui.service;
 
+import com.jin91.preciousmetal.common.api.entity.Finance;
 import com.jin91.preciousmetal.common.api.entity.FinanceCalen;
 
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
  */
 public interface FinanceCalenView {
 
-    public void setItems(List<FinanceCalen> list);
+    public void setItems(Finance list);
 
     /**
      * 显示加载对话框
