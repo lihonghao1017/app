@@ -410,7 +410,7 @@ public final class R {
 		public static final int back = 0x7f080050;
 		public static final int backBtn = 0x7f08016e;
 		public static final int backbuild = 0x7f080121;
-		public static final int bankname = 0x7f08031d;
+		public static final int bankname = 0x7f080320;
 		public static final int bar = 0x7f080078;
 		public static final int baseLayout = 0x7f080107;
 		public static final int bb = 0x7f080122;
@@ -565,7 +565,7 @@ public final class R {
 		public static final int listView_detial = 0x7f0800aa;
 		public static final int listView_trust = 0x7f0801d0;
 		public static final int listview = 0x7f0801a3;
-		public static final int listview_bank = 0x7f08031c;
+		public static final int listview_bank = 0x7f08031f;
 		public static final int ll = 0x7f0801aa;
 		public static final int ll1 = 0x7f0801d7;
 		public static final int ll2 = 0x7f0801da;
@@ -944,8 +944,8 @@ public final class R {
 		public static final int bloomplus_v2_waring_message_list_item = 0x7f0400a4;
 		public static final int bloomplus_v2_warining_list_item = 0x7f0400a5;
 		public static final int bloomplus_v2_warning_message_set_layout = 0x7f0400a6;
-		public static final int v3_bank_menu = 0x7f0400f4;
-		public static final int v3_bank_pop = 0x7f0400f5;
+		public static final int v3_bank_menu = 0x7f0400f5;
+		public static final int v3_bank_pop = 0x7f0400f6;
 	}
 	public static final class raw {
 		public static final int bloomplus_v2_memkey = 0x7f060000;

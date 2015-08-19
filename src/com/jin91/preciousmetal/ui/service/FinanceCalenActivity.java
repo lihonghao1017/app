@@ -1,6 +1,8 @@
 package com.jin91.preciousmetal.ui.service;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import android.content.Context;
@@ -10,20 +12,18 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
-import android.widget.AdapterView;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.jin91.preciousmetal.R;
-import com.jin91.preciousmetal.adapter.FinanceCalenAdapter;
+import com.jin91.preciousmetal.adapter.CalendarAdapter;
 import com.jin91.preciousmetal.adapter.FragmentsPagerAdapter;
-import com.jin91.preciousmetal.common.Config;
 import com.jin91.preciousmetal.common.api.entity.Finance;
 import com.jin91.preciousmetal.common.api.entity.FinanceCalen;
 import com.jin91.preciousmetal.common.api.entity.FinanceEvent;
@@ -61,17 +61,23 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
     private TextView event_tv;
     @ViewInject(R.id.FinanceCalenActivity_index)
     private View indexView;
+    @ViewInject(R.id.FinanceCalenActivity_recyclerview)
+    private RecyclerView recyclerView;
     
     private FinanceDataFragment fdf;
     private FinanceEventFragment fef;
 
     public List<FinanceCalen> Finances;
     public List<FinanceEvent> Events;
-    FinanceCalenPre financeCalenPre;
+    public FinanceCalenPre financeCalenPre;
     EmptyLayout emptyLayout;
     LoadingDialog loadingDialog;
     private int indexWidth,currentIndex;
-
+    private long onetime=1000*60*60*24;
+    private ArrayList<CalenderBean> CalenderBeans;
+    private CalendarAdapter calendarAdapter;
+    private SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd"); 
+    private SimpleDateFormat nWeekFormat = new SimpleDateFormat("  EEE");
     /**
      * @param context
      */
@@ -85,8 +91,26 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.finance_calenda_list);
         ViewUtils.inject(this);
+        LinearLayoutManager llm=new LinearLayoutManager(mContext);
+        llm.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerView.setLayoutManager(llm);
         initLineWidth();
         initialize();
+        setCalenders();
+    }
+    private void setCalenders(){
+    	CalenderBeans=new ArrayList<>();
+    	long time=System.currentTimeMillis()-onetime*27;
+    	for (int i = 0; i < 30; i++) {
+//    		time=time+onetime*i;
+    		String date=sDateFormat.format(new Date(time+onetime*i));
+    		String week=nWeekFormat.format(new Date(time+onetime*i));
+    		String url=date.replaceAll("_", "");
+    		CalenderBeans.add(new CalenderBean(date, week, url));
+		}
+    	calendarAdapter=new CalendarAdapter(CalenderBeans, this);
+    	recyclerView.setAdapter(calendarAdapter);
+    	recyclerView.scrollToPosition(CalenderBeans.size()-3);
     }
     public void initLineWidth() {
 		DisplayMetrics dm = new DisplayMetrics();
@@ -124,6 +148,7 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
     @SuppressWarnings("deprecation")
 	@Override
     public void initialize() {
+    	
     	ArrayList<Fragment> fragments=new ArrayList<Fragment>();
     	fdf=new FinanceDataFragment();
     	fef=new FinanceEventFragment();
