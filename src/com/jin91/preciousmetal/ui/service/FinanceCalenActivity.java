@@ -94,15 +94,14 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
         LinearLayoutManager llm=new LinearLayoutManager(mContext);
         llm.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(llm);
+        setCalenders();
         initLineWidth();
         initialize();
-        setCalenders();
     }
     private void setCalenders(){
     	CalenderBeans=new ArrayList<>();
     	long time=System.currentTimeMillis()-onetime*27;
     	for (int i = 0; i < 30; i++) {
-//    		time=time+onetime*i;
     		String date=sDateFormat.format(new Date(time+onetime*i));
     		String week=nWeekFormat.format(new Date(time+onetime*i));
     		String url=date.replaceAll("_", "");
@@ -110,6 +109,7 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
 		}
     	calendarAdapter=new CalendarAdapter(CalenderBeans, this);
     	recyclerView.setAdapter(calendarAdapter);
+//    	recyclerView.getLayoutManager().smoothScrollToPosition(recyclerView, null, calendarAdapter.getItemCount() - 1);
     	recyclerView.scrollToPosition(CalenderBeans.size()-3);
     }
     public void initLineWidth() {
@@ -162,7 +162,7 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
         emptyLayout.setErrorButtonClickListener(this);
         tv_title_title.setText(getString(R.string.finance_calcenda));
         tv_title_option.setBackgroundResource(R.drawable.btn_refresh_selecter);
-        financeCalenPre.getFinCalList(TAG,"20150808");
+        financeCalenPre.getFinCalList(TAG,CalenderBeans.get(CalenderBeans.size()-3).url);
         swipeRereshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
