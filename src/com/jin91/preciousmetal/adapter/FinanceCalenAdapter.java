@@ -54,19 +54,19 @@ public class FinanceCalenAdapter extends BaseAdapter {
         }
         FinanceCalen financeCalen = mList.get(position);
         holder.tv_finance_time.setText(financeCalen.Time);
-        if ("低".equals(financeCalen.Important)) {
+        if ("1".equals(financeCalen.Importance)) {
             holder.tv_finance_leve.setTextColor(mContext.getResources().getColor(R.color.deep_gray));
             holder.tv_finance_leve.setText("低");
-        } else if ("中".equals(financeCalen.Important)) {
+        } else if ("2".equals(financeCalen.Importance)) {
             holder.tv_finance_leve.setTextColor(mContext.getResources().getColor(R.color.orange_gray));
             holder.tv_finance_leve.setText("中");
         } else {
             holder.tv_finance_leve.setTextColor(mContext.getResources().getColor(R.color.orange));
             holder.tv_finance_leve.setText("高");
         }
-        holder.tv_finance_content.setText(financeCalen.Event);
+        holder.tv_finance_content.setText(financeCalen.Name);
         holder.tv_finance_forward.setText("前值: " + financeCalen.FrontValue);
-        holder.tv_finance_project.setText("市场预测: " + financeCalen.MarketForecast);
+        holder.tv_finance_project.setText("市场预测: " + financeCalen.Forecast);
         holder.tv_finance_result.setText("结果: " + financeCalen.Result);
         return convertView;
     }

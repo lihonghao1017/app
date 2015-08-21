@@ -77,6 +77,7 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
     private ArrayList<CalenderBean> CalenderBeans;
     private CalendarAdapter calendarAdapter;
     private SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd"); 
+    private SimpleDateFormat uDateFormat = new SimpleDateFormat("yyyyMMdd"); 
     private SimpleDateFormat nWeekFormat = new SimpleDateFormat("  EEE");
     /**
      * @param context
@@ -104,13 +105,17 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
     	for (int i = 0; i < 30; i++) {
     		String date=sDateFormat.format(new Date(time+onetime*i));
     		String week=nWeekFormat.format(new Date(time+onetime*i));
-    		String url=date.replaceAll("_", "");
+    		String url=uDateFormat.format(new Date(time+onetime*i));
     		CalenderBeans.add(new CalenderBean(date, week, url));
+    		
 		}
+    	CalenderBeans.get(CalenderBeans.size()-3).isChecked=true;
     	calendarAdapter=new CalendarAdapter(CalenderBeans, this);
+    	
     	recyclerView.setAdapter(calendarAdapter);
 //    	recyclerView.getLayoutManager().smoothScrollToPosition(recyclerView, null, calendarAdapter.getItemCount() - 1);
     	recyclerView.scrollToPosition(CalenderBeans.size()-3);
+    	
     }
     public void initLineWidth() {
 		DisplayMetrics dm = new DisplayMetrics();
@@ -161,7 +166,7 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
         emptyLayout = new EmptyLayout(mContext, fl_price_content);
         emptyLayout.setErrorButtonClickListener(this);
         tv_title_title.setText(getString(R.string.finance_calcenda));
-        tv_title_option.setBackgroundResource(R.drawable.btn_refresh_selecter);
+        tv_title_option.setBackgroundResource(R.drawable.calender_icon_style);
         financeCalenPre.getFinCalList(TAG,CalenderBeans.get(CalenderBeans.size()-3).url);
         swipeRereshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override

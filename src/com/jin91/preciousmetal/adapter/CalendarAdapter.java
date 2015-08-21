@@ -80,15 +80,22 @@ public class CalendarAdapter extends RecyclerView.Adapter {
 
 	@Override
 	public void onBindViewHolder(
-			android.support.v7.widget.RecyclerView.ViewHolder arg0, int arg1) {
+			android.support.v7.widget.RecyclerView.ViewHolder arg0, final int arg1) {
 		final CalenderBean calenderBean=mList.get(arg1);
 		ViewHolder h=(ViewHolder) arg0;
 		h.week.setText(calenderBean.week);
 		h.date.setText(calenderBean.date);
+		h.allView.setBackgroundColor(calenderBean.isChecked?0xFFFFFFFF:0x00000000);
 		h.allView.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
+				calenderBean.isChecked=true;
+				for (int i = 0; i < mList.size(); i++) {
+					if(i!=arg1)
+					mList.get(i).isChecked=false;
+				}
+				notifyDataSetChanged();
 				mContext.financeCalenPre.getFinCalList("FinanceCalenActivity",calenderBean.url);
 			}
 		});

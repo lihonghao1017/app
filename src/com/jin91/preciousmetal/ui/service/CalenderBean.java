@@ -4,6 +4,7 @@ public class CalenderBean {
 	public String date;
 	public String week;
 	public String url;
+	public boolean isChecked;
 
 	public CalenderBean(String date, String week, String url) {
 		this.date = date;
