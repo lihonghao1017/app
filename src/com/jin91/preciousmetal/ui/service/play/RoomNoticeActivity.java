@@ -10,6 +10,8 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.jin91.preciousmetal.R;
 import com.jin91.preciousmetal.adapter.RoomNoticeAdapter;
@@ -17,6 +19,7 @@ import com.jin91.preciousmetal.common.api.entity.RoomNotice;
 import com.jin91.preciousmetal.customview.ExpandListView;
 import com.jin91.preciousmetal.ui.base.BaseExpandListActivity;
 import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
 
 /**
@@ -31,6 +34,20 @@ public class RoomNoticeActivity extends BaseExpandListActivity<RoomNotice> {
     RoomNoticeAdapter adapter;
     PlayPresenter presenter;
     private String roomId;
+    @ViewInject(R.id.tv_title_back)
+    public TextView tv_title_back;
+    @ViewInject(R.id.tv_title_option)
+    public TextView tv_title_option;
+    @ViewInject(R.id.tv_title_title)
+    public TextView tv_title_title;
+
+
+    @ViewInject(R.id.fl_price_content)
+    public FrameLayout flPriceContent;
+    @ViewInject(R.id.mListView)
+    public ExpandListView mListView;
+    @ViewInject(R.id.swipeRereshLayout)
+    public SwipeRefreshLayout swipeRereshLayout;
 
     public static void actionLaunch(Context context, String roomId) {
         Intent intent = new Intent(context, RoomNoticeActivity.class);

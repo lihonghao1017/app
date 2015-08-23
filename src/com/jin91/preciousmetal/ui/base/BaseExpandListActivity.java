@@ -21,21 +21,6 @@ import com.lidroid.xutils.view.annotation.ViewInject;
  */
 public  abstract  class BaseExpandListActivity<T> extends BaseActivity implements PlayView<T>, View.OnClickListener {
 
-    @ViewInject(R.id.tv_title_back)
-    public TextView tv_title_back;
-    @ViewInject(R.id.tv_title_option)
-    public TextView tv_title_option;
-    @ViewInject(R.id.tv_title_title)
-    public TextView tv_title_title;
-
-
-    @ViewInject(R.id.fl_price_content)
-    public FrameLayout flPriceContent;
-    @ViewInject(R.id.mListView)
-    public ExpandListView mListView;
-    @ViewInject(R.id.swipeRereshLayout)
-    public SwipeRefreshLayout swipeRereshLayout;
-
     protected EmptyLayout emptyLayout;
     protected String startId = "0";
 
@@ -43,7 +28,7 @@ public  abstract  class BaseExpandListActivity<T> extends BaseActivity implement
      * 初始化方法，在onCreate方法中调用
      */
     public void initialize() {
-        emptyLayout = new EmptyLayout(mContext, flPriceContent);
+        emptyLayout = new EmptyLayout(mContext, (FrameLayout)findViewById(R.id.fl_price_content));
         emptyLayout.setEmptyButtonClickListener(this);
         emptyLayout.setErrorButtonClickListener(this);
     }
@@ -61,8 +46,10 @@ public  abstract  class BaseExpandListActivity<T> extends BaseActivity implement
     @Override
     public void hideLoading() {
         emptyLayout.hideLoadinAnim();
-        if (flPriceContent != null) {
-            flPriceContent.setVisibility(View.GONE);
+        
+        
+        if ((FrameLayout)findViewById(R.id.fl_price_content) != null) {
+        	((FrameLayout)findViewById(R.id.fl_price_content)).setVisibility(View.GONE);
         }
     }
 
@@ -74,15 +61,15 @@ public  abstract  class BaseExpandListActivity<T> extends BaseActivity implement
     @Override
     public void showToastNetErr() {
         MessageToast.showToast(R.string.net_error, 0);
-        swipeRereshLayout.setRefreshing(false);
-        mListView.setRefreshFootComplet();
+	    ((SwipeRefreshLayout)findViewById(R.id.swipeRereshLayout)).setRefreshing(false);
+	    ((ExpandListView)findViewById(R.id.mListView)).setRefreshFootComplet();
     }
 
     @Override
     public void showToastNoMoreData() {
         MessageToast.showToast(R.string.no_more_data, 0);
-        swipeRereshLayout.setRefreshing(false);
-        mListView.setRefreshFootComplet();
+        ((SwipeRefreshLayout)findViewById(R.id.swipeRereshLayout)).setRefreshing(false);
+        ((ExpandListView)findViewById(R.id.mListView)).setRefreshFootComplet();
     }
 
     @Override
