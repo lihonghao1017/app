@@ -60,6 +60,11 @@ public class PriceAlarmAdapter extends BaseAdapter {
         if (TextUtils.isEmpty(alarm.D)) {
             holder.tvAlarmPrice.setText("");
         } else {
+        	if(alarm.P.contains(".")){
+        		String[] as=alarm.P.split("\\.");
+        		if(as[1].length()>4)
+        			alarm.P=as[0]+"."+as[1].substring(0, 4);
+        	}
             holder.tvAlarmPrice.setText(("0".equals(alarm.D) ? "价格<=" : ">=") + alarm.P);
         }
         holder.tvAlarmName.setText(preferences.getString(alarm.C, ""));

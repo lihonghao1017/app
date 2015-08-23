@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioGroup;
@@ -27,7 +29,7 @@ import com.lidroid.xutils.view.annotation.event.OnClick;
  * Created by lijinhua on 2015/4/30.
  * 价格提醒
  */
-public class PriceAlertActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener, PriceAlertView {
+public class PriceAlertActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener, PriceAlertView ,TextWatcher{
 
     public static final String TAG = "PriceAlertActivity";
     public static final int REQUEST_SELECT_PRICE_CODE = 101; // 选择行情的请求码
@@ -108,6 +110,7 @@ public class PriceAlertActivity extends BaseActivity implements RadioGroup.OnChe
             rg_alert_type.check(R.id.rb_msg_alert);
         }
         BuildApiUtil.setCursorDraw(et_price);
+        et_price.addTextChangedListener(this);
         loadingDialog = new LoadingDialog(mContext, false);
         presenter = new PriceAlertPresenterImpl(this);
         rg_alert_type.setOnCheckedChangeListener(this); // 交易方式 本地提醒 短信提醒
@@ -258,4 +261,44 @@ public class PriceAlertActivity extends BaseActivity implements RadioGroup.OnChe
             tv_trade_pre.setText(data.getStringExtra("increase"));
         }
     }
+    private boolean isChanged = false;      
+	@Override
+	public void beforeTextChanged(CharSequence s, int start, int count,
+			int after) {
+		
+	}
+
+	@Override
+	public void onTextChanged(CharSequence s, int start, int before, int count) {
+		
+	}
+
+	@Override
+	public void afterTextChanged(Editable s) {
+		  if (isChanged) {// ----->如果字符未改变则返回      
+	            return;      
+	        }      
+	        String str = s.toString();      
+	  
+	        isChanged = true;      
+	        String cuttedStr = str;    
+	        boolean flag=false;  
+	        /* 删除字符串中的dot */      
+	        for (int i = str.length() - 1; i >= 0; i--) {      
+	            char c = str.charAt(i);      
+	            if ('.' == c&&i==str.length() - 6) {  
+	                cuttedStr = str.substring(0, i+5);   
+	                if(cuttedStr.endsWith(".")){  
+	                    cuttedStr=cuttedStr.substring(0, i+5);  
+	                }  
+	                flag=true; 
+	                break;  
+	            }      
+	        }      
+	        if(flag){  
+	        	et_price.setText(cuttedStr);      
+	        }  
+//	        edit.setSelection(edit.length());      
+	        isChanged = false;      
+	}
 }

@@ -185,7 +185,6 @@
             android:layout_marginLeft="19dp"
             android:singleLine="true"
             android:numeric="decimal"
-            android:text=""
             android:background="@drawable/et_input_bg"
             android:layout_gravity="center_vertical" />
 
