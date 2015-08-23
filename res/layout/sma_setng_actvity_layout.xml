@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/in_price_detail_title"
+        layout="@layout/layout_title" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DCDEE0"
+        android:paddingBottom="3dp"
+        android:paddingLeft="11dp"
+        android:paddingTop="3dp"
+        android:text="周期修改"
+        android:textColor="#555555"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DCDEE0"
+        android:paddingBottom="3dp"
+        android:paddingLeft="11dp"
+        android:paddingTop="3dp"
+        android:text="名称           当前值"
+        android:textColor="#525253"
+        android:textSize="10sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DCDEE0" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="11dp"
+        android:orientation="horizontal" >
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="N1"
+            android:textColor="#525253"
+            android:textSize="14sp"/>
+        
+         <TextView 
+             android:id="@+id/SMASettingActivity_add01"
+             android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="30dp"
+            android:background="@mipmap/sam_reduce"/>
+         <TextView 
+             android:id="@+id/SMASettingActivity_middle01"
+             android:layout_width="150dp"
+            android:layout_height="30dp"
+             android:textColor="#525253"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:text="2"
+            android:background="@android:color/white"/>
+          <TextView 
+             android:id="@+id/SMASettingActivity_reduce01"
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/sam_add"/>
+         
+    </LinearLayout>
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="11dp"
+        android:orientation="horizontal" >
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="N2"
+            android:textColor="#525253"
+            android:textSize="14sp"/>
+        
+         <TextView 
+             android:id="@+id/SMASettingActivity_add02"
+             android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="30dp"
+            android:background="@mipmap/sam_reduce"/>
+         <TextView 
+             android:id="@+id/SMASettingActivity_middle02"
+             android:layout_width="150dp"
+            android:layout_height="30dp"
+             android:textColor="#525253"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:text="2"
+            android:background="@android:color/white"/>
+          <TextView 
+             android:id="@+id/SMASettingActivity_reduce02"
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/sam_add"/>
+         
+    </LinearLayout>
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="11dp"
+        android:orientation="horizontal" >
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="N3"
+            android:textColor="#525253"
+            android:textSize="14sp"/>
+        
+         <TextView 
+             android:id="@+id/SMASettingActivity_add03"
+             android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="30dp"
+            android:background="@mipmap/sam_reduce"/>
+         <TextView 
+             android:id="@+id/SMASettingActivity_middle03"
+             android:layout_width="150dp"
+            android:layout_height="30dp"
+             android:textColor="#525253"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:text="2"
+            android:background="@android:color/white"/>
+          <TextView 
+             android:id="@+id/SMASettingActivity_reduce03"
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/sam_add"/>
+         
+    </LinearLayout>
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="11dp"
+        android:orientation="horizontal" >
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="N4"
+            android:textColor="#525253"
+            android:textSize="14sp"/>
+        
+         <TextView 
+             android:id="@+id/SMASettingActivity_add04"
+             android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="30dp"
+            android:background="@mipmap/sam_reduce"/>
+         <TextView 
+             android:id="@+id/SMASettingActivity_middle04"
+             android:layout_width="150dp"
+            android:layout_height="30dp"
+             android:textColor="#525253"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:text="2"
+            android:background="@android:color/white"/>
+          <TextView 
+             android:id="@+id/SMASettingActivity_reduce04"
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/sam_add"/>
+         
+    </LinearLayout>
+    </LinearLayout>
+  <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DCDEE0"
+        android:paddingBottom="3dp"
+        android:paddingLeft="11dp"
+        android:paddingTop="3dp"
+        android:text="数据选择"
+        android:textColor="#555555"
+        android:textSize="12sp" />
+   <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="11dp"
+        android:orientation="horizontal" >
+          <RadioButton android:id="@+id/SMASettingActivity_radio01"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              
+               android:textColor="#555555"
+        android:textSize="14sp"
+              android:text="开盘价"/>
+          <RadioButton android:id="@+id/SMASettingActivity_radio02"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerHorizontal="true"
+               android:textColor="#555555"
+        android:textSize="14sp"
+              android:text="最高价"/>
+          <RadioButton android:id="@+id/SMASettingActivity_radio03"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+               android:textColor="#555555"
+               android:layout_alignParentRight="true"
+        android:textSize="14sp"
+              android:text="均价"/>
+      </RelativeLayout>
+       <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="11dp"
+        android:orientation="horizontal" >
+          <RadioButton android:id="@+id/SMASettingActivity_radio04"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              
+               android:textColor="#555555"
+        android:textSize="14sp"
+              android:text="收盘价"/>
+          <RadioButton android:id="@+id/SMASettingActivity_radio05"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerHorizontal="true"
+               android:textColor="#555555"
+        android:textSize="14sp"
+              android:text="最低价"/>
+         
+      </RelativeLayout>
+      </LinearLayout>
+       <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DCDEE0"
+        android:paddingBottom="3dp"
+        android:paddingLeft="11dp"
+        android:paddingTop="3dp"
+        android:text="数据选择"
+        android:textColor="#555555"
+        android:textSize="12sp" />
+       <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="11dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+       <Spinner android:id="@+id/SMASettingActivity_spinner"
+           android:layout_height="wrap_content"
+           android:layout_width="match_parent"
+           android:layout_weight="1"/>
+       <CheckBox android:id="@+id/SMASettingActivity_checkbox"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textColor="#555555"
+        android:textSize="12sp"
+         android:layout_weight="1"
+        android:button="@drawable/check_box_style" 
+            android:background="@null"  
+           android:text="应用到所有均线"/>
+          </LinearLayout>
+       
+</LinearLayout>

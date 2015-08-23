@@ -5,6 +5,7 @@ import java.util.List;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import android.widget.TextView;
 
 import com.jin91.preciousmetal.R;
 import com.jin91.preciousmetal.common.api.entity.ListDialogEntity;
+import com.jin91.preciousmetal.ui.price.SMASettingActivity;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 
@@ -117,7 +119,7 @@ public class ListViewDialog extends Dialog {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
             ViewHolder holder = null;
             if (convertView == null) {
                 convertView = LayoutInflater.from(mContext).inflate(R.layout.list_dialog_item, parent, false);
@@ -138,6 +140,14 @@ public class ListViewDialog extends Dialog {
                 holder.ivListdialogSelected.setVisibility(View.INVISIBLE);
             }
             holder.tvListdialogItem.setText(mList.get(position).key);
+            if(mList.get(position).key.equals("SMA均线"))
+            holder.tvListdialogItem.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					v.getContext().startActivity(new Intent(v.getContext(),SMASettingActivity.class));
+				}
+			});
             return convertView;
         }
 

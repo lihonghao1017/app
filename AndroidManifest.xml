@@ -64,6 +64,11 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/PageIndicatorDefaults" />
+         <activity
+            android:name=".ui.price.SMASettingActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
         <activity
             android:name=".ui.price.PriceAlertActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
