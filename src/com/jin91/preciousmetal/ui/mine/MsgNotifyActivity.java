@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.jin91.preciousmetal.R;
 import com.jin91.preciousmetal.ui.base.BaseActivity;
@@ -23,9 +24,9 @@ public class MsgNotifyActivity extends BaseActivity {
 	@ViewInject(R.id.tv_title_title)
 	public TextView tv_title_title;
 	@ViewInject(R.id.shengyin_tb)
-	public com.zcw.togglebutton.ToggleButton shengyin_tb;
+	public ToggleButton shengyin_tb;
 	@ViewInject(R.id.zhengdong_tb)
-	public com.zcw.togglebutton.ToggleButton zhendong_tv;
+	public ToggleButton zhendong_tv;
 
 	public static void actionLaunch(Context context) {
 		Intent intent = new Intent(context, MsgNotifyActivity.class);
@@ -59,6 +60,5 @@ public class MsgNotifyActivity extends BaseActivity {
 	@Override
 	public void initialize() {
 		tv_title_title.setText("消息提醒");
-		shengyin_tb.setToggleOn();
 	}
 }
