@@ -40,140 +40,165 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
+
         <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="11dp"
-        android:orientation="horizontal" >
-        <TextView android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="N1"
-            android:textColor="#525253"
-            android:textSize="14sp"/>
-        
-         <TextView 
-             android:id="@+id/SMASettingActivity_add01"
-             android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="30dp"
-            android:background="@mipmap/sam_reduce"/>
-         <TextView 
-             android:id="@+id/SMASettingActivity_middle01"
-             android:layout_width="150dp"
-            android:layout_height="30dp"
-             android:textColor="#525253"
-            android:textSize="12sp"
-            android:gravity="center"
-            android:text="2"
-            android:background="@android:color/white"/>
-          <TextView 
-             android:id="@+id/SMASettingActivity_reduce01"
-             android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:padding="11dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="N1"
+                android:textColor="#525253"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/SMASettingActivity_add01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/sam_reduce_bg_left_style"
+                android:src="@mipmap/sam_reduce" />
+
+            <TextView
+                android:id="@+id/SMASettingActivity_middle01"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/bg_middle"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="#525253"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/SMASettingActivity_reduce01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/add_bg_right_style"
+                android:src="@mipmap/sam_add" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@mipmap/sam_add"/>
-         
+            android:orientation="horizontal"
+            android:padding="11dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="N2"
+                android:textColor="#525253"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/SMASettingActivity_add02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/sam_reduce_bg_left_style"
+                android:src="@mipmap/sam_reduce" />
+
+            <TextView
+                android:id="@+id/SMASettingActivity_middle02"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/bg_middle"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="#525253"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/SMASettingActivity_reduce02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/add_bg_right_style"
+                android:src="@mipmap/sam_add" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="11dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="N3"
+                android:textColor="#525253"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/SMASettingActivity_add03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/sam_reduce_bg_left_style"
+                android:src="@mipmap/sam_reduce" />
+
+            <TextView
+                android:id="@+id/SMASettingActivity_middle03"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/bg_middle"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="#525253"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/SMASettingActivity_reduce03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/add_bg_right_style"
+                android:src="@mipmap/sam_add" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="11dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="N4"
+                android:textColor="#525253"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/SMASettingActivity_add04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/sam_reduce_bg_left_style"
+                android:src="@mipmap/sam_reduce" />
+
+            <TextView
+                android:id="@+id/SMASettingActivity_middle04"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/bg_middle"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="#525253"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/SMASettingActivity_reduce04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/add_bg_right_style"
+                android:src="@mipmap/sam_add" />
+        </LinearLayout>
     </LinearLayout>
-     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="11dp"
-        android:orientation="horizontal" >
-        <TextView android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="N2"
-            android:textColor="#525253"
-            android:textSize="14sp"/>
-        
-         <TextView 
-             android:id="@+id/SMASettingActivity_add02"
-             android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="30dp"
-            android:background="@mipmap/sam_reduce"/>
-         <TextView 
-             android:id="@+id/SMASettingActivity_middle02"
-             android:layout_width="150dp"
-            android:layout_height="30dp"
-             android:textColor="#525253"
-            android:textSize="14sp"
-            android:gravity="center"
-            android:text="2"
-            android:background="@android:color/white"/>
-          <TextView 
-             android:id="@+id/SMASettingActivity_reduce02"
-             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@mipmap/sam_add"/>
-         
-    </LinearLayout>
-     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="11dp"
-        android:orientation="horizontal" >
-        <TextView android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="N3"
-            android:textColor="#525253"
-            android:textSize="14sp"/>
-        
-         <TextView 
-             android:id="@+id/SMASettingActivity_add03"
-             android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="30dp"
-            android:background="@mipmap/sam_reduce"/>
-         <TextView 
-             android:id="@+id/SMASettingActivity_middle03"
-             android:layout_width="150dp"
-            android:layout_height="30dp"
-             android:textColor="#525253"
-            android:textSize="14sp"
-            android:gravity="center"
-            android:text="2"
-            android:background="@android:color/white"/>
-          <TextView 
-             android:id="@+id/SMASettingActivity_reduce03"
-             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@mipmap/sam_add"/>
-         
-    </LinearLayout>
-     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="11dp"
-        android:orientation="horizontal" >
-        <TextView android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="N4"
-            android:textColor="#525253"
-            android:textSize="14sp"/>
-        
-         <TextView 
-             android:id="@+id/SMASettingActivity_add04"
-             android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="30dp"
-            android:background="@mipmap/sam_reduce"/>
-         <TextView 
-             android:id="@+id/SMASettingActivity_middle04"
-             android:layout_width="150dp"
-            android:layout_height="30dp"
-             android:textColor="#525253"
-            android:textSize="14sp"
-            android:gravity="center"
-            android:text="2"
-            android:background="@android:color/white"/>
-          <TextView 
-             android:id="@+id/SMASettingActivity_reduce04"
-             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@mipmap/sam_add"/>
-         
-    </LinearLayout>
-    </LinearLayout>
-  <TextView
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#DCDEE0"
@@ -183,60 +208,77 @@
         android:text="数据选择"
         android:textColor="#555555"
         android:textSize="12sp" />
-   <LinearLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
-     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="11dp"
-        android:orientation="horizontal" >
-          <RadioButton android:id="@+id/SMASettingActivity_radio01"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              
-               android:textColor="#555555"
-        android:textSize="14sp"
-              android:text="开盘价"/>
-          <RadioButton android:id="@+id/SMASettingActivity_radio02"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_centerHorizontal="true"
-               android:textColor="#555555"
-        android:textSize="14sp"
-              android:text="最高价"/>
-          <RadioButton android:id="@+id/SMASettingActivity_radio03"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-               android:textColor="#555555"
-               android:layout_alignParentRight="true"
-        android:textSize="14sp"
-              android:text="均价"/>
-      </RelativeLayout>
-       <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="11dp"
-        android:orientation="horizontal" >
-          <RadioButton android:id="@+id/SMASettingActivity_radio04"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              
-               android:textColor="#555555"
-        android:textSize="14sp"
-              android:text="收盘价"/>
-          <RadioButton android:id="@+id/SMASettingActivity_radio05"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_centerHorizontal="true"
-               android:textColor="#555555"
-        android:textSize="14sp"
-              android:text="最低价"/>
-         
-      </RelativeLayout>
-      </LinearLayout>
-       <TextView
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="11dp" >
+
+            <RadioButton
+                android:id="@+id/SMASettingActivity_radio01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/rediobutton_style"
+                android:text="  开盘价"
+                android:textColor="#555555"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/SMASettingActivity_radio02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:button="@drawable/rediobutton_style"
+                android:text="  最高价"
+                android:textColor="#555555"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/SMASettingActivity_radio03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="11dp"
+                android:button="@drawable/rediobutton_style"
+                android:text="  均价"
+                android:textColor="#555555"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="11dp" >
+
+            <RadioButton
+                android:id="@+id/SMASettingActivity_radio04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/rediobutton_style"
+                android:text="  收盘价"
+                android:textColor="#555555"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/SMASettingActivity_radio05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:button="@drawable/rediobutton_style"
+                android:text="  最低价"
+                android:textColor="#555555"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#DCDEE0"
@@ -246,25 +288,30 @@
         android:text="数据选择"
         android:textColor="#555555"
         android:textSize="12sp" />
-       <LinearLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="11dp"
         android:gravity="center_vertical"
-        android:orientation="horizontal" >
-       <Spinner android:id="@+id/SMASettingActivity_spinner"
-           android:layout_height="wrap_content"
-           android:layout_width="match_parent"
-           android:layout_weight="1"/>
-       <CheckBox android:id="@+id/SMASettingActivity_checkbox"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:textColor="#555555"
-        android:textSize="12sp"
-         android:layout_weight="1"
-        android:button="@drawable/check_box_style" 
-            android:background="@null"  
-           android:text="应用到所有均线"/>
-          </LinearLayout>
-       
+        android:orientation="horizontal"
+        android:padding="11dp" >
+
+        <Spinner
+            android:id="@+id/SMASettingActivity_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <CheckBox
+            android:id="@+id/SMASettingActivity_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@drawable/check_box_style"
+            android:text="应用到所有均线"
+            android:textColor="#555555"
+            android:textSize="12sp" />
+    </LinearLayout>
+
 </LinearLayout>
