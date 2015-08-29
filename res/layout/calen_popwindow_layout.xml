@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/CalenPopwindow_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:padding="11dp" >
+
+        <Button
+            android:id="@+id/CalenPopwindow_cancle"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginRight="6dp"
+            android:layout_weight="1"
+            android:text="取消"
+            android:textColor="@android:color/white"
+            android:background="#B4B8BE"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/CalenPopwindow_cormit"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="6dp"
+            android:layout_weight="1"
+            android:text="確定"
+            android:background="#3ABA6F"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/CalenPopwindow_center_layout"
+        android:layout_width="match_parent"
+        android:layout_height="285dp"
+        android:layout_above="@id/CalenPopwindow_bottom_layout"
+        android:background="#ffffff"
+        android:orientation="horizontal" >
+
+        <com.jin91.preciousmetal.ui.service.NumberPicker
+            android:id="@+id/numberpicker_year"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.jin91.preciousmetal.ui.service.NumberPicker
+            android:id="@+id/numberpicker_moth"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.jin91.preciousmetal.ui.service.NumberPicker
+            android:id="@+id/numberpicker_date"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/CalenPopwindow_center_layout"
+        android:alpha="0.6"
+        android:background="@android:color/black" />
+
+</RelativeLayout>

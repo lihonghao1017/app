@@ -12,7 +12,14 @@
 
     <RelativeLayout
         android:id="@+id/rl_msg_notify"
-        style="@style/rl_rect_set" >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/rl_rect_gray_selector"
+        android:paddingBottom="7dp"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp"
+        android:paddingTop="7dp" >
 
         <TextView
             style="@style/rl_rect_set_text"
@@ -20,16 +27,26 @@
 
         <ToggleButton
             android:id="@+id/shengyin_tb"
-            android:layout_width="70dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginRight="13dp"
-            android:background="@drawable/btn_sys_set_toggle" />
+            android:background="@drawable/btn_sys_set_toggle"
+            android:textOff=""
+            android:textOn="" />
     </RelativeLayout>
 
     <View style="@style/horizontal_line" />
 
-    <RelativeLayout style="@style/rl_rect_set" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/rl_rect_gray_selector"
+        android:paddingBottom="7dp"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp"
+        android:paddingTop="7dp" >
 
         <TextView
             style="@style/rl_rect_set_text"
@@ -37,11 +54,13 @@
 
         <ToggleButton
             android:id="@+id/zhengdong_tb"
-            android:layout_width="70dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginRight="13dp"
-            android:background="@drawable/btn_sys_set_toggle" />
+            android:background="@drawable/btn_sys_set_toggle"
+            android:textOff=""
+            android:textOn="" />
     </RelativeLayout>
 
 </LinearLayout>

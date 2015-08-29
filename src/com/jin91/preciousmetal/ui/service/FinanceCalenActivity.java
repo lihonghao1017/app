@@ -62,7 +62,7 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
     @ViewInject(R.id.FinanceCalenActivity_index)
     private View indexView;
     @ViewInject(R.id.FinanceCalenActivity_recyclerview)
-    private RecyclerView recyclerView;
+    public RecyclerView recyclerView;
     
     private FinanceDataFragment fdf;
     private FinanceEventFragment fef;
@@ -132,11 +132,12 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
                 finish();
                 break;
             case R.id.tv_title_option:
-                if (loadingDialog == null) {
-                    loadingDialog = new LoadingDialog(mContext, false);
-                }
-                loadingDialog.show();
-                financeCalenPre.getFinCalList(TAG,"20150808");
+            	CalenPopwindow.getCalenPopwindow(this, v);
+//                if (loadingDialog == null) {
+//                    loadingDialog = new LoadingDialog(mContext, false);
+//                }
+//                loadingDialog.show();
+//                financeCalenPre.getFinCalList(TAG,"20150808");
                 break;
             case R.id.ll_view_error:
                 financeCalenPre.getFinCalList(TAG,"20150808");

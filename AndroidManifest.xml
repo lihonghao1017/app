@@ -53,6 +53,12 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/PageIndicatorDefaults" />
+            <activity
+            android:name="com.jin91.preciousmetal.ui.mine.MsgNotifyActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
         <activity
             android:name=".ui.service.PriceAlarmActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -159,7 +165,7 @@
             android:name=".ui.service.FinanceCalenActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Base" />
+            android:theme="@style/SampleTheme.Light" />
         <activity
             android:name=".ui.service.ServiceDetailActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
