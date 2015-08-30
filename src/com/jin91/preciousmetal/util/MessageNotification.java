@@ -1,10 +1,12 @@
 package com.jin91.preciousmetal.util;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.net.Uri;
@@ -19,6 +21,7 @@ import com.jin91.preciousmetal.common.util.Logger;
  * Created by lijinhua on 2015/5/22.
  * 消息通知
  */
+@SuppressLint("NewApi")
 public class MessageNotification {
 
 
@@ -26,8 +29,10 @@ public class MessageNotification {
     private Context mContext;
     private static MessageNotification dNM;
     private int notifyId;
+    private SharedPreferences sp;
     private MessageNotification(Context context) {
         mContext = context;
+        sp=context.getSharedPreferences("MsgSetting", Context.MODE_PRIVATE);
         mNotificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
     }
 
@@ -59,8 +64,10 @@ public class MessageNotification {
         notification.flags |= Notification.FLAG_AUTO_CANCEL;
         // 0毫秒后开始振动，振动100毫秒后停止，再过200毫秒后再次振动300毫秒
         // long[] vibrate = {0,100,200,300};
-        long[] vibrate = {0, 500};
-        notification.vibrate = vibrate;
+        if (sp.getBoolean("zhendong", true)) {
+        	long[] vibrate = {0, 500};
+        	notification.vibrate = vibrate;
+		}
         String packageName = null;
         try {
             packageName = mContext.getPackageManager().getPackageInfo(mContext.getPackageName(), 0).packageName;
@@ -69,7 +76,9 @@ public class MessageNotification {
             Logger.i("notify", "发送通知==>设置声音异常" + e.toString());
             notification.defaults = Notification.DEFAULT_ALL;
         }
-        notification.sound = Uri.parse("android.resource://" + packageName + "/raw/notification_ring");
+        if (sp.getBoolean("shengyin", true)) {
+        	notification.sound = Uri.parse("android.resource://" + packageName + "/raw/notification_ring");
+		}
         RemoteViews contentView = new RemoteViews(mContext.getPackageName(), R.layout.notify);
         contentView.setTextViewText(R.id.tv_notify_title, title);
         contentView.setTextViewText(R.id.tv_notify_content, text);
