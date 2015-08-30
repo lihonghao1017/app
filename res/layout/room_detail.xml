@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
 
     <include layout="@layout/layout_title" />
 
@@ -10,24 +10,24 @@
         style="@style/horizontal_line"
         android:layout_marginTop="10dp" />
 
-    <LinearLayout style="@style/account_manage_ll">
+    <LinearLayout style="@style/account_manage_ll" >
 
         <ImageView
             android:id="@+id/iv_roomdetail_img"
             android:layout_width="36dp"
             android:layout_height="36dp"
+            android:layout_gravity="center"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="20dp"
-            android:layout_gravity="center"
             android:src="@mipmap/default_normal_avatar" />
 
         <TextView
-            style="@style/Text.Black.General"
             android:id="@+id/tv_room_name"
+            style="@style/Text.Black.General"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
             android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
             android:text="在市场中赚钱主要靠都是等出来的" />
     </LinearLayout>
 
@@ -37,78 +37,88 @@
         style="@style/horizontal_line"
         android:layout_marginTop="10dp" />
 
-    <LinearLayout style="@style/account_manage_ll">
+    <LinearLayout style="@style/account_manage_ll" >
 
         <TextView
             style="@style/Text.Black.General"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="20dp"
+            android:gravity="center"
             android:text="主播" />
 
         <TextView
-            style="@style/Text.Black.General"
             android:id="@+id/tv_room_playname"
+            style="@style/Text.Black.General"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
             android:layout_marginRight="15dp"
-            android:text=""
-            />
+            android:gravity="center_vertical"
+            android:text="" />
     </LinearLayout>
 
     <View style="@style/horizontal_line" />
 
-
-    <LinearLayout style="@style/account_manage_ll">
+    <LinearLayout style="@style/account_manage_ll" >
 
         <TextView
             style="@style/Text.Black.General"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="20dp"
+            android:gravity="center"
             android:text="成员" />
 
         <TextView
-            style="@style/Text.Black.General"
             android:id="@+id/tv_room_number"
+            style="@style/Text.Black.General"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
             android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
             android:text="在市场中赚钱主要靠都是等出来的" />
     </LinearLayout>
 
     <View style="@style/horizontal_line" />
+
     <LinearLayout
-        android:minHeight="44dp"
+        style="@style/account_manage_ll"
         android:layout_height="wrap_content"
-        style="@style/account_manage_ll">
+        android:minHeight="44dp" >
 
         <TextView
             style="@style/Text.Black.General"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="20dp"
+            android:gravity="center"
             android:text="风格" />
 
         <TextView
-            style="@style/Text.Black.General"
             android:id="@+id/tv_room_style"
+            style="@style/Text.Black.General"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
             android:layout_marginRight="15dp"
-            android:paddingTop="15dp"
+            android:gravity="center_vertical"
             android:paddingBottom="15dp"
+            android:paddingTop="15dp"
             android:text="在市场中是要靠都是来的" />
     </LinearLayout>
 
     <View style="@style/horizontal_line" />
+
+    <Button
+        android:id="@+id/RoomDetailActivity_bangding"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="15dp"
+        android:background="#F34F4F"
+        android:gravity="center"
+        android:text="绑定"
+        android:textColor="@android:color/white" />
+
 </LinearLayout>
