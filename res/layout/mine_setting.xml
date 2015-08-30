@@ -92,6 +92,18 @@
     <View style="@style/horizontal_line" />
 
     <RelativeLayout
+        android:id="@+id/rl_shared_jin"
+        style="@style/rl_rect_set" >
+
+        <TextView
+            style="@style/rl_rect_set_text"
+            android:text="分享国鑫" />
+
+        <ImageView style="@style/rl_rect_set_arrow" />
+    </RelativeLayout>
+
+    <View style="@style/horizontal_line" />
+     <RelativeLayout
         android:id="@+id/rl_about_jin"
         style="@style/rl_rect_set" >
 

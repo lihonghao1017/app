@@ -1,5 +1,6 @@
 package com.jin91.preciousmetal.ui.mine;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import com.jin91.preciousmetal.common.api.entity.AllNotify;
 import com.jin91.preciousmetal.common.api.entity.Update;
 import com.jin91.preciousmetal.customview.CustomDialog;
 import com.jin91.preciousmetal.customview.LoadingDialog;
+import com.jin91.preciousmetal.customview.ShareDailog;
 import com.jin91.preciousmetal.services.DownLoadService;
 import com.jin91.preciousmetal.ui.MainActivity;
 import com.jin91.preciousmetal.ui.PreciousMetalAplication;
@@ -25,6 +27,10 @@ import com.jin91.preciousmetal.util.ClientUtil;
 import com.jin91.preciousmetal.util.JsonUtil;
 import com.jin91.preciousmetal.util.MessageToast;
 import com.jin91.preciousmetal.util.UserHelper;
+import com.jin91.preciousmetal.wxapi.ShareModel;
+import com.jin91.preciousmetal.wxapi.ShareQQWeibo;
+import com.jin91.preciousmetal.wxapi.ShareSinaActivity;
+import com.jin91.preciousmetal.wxapi.WXEntryActivity;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
@@ -45,6 +51,7 @@ public class SettingActivity extends BaseActivity {
     public TextView tv_title_option;
     @ViewInject(R.id.tv_title_title)
     public TextView tv_title_title;
+    ShareDailog dialog;
 
     public static void actionLaunch(Context context) {
         Intent intent = new Intent(context, SettingActivity.class);
@@ -59,7 +66,7 @@ public class SettingActivity extends BaseActivity {
         initialize();
     }
 
-    @OnClick({R.id.tv_title_back, R.id.rl_update_version,R.id.rl_msg_notify, R.id.rl_clear_cache, R.id.rl_feed_back, R.id.rl_use_protocol, R.id.rl_about_jin})
+    @OnClick({R.id.tv_title_back, R.id.rl_shared_jin,R.id.rl_update_version,R.id.rl_msg_notify, R.id.rl_clear_cache, R.id.rl_feed_back, R.id.rl_use_protocol, R.id.rl_about_jin})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_title_back:
@@ -96,7 +103,47 @@ public class SettingActivity extends BaseActivity {
             case R.id.rl_msg_notify: // 消息提醒
             	MsgNotifyActivity.actionLaunch(mContext);
                 break;
+            case R.id.rl_shared_jin:
+            	shareDialog(this);
+            	break;
         }
+    }
+    public void shareDialog(final Activity activity) {
+        if (dialog == null) {
+
+
+            int[] nameList = {R.string.wechat_friend, R.string.friends, R.string.sina_weibo, R.string.QQ_weibo};
+            int[] iconList = {R.drawable.share_wefriends_selector, R.drawable.share_fricircle_selector, R.drawable.share_sina_selector, R.drawable.share_qqweibo_selector};
+            dialog = new ShareDailog(activity, iconList, nameList, new ShareDailog.OnClickLinstener() {
+                @Override
+                public void onClick(int position) {
+                    ShareModel shareModel = new ShareModel();
+                    shareModel.url = "http://m.91jin.com/zhuanti/hj3gfx/";
+                    shareModel.type_title = "国鑫贵金属";
+                    shareModel.content_title = "值得信赖的贵金属投资顾问";
+                    dialog.dismiss();
+                    switch (position) {
+
+                        case 0: // 微信好友
+                            shareModel.weixin_type = 0;
+                            WXEntryActivity.actionLaunch(activity, shareModel);
+                            break;
+                        case 1: // 朋友圈
+                            shareModel.weixin_type = 1;
+                            WXEntryActivity.actionLaunch(activity, shareModel);
+                            break;
+                        case 2: // 新浪微博
+//                            new ShareSina(activity, shareModel).shareSina();
+                            ShareSinaActivity.actionLaunch(activity, shareModel);
+                            break;
+                        case 3:// 腾讯微博
+                            new ShareQQWeibo(activity, shareModel);
+                            break;
+                    }
+                }
+            });
+        }
+        dialog.show();
     }
 
     @Override
