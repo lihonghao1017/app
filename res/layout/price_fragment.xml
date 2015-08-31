@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/content_bg">
 
 
-    <FrameLayout
-        android:id="@+id/fl_price_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+   
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:orientation="horizontal"
+        android:id="@+id/head_layout"
         android:gravity="right"
         android:layout_gravity="right">
 
@@ -34,11 +32,23 @@
             android:layout_gravity="right"
             android:src="@mipmap/news_cate_arr" />
     </LinearLayout>
+    <LinearLayout android:id="@+id/nian_head"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:visibility="gone"
+        android:background="@mipmap/news_nav_two_bg"
+        android:orientation="horizontal">
+        
+    </LinearLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager"
+        android:layout_below="@id/head_layout"
         android:layout_width="fill_parent"
         android:layout_height="match_parent" />
+ <FrameLayout
+        android:id="@+id/fl_price_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-
-</LinearLayout>
+</RelativeLayout>
