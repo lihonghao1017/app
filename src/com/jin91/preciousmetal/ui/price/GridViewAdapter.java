@@ -51,7 +51,7 @@ public class GridViewAdapter extends BaseAdapter {
             view.setLayoutParams(lp);
             view.setBackgroundResource(R.drawable.zixuan_textview_bj_style);
             view.setGravity(Gravity.CENTER);
-            view.setTextSize(14);
+            view.setTextSize(R.dimen.zixuan_text_size);
             view.setTextColor(0xFFF7F8F8);
             
         }

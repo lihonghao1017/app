@@ -75,14 +75,7 @@ public class ZiXuanActivity extends Activity implements OnClickListener,
 		SharedPreferences sp = getSharedPreferences("Price",
 				Context.MODE_PRIVATE);
 		zixuanJson = sp.getString("cave_price", null);
-
-		// ziXuanList = new Gson().fromJson(zixuanJson,
-		// new TypeToken<List<Price>>() {
-		// }.getType());
-		// ;
-		// if (ziXuanList == null) {
 		ziXuanList = new ArrayList<>();
-		// }
 		mListPages = new ArrayList<ItemPricePage>();
 		category_map = new LinkedHashMap<String, String>();
 		category_map.put("TJPME", "天交所");

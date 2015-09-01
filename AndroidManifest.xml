@@ -245,7 +245,7 @@
             android:name="com.jin91.preciousmetal.ui.price.ZiXuanActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Base"
+             android:theme="@style/PageIndicatorDefaults"
             android:windowSoftInputMode="adjustPan" />
         <!-- *************************service************************ -->
         <service

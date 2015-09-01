@@ -62,13 +62,14 @@
                 android:background="@drawable/sam_reduce_bg_left_style"
                 android:src="@mipmap/sam_reduce" />
 
-            <TextView
+            <EditText
                 android:id="@+id/SMASettingActivity_middle01"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:background="@mipmap/bg_middle"
                 android:gravity="center"
-                android:text="2"
+                android:numeric="integer"  
+                android:text="0"
                 android:textColor="#525253"
                 android:textSize="12sp" />
 
@@ -101,14 +102,15 @@
                 android:background="@drawable/sam_reduce_bg_left_style"
                 android:src="@mipmap/sam_reduce" />
 
-            <TextView
+            <EditText
                 android:id="@+id/SMASettingActivity_middle02"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:background="@mipmap/bg_middle"
                 android:gravity="center"
-                android:text="2"
+                android:text="0"
                 android:textColor="#525253"
+                android:numeric="integer"  
                 android:textSize="14sp" />
 
             <ImageView
@@ -140,13 +142,14 @@
                 android:background="@drawable/sam_reduce_bg_left_style"
                 android:src="@mipmap/sam_reduce" />
 
-            <TextView
+            <EditText
                 android:id="@+id/SMASettingActivity_middle03"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:background="@mipmap/bg_middle"
                 android:gravity="center"
-                android:text="2"
+                android:numeric="integer"  
+                android:text="0"
                 android:textColor="#525253"
                 android:textSize="14sp" />
 
@@ -179,13 +182,14 @@
                 android:background="@drawable/sam_reduce_bg_left_style"
                 android:src="@mipmap/sam_reduce" />
 
-            <TextView
+            <EditText
                 android:id="@+id/SMASettingActivity_middle04"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:background="@mipmap/bg_middle"
                 android:gravity="center"
-                android:text="2"
+                android:text="0"
+                android:numeric="integer"  
                 android:textColor="#525253"
                 android:textSize="14sp" />
 
@@ -285,7 +289,7 @@
         android:paddingBottom="3dp"
         android:paddingLeft="11dp"
         android:paddingTop="3dp"
-        android:text="数据选择"
+        android:text="移动平均线类型"
         android:textColor="#555555"
         android:textSize="12sp" />
 
