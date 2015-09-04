@@ -1,11 +1,15 @@
 package com.jin91.preciousmetal.ui.price;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -60,27 +64,42 @@ public class SMASettingActivity extends Activity {
 	private ImageView right03;
 	@ViewInject(R.id.SMASettingActivity_reduce04)
 	private ImageView right04;
+	@ViewInject(R.id.SMASettingActivity_checkbox)
+	private CheckBox checkbox;
 	private static final String[] m = { "算数平均", "线性加权", "指数加权", "三角" };
-
+private int spinner_select;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.sma_setng_actvity_layout);
 		ViewUtils.inject(this);
 		initView();
+		SharedPreferences sp = getSharedPreferences("Price",
+				Context.MODE_PRIVATE);
+		et_01.setText(sp.getString("N1", "5"));
+		et_02.setText(sp.getString("N2", "10"));
+		et_03.setText(sp.getString("N3", "20"));
+		et_04.setText(sp.getString("N4", "60"));
+		checkbox.setChecked(sp.getBoolean("isUseAll", true));
+		spinner.setSelection(sp.getInt("data_class", 0));
+		setRadioButtton(sp.getInt("data_select", 3));
 	}
 
 	private void initView() {
 		tv_title_title.setText("SMA均匀线");
 		tv_title_option.setText("保存");
-		spinner.setAdapter(new ArrayAdapter<String>(this,
-				android.R.layout.simple_spinner_item, m));
-		spinner.setSelection(1);
+		ArrayAdapter arr_adapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_spinner_item, m);
+		arr_adapter
+				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinner.setAdapter(arr_adapter);
+		spinner.setSelection(spinner_select);
 		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View view,
 					int position, long id) {
+				spinner_select=position;
 				((TextView) view).setText(m[position]);
 			}
 
@@ -105,22 +124,33 @@ public class SMASettingActivity extends Activity {
 			finish();
 			break;
 		case R.id.tv_title_option:
-
+			SharedPreferences sp = getSharedPreferences("Price",
+					Context.MODE_PRIVATE);
+			Editor e=sp.edit();
+			e.putString("N1", et_01.getText().toString());
+			e.putString("N2", et_02.getText().toString());
+			e.putString("N3", et_03.getText().toString());
+			e.putString("N4", et_04.getText().toString());
+			e.putInt("data_select", postion);
+			e.putInt("data_class", spinner_select);
+			e.putBoolean("isUseAll", checkbox.isChecked());
+			e.commit();
+			this.finish();
 			break;
 		case R.id.SMASettingActivity_radio01:
-			setRadioButtton(1);
+			setRadioButtton(0);
 			break;
 		case R.id.SMASettingActivity_radio02:
-			setRadioButtton(2);
+			setRadioButtton(1);
 			break;
 		case R.id.SMASettingActivity_radio03:
-			setRadioButtton(3);
+			setRadioButtton(2);
 			break;
 		case R.id.SMASettingActivity_radio04:
-			setRadioButtton(4);
+			setRadioButtton(3);
 			break;
 		case R.id.SMASettingActivity_radio05:
-			setRadioButtton(5);
+			setRadioButtton(4);
 			break;
 		case R.id.SMASettingActivity_reduce01:
 			et_01.setText((Integer.parseInt(et_01.getText().toString()) + 1)+"");
@@ -148,12 +178,13 @@ public class SMASettingActivity extends Activity {
 			break;
 		}
 	}
-
+private int postion;
 	private void setRadioButtton(int pos) {
-		radio01.setChecked(pos == 1 ? true : false);
-		radio02.setChecked(pos == 2 ? true : false);
-		radio03.setChecked(pos == 3 ? true : false);
-		radio04.setChecked(pos == 4 ? true : false);
-		radio05.setChecked(pos == 5 ? true : false);
+		this.postion=pos;
+		radio01.setChecked(pos == 0 ? true : false);
+		radio02.setChecked(pos == 1 ? true : false);
+		radio03.setChecked(pos == 2 ? true : false);
+		radio04.setChecked(pos == 3 ? true : false);
+		radio05.setChecked(pos == 4 ? true : false);
 	}
 }

@@ -250,6 +250,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="11dp"
                 android:button="@drawable/rediobutton_style"
+                android:visibility="gone"
                 android:text="  均价"
                 android:textColor="#555555"
                 android:textSize="14sp" />

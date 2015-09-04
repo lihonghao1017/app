@@ -90,7 +90,8 @@ public class DirectPlayFragment extends BasePlayFragment<DirectPlay> implements 
 
     }
 
-    private void setOnClickListener() {
+    @SuppressWarnings("unchecked")
+	private void setOnClickListener() {
         mListView.setOnRefreshListener(new ExpandListView.OnRefreshListener() {
 
             @Override
@@ -109,7 +110,7 @@ public class DirectPlayFragment extends BasePlayFragment<DirectPlay> implements 
             public void onFootRefresh() {
                 if (!threadStart) {
                     threadStart = true;
-                    presenter.getDirectPlayMoreList(moreTypeToken, mList.get(mList.size() - 1).ID, action);
+                    presenter.getDirectPlayMoreList(moreTypeToken, mList.get(mList.size() - 1).ID, action,type);
                 } else {
                     setRefreshComplete();
                 }
@@ -144,7 +145,7 @@ public class DirectPlayFragment extends BasePlayFragment<DirectPlay> implements 
             }
         });
         // 加载数据
-        presenter.getDirectPlayFirstList(firstTypeToken, true, type, startId);
+        presenter.getDirectPlayFirstList(new TypeToken<LiveRoom<DirectPlay>>(){}, true, type, startId);
     }
 
     @Override

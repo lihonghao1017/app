@@ -329,17 +329,17 @@ public class ServiceDetailActivity extends BaseActivity implements ServiceView {
      * 获取行情
      */
     private void contiunePrice() {
-        if (timer == null) {
-            timer = new Timer();
-            timer.schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    if (!threadStart && isVisable) {
-                        presenter.getPriceNotice(TAG);
-                    }
-                }
-            }, 0, Constants.PRICE_INTERVAL);
-        }
+//        if (timer == null) {
+//            timer = new Timer();
+//            timer.schedule(new TimerTask() {
+//                @Override
+//                public void run() {
+//                    if (!threadStart && isVisable) {
+//                        presenter.getPriceNotice(TAG);
+//                    }
+//                }
+//            }, 0, Constants.PRICE_INTERVAL);
+//        }
     }
 
     /**
@@ -643,7 +643,7 @@ public class ServiceDetailActivity extends BaseActivity implements ServiceView {
             ivTextEmo.setTag("emo");
             ivTextEmo.setImageResource(R.drawable.btn_emo_selector);
         }
-    }
+    }   
 
     public void setEtCommentContentText(String text) {
         etCommentContent.setText(text);

@@ -3,6 +3,7 @@ package com.jin91.preciousmetal.ui.price;
 import java.util.List;
 import android.content.Context;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -21,12 +22,17 @@ public class GridViewAdapter extends BaseAdapter {
     private Context context;
     private List<Price> strList;
     private int hidePosition = AdapterView.INVALID_POSITION;
+    private int textSize;
 
     public GridViewAdapter(Context context, List<Price> strList) {
         this.context = context;
         this.strList = strList;
+        this.textSize=sp2px(R.dimen.zixuan_text_size);
     }
-
+    public  int sp2px(float spValue) {
+    	 float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+    	  return (int) (spValue * fontScale + 0.5f);
+    	 }
     @Override
     public int getCount() {
         return strList.size();
@@ -46,13 +52,14 @@ public class GridViewAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         TextView view;
         if(convertView == null) {
-            view = new TextView(context);
-            LayoutParams lp=new LayoutParams(AbsListView.LayoutParams.MATCH_PARENT, AbsListView.LayoutParams.WRAP_CONTENT);
-            view.setLayoutParams(lp);
-            view.setBackgroundResource(R.drawable.zixuan_textview_bj_style);
-            view.setGravity(Gravity.CENTER);
-            view.setTextSize(R.dimen.zixuan_text_size);
-            view.setTextColor(0xFFF7F8F8);
+//        	View v=LayoutInflater.from(context).inflate(R.layout.zixuanitem, null);
+            view = (TextView) LayoutInflater.from(context).inflate(R.layout.zixuanitemhead, null);
+//            LayoutParams lp=new LayoutParams(AbsListView.LayoutParams.WRAP_CONTENT, AbsListView.LayoutParams.WRAP_CONTENT);
+//            view.setLayoutParams(lp);
+//            view.setBackgroundResource(R.drawable.zixuan_textview_bj_style);
+//            view.setGravity(Gravity.CENTER);
+//            view.setTextSize(textSize);
+//            view.setTextColor(0xFFF7F8F8);
             
         }
         else {

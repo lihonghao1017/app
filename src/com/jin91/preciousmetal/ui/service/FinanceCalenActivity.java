@@ -125,7 +125,7 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
 		indexView.setLayoutParams(indexView.getLayoutParams());
 	}
 
-    @OnClick({R.id.tv_title_back, R.id.tv_title_option})
+    @OnClick({R.id.tv_title_back, R.id.tv_title_option,R.id.FinanceCalenActivity_data_tv,R.id.FinanceCalenActivity_event_tv})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_title_back:
@@ -141,6 +141,12 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
                 break;
             case R.id.ll_view_error:
                 financeCalenPre.getFinCalList(TAG,"20150808");
+                break;
+            case R.id.FinanceCalenActivity_data_tv:
+            	FinanceCalenActivity_pager.setCurrentItem(0);
+                break;
+            case R.id.FinanceCalenActivity_event_tv:
+            	FinanceCalenActivity_pager.setCurrentItem(1);
                 break;
         }
     }

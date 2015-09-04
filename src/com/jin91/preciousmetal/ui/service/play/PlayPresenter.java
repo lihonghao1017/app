@@ -35,7 +35,7 @@ public interface PlayPresenter<TypeToken> {
                        getmydatas
 
      */
-    public void getDirectPlayMoreList(TypeToken typeToken,String startId,String action);
+    public void getDirectPlayMoreList(TypeToken typeToken,String startId,String action,String type);
 
     /**
      * 获取主题的更多

@@ -96,7 +96,7 @@ public class MarrowsFragment extends BasePlayFragment<Marrow> implements View.On
                 if (!threadStart) {
                     threadStart = true;
                     isAutoRefresh = false;
-                    presenter.getDirectPlayMoreList(moreTypeToken, mList.get(mList.size() - 1).ID, action);
+                    presenter.getDirectPlayMoreList(moreTypeToken, mList.get(mList.size() - 1).ID, action,type);
                 } else {
                     setRefreshComplete();
                 }

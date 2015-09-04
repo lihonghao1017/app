@@ -16,10 +16,15 @@ import com.google.gson.reflect.TypeToken;
 import com.jin91.preciousmetal.common.api.PlayRoomApi;
 import com.jin91.preciousmetal.common.api.base.ResultCallback;
 import com.jin91.preciousmetal.common.api.entity.AllData;
+import com.jin91.preciousmetal.common.api.entity.DirectPlay;
+import com.jin91.preciousmetal.common.api.entity.Exchange;
 import com.jin91.preciousmetal.common.api.entity.ImmedSuggest;
 import com.jin91.preciousmetal.common.api.entity.LiveRoom;
+import com.jin91.preciousmetal.common.api.entity.Marrow;
+import com.jin91.preciousmetal.common.api.entity.MySay;
 import com.jin91.preciousmetal.common.api.entity.RoomNotice;
 import com.jin91.preciousmetal.common.api.entity.Tables;
+import com.jin91.preciousmetal.common.api.entity.Theme;
 import com.jin91.preciousmetal.common.api.entity.User;
 import com.jin91.preciousmetal.ui.PreciousMetalAplication;
 import com.jin91.preciousmetal.ui.service.ServiceDetailActivity;
@@ -53,23 +58,18 @@ public class PlayPresenterImpl<T> implements PlayPresenter {
         editor = preferences.edit();
     }
 
-
-    /**
-     * @param typeToken
-     * @param isShowLoading
-     * @param type          0,直播 1,交流 2，发言 3,主题 4,精华 5表示建议
-     * @param startId       第一次传0,如果已经获取到，传最新的一条数据的id
-     */
-    public void getDirectPlayFirstList(final Object typeToken, final boolean isShowLoading, String type, final String startId) {
+    
+    
+    public void getExchangeFirstList(final Object typeToken, final boolean isShowLoading, final String type, final String startId) {
         if (isShowLoading) {
             view.showLoading();
         }
         PlayRoomApi.getDirectPlayMoreList(ServiceDetailActivity.TAG, getFirstMapParams(type), startId, new ResultCallback() {
-            @Override
+			@Override
             public void onEntitySuccess(String json) {
-
+            	
                 try {
-                    LiveRoom<T> liveRoom = (LiveRoom<T>) JsonUtil.parse(json, (Class<T>) typeToken);
+					LiveRoom<T> liveRoom = (LiveRoom<T>) JsonUtil.parse(json, (Class<T>)typeToken);
                     if (liveRoom == null || liveRoom.Alldata == null) {
                         if (isShowLoading) {
                             view.showNetErrView();
@@ -88,7 +88,75 @@ public class PlayPresenterImpl<T> implements PlayPresenter {
                     if (isShowLoading) {
                         view.hideLoading();
                     }
-                } finally {
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                finally {
+                    view.setRefreshComplete();
+                }
+            }
+
+			@Override
+			public void onException(com.android.volley.VolleyError e) {
+				 playFirstListErrCall(isShowLoading);
+			}
+        });
+    }
+    /**
+     * @param typeToken
+     * @param isShowLoading
+     * @param type          0,直播 1,交流 2，发言 3,主题 4,精华 5表示建议
+     * @param startId       第一次传0,如果已经获取到，传最新的一条数据的id
+     */
+    public void getDirectPlayFirstList(final Object typeToken, final boolean isShowLoading, final String type, final String startId) {
+        if (isShowLoading) {
+            view.showLoading();
+        }
+        PlayRoomApi.getDirectPlayMoreList(ServiceDetailActivity.TAG, getFirstMapParams(type), startId, new ResultCallback() {
+            @SuppressWarnings("unchecked")
+			@Override
+            public void onEntitySuccess(String json) {
+            	TypeToken obj=null;
+            	if (type.equals("0")) {
+            		obj=new TypeToken<LiveRoom<DirectPlay>>() {
+                    };
+				}else if (type.equals("1")) {
+					obj=new TypeToken<LiveRoom<Exchange>>() {
+                    };
+				}else if (type.equals("2")) {
+					obj=new TypeToken<LiveRoom<MySay>>() {
+                    };
+				}else if (type.equals("3")) {
+					obj=new TypeToken<LiveRoom<Theme>>() {
+                    };
+				}else if (type.equals("4")) {
+					obj=new TypeToken<LiveRoom<Marrow>>() {
+                    };
+				}
+                try {
+					LiveRoom<T> liveRoom = (LiveRoom<T>) JsonUtil.parse(json, obj);
+                    if (liveRoom == null || liveRoom.Alldata == null) {
+                        if (isShowLoading) {
+                            view.showNetErrView();
+                        }
+                        return;
+                    }
+                    // 设置新的消息
+                    view.setNewMsgCount(liveRoom.Alldata);
+                    if (liveRoom.Alldata.Table == null || liveRoom.Alldata.Table.size() == 0) {
+                        if (isShowLoading) {
+                            view.showNoDataView("暂无直播");
+                        }
+                        return;
+                    }
+                    view.setFistDataList(liveRoom.Alldata.Table);
+                    if (isShowLoading) {
+                        view.hideLoading();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                finally {
                     view.setRefreshComplete();
                 }
             }
@@ -167,12 +235,30 @@ public class PlayPresenterImpl<T> implements PlayPresenter {
     }
 
     @Override
-    public void getDirectPlayMoreList(final Object typeToken, String startId, String action) {
-        PlayRoomApi.getDirectPlayMoreList(ServiceDetailActivity.TAG, userId, roomId, startId, action, new ResultCallback() {
+    public void getDirectPlayMoreList(final Object typeToken, String startId, String action,final String type) {
+    	
+    	PlayRoomApi.getDirectPlayMoreList(ServiceDetailActivity.TAG, userId, roomId, startId, action, new ResultCallback() {
             @Override
             public void onEntitySuccess(String json) {
+            	TypeToken obj=null;
+            	if (type.equals("0")) {
+            		obj=new TypeToken<AllData<DirectPlay>>() {
+                    };
+        		}else if (type.equals("1")) {
+        			obj=new TypeToken<AllData<Exchange>>() {
+                    };
+        		}else if (type.equals("2")) {
+        			obj=new TypeToken<AllData<MySay>>() {
+                    };
+        		}else if (type.equals("3")) {
+        			obj=new TypeToken<AllData<Theme>>() {
+                    };
+        		}else if (type.equals("4")) {
+        			obj=new TypeToken<AllData<Marrow>>() {
+                    };
+        		}
                 try {
-                    AllData<T> allData = (AllData<T>) JsonUtil.parse(json, (Class<T>) typeToken);
+                    AllData<T> allData = (AllData<T>) JsonUtil.parse(json, obj);
                     if (allData != null && allData.Table != null && allData.Table.size() > 0) {
                         view.setMoreDataList(allData.Table);
                     } else {
@@ -226,7 +312,9 @@ public class PlayPresenterImpl<T> implements PlayPresenter {
             @Override
             public void onEntitySuccess(String json) {
                 try {
-                    AllData<T> allData = (AllData<T>) JsonUtil.parse(json, (Class<T>) typeToken);
+                	TypeToken<AllData<Theme>> moreTypeToken = new TypeToken<AllData<Theme>>() {
+                    };
+                    AllData<T> allData = (AllData<T>) JsonUtil.parse(json, moreTypeToken);
                     if (allData != null && allData.Table != null && allData.Table.size() > 0) {
                         view.setMoreDataList(allData.Table);
                     } else {
@@ -389,6 +477,7 @@ public class PlayPresenterImpl<T> implements PlayPresenter {
         map.put("roomid", roomId);
         map.put("uid", userId);
         map.put("type", type);
+        map.put("LeftIndex", "0");
         return map;
     }
 

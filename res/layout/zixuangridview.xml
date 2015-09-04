@@ -39,9 +39,14 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_gravity="center"
-        android:horizontalSpacing="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:paddingLeft="11dp"
+        android:paddingRight="11dp"
+        android:horizontalSpacing="18dp"
+        android:listSelector="@android:color/transparent"
         android:numColumns="3"
-        android:verticalSpacing="10dp" >
+        android:verticalSpacing="18dp" >
     </com.jin91.preciousmetal.ui.price.DragGridView>
 
     <LinearLayout

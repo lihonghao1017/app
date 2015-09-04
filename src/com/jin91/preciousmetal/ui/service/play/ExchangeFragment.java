@@ -101,7 +101,7 @@ public class ExchangeFragment extends BasePlayFragment<Exchange> implements View
                 isAutoRefresh = false;
                 if (!threadStart) {
                     threadStart = true;
-                    presenter.getDirectPlayMoreList(moreTypeToken, mList.get(mList.size() - 1).ID, action);
+                    presenter.getDirectPlayMoreList(moreTypeToken, mList.get(mList.size() - 1).ID, action,type);
                 } else {
                     setRefreshComplete();
                 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ziXuanItem"
+    android:layout_width="100dp"
+    android:layout_height="46dp"
+    android:layout_gravity="center"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="20dp"
+    android:background="@drawable/zixuan_textview_bj_style"
+    android:gravity="center"
+    android:singleLine="true"
+    android:textColor="#ffffff"
+    android:textSize="16sp" />

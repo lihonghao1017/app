@@ -149,34 +149,35 @@ public class ZiXuanActivity extends Activity implements OnClickListener,
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
-		
-		notifyAdapter2(position );
+
+		notifyAdapter2(position);
 	}
 
 	private void notifyAdapter2(int position) {
 		mListPages.clear();
-		Price p=ziXuanList.get(position);
+		Price p = ziXuanList.get(position);
 		ziXuanList.remove(p);
 		Iterator<Entry<String, String>> iter = category_map.entrySet()
 				.iterator();
+		int CurrentItem = 0;
+		int index = 0;
 		while (iter.hasNext()) {
 			Map.Entry<String, String> entry = (Map.Entry<String, String>) iter
 					.next();
 			ArrayList<Price> itemList = (ArrayList<Price>) map.get(entry
 					.getKey());
 
-			// for (int i = 0; i < itemList.size(); i++) {
-			// if (ziXuanList.contains(itemList.get(i)))
-			// itemList.remove(i--);
-			// }
-			if(p.excode.equals(entry.getKey())){
+			if (p.excode.equals(entry.getKey())) {
 				itemList.add(p);
+				CurrentItem = index;
 			}
+			index++;
 			mListPages.add(new ItemPricePage(this, itemList, entry.getKey(),
 					map, 1));
 		}
 		pagerAdapter.notifyDataSetChanged();
 		tab_pageindicator.notifyDataSetChanged();
+		view_pager.setCurrentItem(CurrentItem);
 		ziXuanAdapter.notifyDataSetChanged();
 	}
 
