@@ -12,11 +12,17 @@ public interface PlayPresenter<TypeToken> {
     /**
      * 获取直播第一页的列表
      * isShowLoading
+     * @param  type 0,全部 1,白银 2，黄金 3,铜铝镍 4,是有
+     * @param  startId 第一次传0,如果已经获取到，传最新的一条数据的id
+     * */
+    public void getDirectPlayFirstNewList(TypeToken typeToken, boolean isShowLoading,String type,String startId);
+    /**
+     * 获取直播第一页的列表
+     * isShowLoading
      * @param  type 0,直播 1,交流 2，发言 3,主题 4,精华 5表示建议
      * @param  startId 第一次传0,如果已经获取到，传最新的一条数据的id
      * */
     public void getDirectPlayFirstList(TypeToken typeToken, boolean isShowLoading,String type,String startId);
-
     /**
      * 得到建议的列表页的第一页
      * @param isShowLoading
@@ -24,8 +30,8 @@ public interface PlayPresenter<TypeToken> {
      */
     public void getSuggestFirstList(boolean isShowLoading,String startId);
 
-
-
+    public void getDirectPlayMoreNewList(TypeToken typeToken,String startId,String action,String type);
+    
     /**
      * 获取直播更多的列表
      * isShowLoading

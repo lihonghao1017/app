@@ -60,7 +60,7 @@ public class ExchangeFragment extends BasePlayFragment<Exchange> implements View
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.direct_play_list_back, container, false);
+        View view = inflater.inflate(R.layout.jiaoliu_fragment_layout, container, false);
         ViewUtils.inject(this, view);
         return view;
     }

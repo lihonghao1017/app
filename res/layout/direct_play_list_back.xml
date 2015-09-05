@@ -1,22 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/rl_root_driect_play"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="match_parent" >
 
+    <RelativeLayout
+        android:id="@+id/liveRoom_tab"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="#CFD2D4" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/liveRoom_all"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="全部"
+                android:textColor="#F34F4F"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/liveRoom_baiyin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="白银"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/liveRoom_huangjin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="黄金"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/liveRoom_tonglvge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="铜铝镍"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/liveRoom_shiyou"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="石油"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/liveRoom_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/live_arrows" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!--
+    <FrameLayout
+        android:id="@+id/liveRoom_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/liveRoom_tab" >
+    </FrameLayout>
+    -->
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipeRereshLayout"
-        android:layout_above="@+id/in_comment_bottom"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical">
+        android:layout_above="@+id/in_comment_bottom"
+        android:layout_below="@id/liveRoom_tab"
+        android:orientation="vertical" >
 
         <include
+            android:id="@+id/id_stickynavlayout_innerscrollview"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:id="@+id/id_stickynavlayout_innerscrollview"
             layout="@layout/expand_listview" />
     </android.support.v4.widget.SwipeRefreshLayout>
 
@@ -34,4 +124,3 @@
         android:orientation="vertical" />
 
 </RelativeLayout>
-

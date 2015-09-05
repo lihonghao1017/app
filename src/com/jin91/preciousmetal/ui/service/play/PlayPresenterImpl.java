@@ -477,7 +477,6 @@ public class PlayPresenterImpl<T> implements PlayPresenter {
         map.put("roomid", roomId);
         map.put("uid", userId);
         map.put("type", type);
-        map.put("LeftIndex", "0");
         return map;
     }
 
@@ -510,6 +509,92 @@ public class PlayPresenterImpl<T> implements PlayPresenter {
     public void setCallid(String callid) {
         editor.putString("callid", callid).commit();
     }
+
+
+
+	@Override
+	public void getDirectPlayFirstNewList(Object typeToken,
+			final boolean isShowLoading, final String type, String startId) {
+		if (isShowLoading) {
+            view.showLoading();
+        }
+		HashMap<String, String> map=getFirstMapParams("0");
+		 map.put("LeftIndex", type);
+        PlayRoomApi.getDirectPlayMoreList(ServiceDetailActivity.TAG, map, startId, new ResultCallback() {
+            @SuppressWarnings("unchecked")
+			@Override
+            public void onEntitySuccess(String json) {
+            	TypeToken obj=new TypeToken<LiveRoom<DirectPlay>>() {
+                };
+                try {
+					LiveRoom<T> liveRoom = (LiveRoom<T>) JsonUtil.parse(json, obj);
+                    if (liveRoom == null || liveRoom.Alldata == null) {
+                        if (isShowLoading) {
+                            view.showNetErrView();
+                        }
+                        return;
+                    }
+                    // 设置新的消息
+                    view.setNewMsgCount(liveRoom.Alldata);
+                    if (liveRoom.Alldata.Table == null || liveRoom.Alldata.Table.size() == 0) {
+                        if (isShowLoading) {
+                            view.showNoDataView("暂无直播");
+                        }
+                        return;
+                    }
+                    view.setFistDataList(liveRoom.Alldata.Table);
+                    if (isShowLoading) {
+                        view.hideLoading();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                finally {
+                    view.setRefreshComplete();
+                }
+            }
+
+			@Override
+			public void onException(com.android.volley.VolleyError e) {
+				 playFirstListErrCall(isShowLoading);
+			}
+        });
+	}
+
+
+
+	@Override
+	public void getDirectPlayMoreNewList(Object typeToken, String startId,
+			String action, String type) {
+		PlayRoomApi.getDirectPlayMoreNewList(ServiceDetailActivity.TAG, userId, roomId, startId, action,type, new ResultCallback() {
+            @Override
+            public void onEntitySuccess(String json) {
+            	TypeToken obj=new TypeToken<AllData<DirectPlay>>() {
+                    };
+        		
+                try {
+                    AllData<T> allData = (AllData<T>) JsonUtil.parse(json, obj);
+                    if (allData != null && allData.Table != null && allData.Table.size() > 0) {
+                        view.setMoreDataList(allData.Table);
+                    } else {
+                        view.showToastNoMoreData();
+                    }
+                } finally {
+                    view.setRefreshComplete();
+                }
+
+            }
+
+
+			@Override
+			public void onException(com.android.volley.VolleyError e) {
+				 view.setRefreshComplete();
+	                view.showToastNetErr();
+			}
+        });
+	}
+
+
 
 
 
