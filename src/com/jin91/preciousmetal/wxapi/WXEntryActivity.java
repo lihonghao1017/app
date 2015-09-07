@@ -36,11 +36,12 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
     // IWXAPI 是第三方app和微信通信的openapi接口
     private IWXAPI api;
     private Context mContext;
-    private ShareModel shareModel;
+    private static ShareModel shareModels;
 
     public static void actionLaunch(Context context, ShareModel shareModel) {
-        Intent intent = new Intent(context, WXEntryActivity.class);
-        intent.putExtra("shareModel", shareModel);
+    	shareModels=shareModel;
+    	Intent intent = new Intent(context, WXEntryActivity.class);
+//        intent.putExtra("shareModel", shareModel);
         context.startActivity(intent);
     }
 
@@ -49,9 +50,9 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
         super.onCreate(savedInstanceState);
 
         mContext = this;
-        shareModel = (ShareModel) getIntent().getSerializableExtra("shareModel");
-        Logger.i(TAG, "onCreate----" + shareModel);
-        if(shareModel==null)
+//        shareModel = (ShareModel) getIntent().getSerializableExtra("shareModel");
+        Logger.i(TAG, "onCreate----" + shareModels);
+        if(shareModels==null)
         {
             finish();
         }
@@ -72,15 +73,15 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
      * 分享到微信
      */
     public void shareWeiXing() {
-        if (shareModel == null) {
+        if (shareModels == null) {
             finish();
             return;
         }
         WXWebpageObject localWXWebpageObject = new WXWebpageObject();
-        localWXWebpageObject.webpageUrl = shareModel.url;
+        localWXWebpageObject.webpageUrl = shareModels.url;
         WXMediaMessage localWXMediaMessage = new WXMediaMessage(localWXWebpageObject);
-        localWXMediaMessage.title = "[ " + shareModel.type_title + " ] " + shareModel.content_title;
-        localWXMediaMessage.description = "[ " + shareModel.type_title + " ] " + shareModel.content_title;
+        localWXMediaMessage.title = "[ " + shareModels.type_title + " ] " + shareModels.content_title;
+        localWXMediaMessage.description = "[ " + shareModels.type_title + " ] " + shareModels.content_title;
         Bitmap thumBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.share_icon);
         localWXMediaMessage.thumbData = ImageUtil.bmpToByteArray(thumBitmap, true);
         Logger.i(TAG, "share bitmap size----" + localWXMediaMessage.thumbData.length);
@@ -91,7 +92,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
         SendMessageToWX.Req req = new SendMessageToWX.Req();
         req.transaction = System.currentTimeMillis() + "";
         req.message = localWXMediaMessage;
-        req.scene = shareModel.weixin_type == 0 ? SendMessageToWX.Req.WXSceneSession : SendMessageToWX.Req.WXSceneTimeline;
+        req.scene = shareModels.weixin_type == 0 ? SendMessageToWX.Req.WXSceneSession : SendMessageToWX.Req.WXSceneTimeline;
         Logger.i(TAG, "检查分享参数是否法===" + req.checkArgs());
         api.sendReq(req);
         finish();

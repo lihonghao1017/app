@@ -121,6 +121,8 @@ public class PriceDetailActivity extends BaseActivity implements
 	TextView tvTipInd10;
 	@ViewInject(R.id.tv_tip_ind20)
 	TextView tvTipInd20;
+	@ViewInject(R.id.tv_tip_ind60)
+	TextView tvTipInd60;
 	@ViewInject(R.id.bollmaslipcandlestickchart)
 	BOLLMASlipCandleStickChart bollmaslipcandlestickchart;
 	@ViewInject(R.id.tv_k_date)
@@ -862,9 +864,12 @@ public class PriceDetailActivity extends BaseActivity implements
 					.getLinesData().get(1);
 			LineEntity<DateValueEntity> sma20 = bollmaslipcandlestickchart
 					.getLinesData().get(2);
+			LineEntity<DateValueEntity> sma60 = bollmaslipcandlestickchart
+					.getLinesData().get(3);
 			DateValueEntity maFir = sma5.getLineData().get(currentIndex);
 			DateValueEntity maMid = sma10.getLineData().get(currentIndex);
 			DateValueEntity maLast = sma20.getLineData().get(currentIndex);
+			DateValueEntity maLastL = sma60.getLineData().get(currentIndex);
 			// ###########################
 			// sunan,20150128
 			tvTipOpen.setText(getString(R.string.price_chart_open)
@@ -881,6 +886,8 @@ public class PriceDetailActivity extends BaseActivity implements
 					+ MathUtil.keep2Decimal(maMid.getValue() / AxisCalc));
 			tvTipInd20.setText(getString(R.string.price_chart_maLast)
 					+ MathUtil.keep2Decimal(maLast.getValue() / AxisCalc));
+			tvTipInd60.setText(getString(R.string.price_chart_maLastL)
+					+ MathUtil.keep2Decimal(maLastL.getValue() / AxisCalc));
 			// ###########################
 			if (currentIndex > 0) {
 				OHLCEntity lastOhlcEntity = (OHLCEntity) iChartData

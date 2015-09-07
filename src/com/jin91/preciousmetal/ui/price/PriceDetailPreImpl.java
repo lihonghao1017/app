@@ -176,15 +176,14 @@ public class PriceDetailPreImpl implements PriceDetailPre {
         if (list == null) {
             list = new ArrayList<>();
         }
-        list.add(new ListDialogEntity("SMA均线", 0));
-        list.add(new ListDialogEntity("EMA均线", 1));
-        list.add(new ListDialogEntity("BOLL布林线", 2));
-        list.add(new ListDialogEntity("MACD指标", 3));
-        list.add(new ListDialogEntity("KDJ随机指标", 4));
-        list.add(new ListDialogEntity("RSI强弱指标", 5));
-        list.add(new ListDialogEntity("ADX指标", 6));
-        list.add(new ListDialogEntity("ATR指标", 7));
-        list.add(new ListDialogEntity("DMI指标", 8));
+        list.add(new ListDialogEntity("均匀线", 0));
+        list.add(new ListDialogEntity("BOLL布林线", 1));
+        list.add(new ListDialogEntity("MACD指标", 2));
+        list.add(new ListDialogEntity("KDJ随机指标", 3));
+        list.add(new ListDialogEntity("RSI强弱指标", 4));
+        list.add(new ListDialogEntity("ADX指标", 5));
+        list.add(new ListDialogEntity("ATR指标", 6));
+        list.add(new ListDialogEntity("DMI指标", 7));
         
         return list;
     }

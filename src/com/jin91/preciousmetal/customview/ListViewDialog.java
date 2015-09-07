@@ -140,11 +140,12 @@ public class ListViewDialog extends Dialog {
                 holder.ivListdialogSelected.setVisibility(View.INVISIBLE);
             }
             holder.tvListdialogItem.setText(mList.get(position).key);
-            if(mList.get(position).key.equals("SMA均线"))
+            if(mList.get(position).key.equals("均匀线"))
             holder.tvListdialogItem.setOnClickListener(new View.OnClickListener() {
 				
 				@Override
 				public void onClick(View v) {
+					ListViewDialog.this.dismiss();
 					v.getContext().startActivity(new Intent(v.getContext(),SMASettingActivity.class));
 				}
 			});

@@ -89,6 +89,7 @@
     <string name="price_chart_maFirst">&#160;MA5:</string>
     <string name="price_chart_maMid">&#160;MA10:</string>
     <string name="price_chart_maLast">&#160;MA20:</string>
+    <string name="price_chart_maLastL">&#160;MA60:</string>
     <string name="price_chart_time">分时图</string>
     <!--*************************消息消息消息消息消息*****************************-->
     <string name="message_live">即时建议</string>
