@@ -96,12 +96,13 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
         llm.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(llm);
         setCalenders();
+        setCalenderData(System.currentTimeMillis());
         initLineWidth();
         initialize();
     }
-    private void setCalenders(){
-    	CalenderBeans=new ArrayList<>();
-    	long time=System.currentTimeMillis()-onetime*27;
+    public void setCalenderData(long times) {
+    	long time=times-onetime*27;
+    	CalenderBeans.clear();
     	for (int i = 0; i < 30; i++) {
     		String date=sDateFormat.format(new Date(time+onetime*i));
     		String week=nWeekFormat.format(new Date(time+onetime*i));
@@ -110,11 +111,17 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
     		
 		}
     	CalenderBeans.get(CalenderBeans.size()-3).isChecked=true;
+    	calendarAdapter.notifyDataSetChanged();
+    	recyclerView.scrollToPosition(CalenderBeans.size()-3);
+	}
+
+	private void setCalenders(){
+    	CalenderBeans=new ArrayList<>();
+    
     	calendarAdapter=new CalendarAdapter(CalenderBeans, this);
     	
     	recyclerView.setAdapter(calendarAdapter);
 //    	recyclerView.getLayoutManager().smoothScrollToPosition(recyclerView, null, calendarAdapter.getItemCount() - 1);
-    	recyclerView.scrollToPosition(CalenderBeans.size()-3);
     	
     }
     public void initLineWidth() {

@@ -61,15 +61,15 @@ public class PriceDetailActivity extends BaseActivity implements
 	public static final int TIME_CHART = 0; // 分时图
 	public static final int K_CHART = 1; // k 线图
 
-	public static final int INDICATOR_MACD = 0;
+	public static final int INDICATOR_MACD = 2;
 	public static final int INDICATOR_BOLL = 1;
-	public static final int INDICATOR_KDJ = 2;
-	public static final int INDICATOR_RSI = 3;
-	public static final int INDICATOR_SMA = 4;
-	public static final int INDICATOR_EMA = 5;
-	public static final int INDICATOR_ADX = 6;
-	public static final int INDICATOR_ATR = 7;
-	public static final int INDICATOR_DMI = 8;
+	public static final int INDICATOR_KDJ = 3;
+	public static final int INDICATOR_RSI = 4;
+	public static final int INDICATOR_SMA = 0;
+//	public static final int INDICATOR_EMA = 5;
+	public static final int INDICATOR_ADX = 5;
+	public static final int INDICATOR_ATR = 6;
+	public static final int INDICATOR_DMI = 7;
 
 	// ####################
 	// sunan,20150128,缩放级别
@@ -378,11 +378,11 @@ public class PriceDetailActivity extends BaseActivity implements
 			indicatorPosition = INDICATOR_RSI;
 			indicatorBottom = INDICATOR_RSI;
 			break;
-		case INDICATOR_EMA:// EMA线
-			setKChartTopData(kChartList, INDICATOR_EMA);
-			indicatorPosition = INDICATOR_EMA;
-			indicatorTop = INDICATOR_EMA;
-			break;
+//		case INDICATOR_EMA:// EMA线
+//			setKChartTopData(kChartList, INDICATOR_EMA);
+//			indicatorPosition = INDICATOR_EMA;
+//			indicatorTop = INDICATOR_EMA;
+//			break;
 		case INDICATOR_SMA:// SMA线
 			setKChartTopData(kChartList, INDICATOR_SMA);
 			indicatorPosition = INDICATOR_SMA;
@@ -800,28 +800,28 @@ public class PriceDetailActivity extends BaseActivity implements
 			setKChartTopTitle(bollmaslipcandlestickchart.getSelectedIndex(),
 					INDICATOR_BOLL);
 			break;
-		case INDICATOR_EMA:
-
-			LineEntity<DateValueEntity> ema12 = new LineEntity<DateValueEntity>();
-			ema12.setTitle("EMA12");
-			ema12.setLineColor(PriceDetailK.getColor(mContext,
-					R.color.chart_line_red));
-			ema12.setLineData(Utils.getEma(ohlcEntities, 12));
-			lines.add(ema12);
-
-			LineEntity<DateValueEntity> ema26 = new LineEntity<DateValueEntity>();
-			ema26.setTitle("EMA26");
-			ema26.setLineColor(PriceDetailK.getColor(mContext,
-					R.color.chart_line_yellow));
-			ema26.setLineData(Utils.getEma(ohlcEntities, 26));
-			lines.add(ema26);
-
-			bollmaslipcandlestickchart.setLinesData(lines);
-			bollmaslipcandlestickchart.notifyEvent(bollmaslipcandlestickchart);
-
-			setKChartTopTitle(bollmaslipcandlestickchart.getSelectedIndex(),
-					INDICATOR_EMA);
-			break;
+//		case INDICATOR_EMA:
+//
+//			LineEntity<DateValueEntity> ema12 = new LineEntity<DateValueEntity>();
+//			ema12.setTitle("EMA12");
+//			ema12.setLineColor(PriceDetailK.getColor(mContext,
+//					R.color.chart_line_red));
+//			ema12.setLineData(Utils.getEma(ohlcEntities, 12));
+//			lines.add(ema12);
+//
+//			LineEntity<DateValueEntity> ema26 = new LineEntity<DateValueEntity>();
+//			ema26.setTitle("EMA26");
+//			ema26.setLineColor(PriceDetailK.getColor(mContext,
+//					R.color.chart_line_yellow));
+//			ema26.setLineData(Utils.getEma(ohlcEntities, 26));
+//			lines.add(ema26);
+//
+//			bollmaslipcandlestickchart.setLinesData(lines);
+//			bollmaslipcandlestickchart.notifyEvent(bollmaslipcandlestickchart);
+//
+//			setKChartTopTitle(bollmaslipcandlestickchart.getSelectedIndex(),
+//					INDICATOR_EMA);
+//			break;
 		}
 		bollmaslipcandlestickchart.addNotify(new ITouchEventResponse() {
 
@@ -947,42 +947,42 @@ public class PriceDetailActivity extends BaseActivity implements
 			tvTipInd20.setVisibility(View.VISIBLE);
 			// tvTipInd20.setTextColor(bollmaslipcandlestickchart.getLinesData().get(2).getLineColor());
 			break;
-		case INDICATOR_EMA:
-			// ##########################
-			// sunan,20150128
-			tvTipOpen.setText(getString(R.string.price_chart_open)
-					+ MathUtil.keep2Decimal(ohlcEntity.getOpen() / AxisCalc));
-			tvTipYest.setText(getString(R.string.price_chart_close)
-					+ MathUtil.keep2Decimal(ohlcEntity.getClose() / AxisCalc));
-			tvTipHigh.setText(getString(R.string.price_chart_high)
-					+ MathUtil.keep2Decimal(ohlcEntity.getHigh() / AxisCalc));
-			tvTipLow.setText(getString(R.string.price_chart_low)
-					+ MathUtil.keep2Decimal(ohlcEntity.getLow() / AxisCalc));
-			// ##########################
-			DateValueEntity up = bollmaslipcandlestickchart.getLinesData()
-					.get(0).getLineData().get(currentIndex);
-			DateValueEntity low = bollmaslipcandlestickchart.getLinesData()
-					.get(1).getLineData().get(currentIndex);
-
-			if (currentIndex > 0) {
-				OHLCEntity lastOhlcEntity = (OHLCEntity) iChartData
-						.get(currentIndex - 1);
-				setKChartTopColor(ohlcEntity, lastOhlcEntity.getClose());
-			} else {
-				setKChartTopColor(ohlcEntity, 0);
-			}
-			// sunan,20150128
-			tvTipInd5.setText(" EMA(12):"
-					+ MathUtil.keep2Decimal(up.getValue() / AxisCalc));
-			tvTipInd5.setVisibility(View.VISIBLE);
-			// tvTipInd5.setTextColor(bollmaslipcandlestickchart.getLinesData().get(0).getLineColor());
-			// sunan,20150128
-			tvTipInd10.setText(" EMA(26):"
-					+ MathUtil.keep2Decimal(low.getValue() / AxisCalc));
-			tvTipInd10.setVisibility(View.VISIBLE);
-			// tvTipInd10.setTextColor(bollmaslipcandlestickchart.getLinesData().get(1).getLineColor());
-
-			break;
+//		case INDICATOR_EMA:
+//			// ##########################
+//			// sunan,20150128
+//			tvTipOpen.setText(getString(R.string.price_chart_open)
+//					+ MathUtil.keep2Decimal(ohlcEntity.getOpen() / AxisCalc));
+//			tvTipYest.setText(getString(R.string.price_chart_close)
+//					+ MathUtil.keep2Decimal(ohlcEntity.getClose() / AxisCalc));
+//			tvTipHigh.setText(getString(R.string.price_chart_high)
+//					+ MathUtil.keep2Decimal(ohlcEntity.getHigh() / AxisCalc));
+//			tvTipLow.setText(getString(R.string.price_chart_low)
+//					+ MathUtil.keep2Decimal(ohlcEntity.getLow() / AxisCalc));
+//			// ##########################
+//			DateValueEntity up = bollmaslipcandlestickchart.getLinesData()
+//					.get(0).getLineData().get(currentIndex);
+//			DateValueEntity low = bollmaslipcandlestickchart.getLinesData()
+//					.get(1).getLineData().get(currentIndex);
+//
+//			if (currentIndex > 0) {
+//				OHLCEntity lastOhlcEntity = (OHLCEntity) iChartData
+//						.get(currentIndex - 1);
+//				setKChartTopColor(ohlcEntity, lastOhlcEntity.getClose());
+//			} else {
+//				setKChartTopColor(ohlcEntity, 0);
+//			}
+//			// sunan,20150128
+//			tvTipInd5.setText(" EMA(12):"
+//					+ MathUtil.keep2Decimal(up.getValue() / AxisCalc));
+//			tvTipInd5.setVisibility(View.VISIBLE);
+//			// tvTipInd5.setTextColor(bollmaslipcandlestickchart.getLinesData().get(0).getLineColor());
+//			// sunan,20150128
+//			tvTipInd10.setText(" EMA(26):"
+//					+ MathUtil.keep2Decimal(low.getValue() / AxisCalc));
+//			tvTipInd10.setVisibility(View.VISIBLE);
+//			// tvTipInd10.setTextColor(bollmaslipcandlestickchart.getLinesData().get(1).getLineColor());
+//
+//			break;
 		}
 	}
 

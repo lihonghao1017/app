@@ -17,7 +17,7 @@
         android:layout_centerHorizontal="true"
         android:background="@mipmap/add_border"
         android:drawableLeft="@mipmap/add_plus"
-        android:paddingLeft="8dp"
+        android:paddingLeft="15dp"
         android:gravity="center"
         android:textColor="#F34F4F"
         android:text="编辑自选"

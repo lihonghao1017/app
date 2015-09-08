@@ -1,12 +1,15 @@
 package com.jin91.preciousmetal.ui.price;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -19,7 +22,6 @@ import android.widget.GridView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.jin91.preciousmetal.R;
 import com.jin91.preciousmetal.adapter.PriceViewPageAdapter;
 import com.jin91.preciousmetal.common.api.entity.Price;
@@ -115,6 +117,8 @@ public class ZiXuanActivity extends Activity implements OnClickListener,
 				if (zixuanJson != null
 						&& zixuanJson.contains(itemList.get(i).name)
 						&& zixuanJson.contains(itemList.get(i).code)) {
+					itemList.get(i).index = zixuanJson
+							.indexOf(itemList.get(i).name);
 					ziXuanList.add(itemList.get(i));
 					itemList.remove(i--);
 				}
@@ -124,7 +128,27 @@ public class ZiXuanActivity extends Activity implements OnClickListener,
 		}
 		pagerAdapter.notifyDataSetChanged();
 		tab_pageindicator.notifyDataSetChanged();
+		Collections.sort(ziXuanList, new ComparatorPrice());
 		ziXuanAdapter.notifyDataSetChanged();
+	}
+
+	@SuppressWarnings("rawtypes")
+	@SuppressLint("UseValueOf")
+	public class ComparatorPrice implements Comparator {
+
+		public int compare(Object arg0, Object arg1) {
+			Price user0 = (Price) arg0;
+			Price user1 = (Price) arg1;
+			int sum = new Integer(user0.index).compareTo(new Integer(
+					user1.index));
+
+			if (sum == 0)
+				return ((Comparable<Price>) user0).compareTo(user1);
+
+			return sum;
+
+		}
+
 	}
 
 	@Override

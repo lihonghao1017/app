@@ -1,6 +1,9 @@
 package com.jin91.preciousmetal.ui.service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
@@ -79,6 +82,14 @@ public class CalenPopwindow {
 						String d = dates[date.getValue()].replace("日", "");
 						if (d.length() < 2)
 							d = 0 + d;
+						SimpleDateFormat sdf= new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+							try {
+								Date dt2 = sdf.parse(m+"/"+d+"/"+y+" 00:00:00");
+								((FinanceCalenActivity) context).setCalenderData(dt2.getTime());
+							} catch (ParseException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
 						((FinanceCalenActivity) context).financeCalenPre
 								.getFinCalList(FinanceCalenActivity.TAG, y + m
 										+ d);
