@@ -59,12 +59,12 @@ public class ItemPricePage implements PriceAdapter.OnItemClickListener,
 		if(tag==0){
 			recyclerview.setLayoutManager(new LinearLayoutManager(mContext));
 			adapter = new PriceAdapter(mList, mContext,false);
+			recyclerview.addItemDecoration(new PriceDivider(mContext));
 		}else if(tag==1){
 			recyclerview.setLayoutManager(new android.support.v7.widget.GridLayoutManager(mContext, 3));
 			adapter = new PriceAdapter(mList, mContext,true);
 			view.findViewById(R.id.titles).setVisibility(View.GONE);
 		}
-		recyclerview.addItemDecoration(new PriceDivider(mContext));
 		
 		recyclerview.setAdapter(adapter);
 		adapter.setOnItemClickListener(this);
