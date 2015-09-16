@@ -62,7 +62,7 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
     @ViewInject(R.id.FinanceCalenActivity_index)
     private View indexView;
     @ViewInject(R.id.FinanceCalenActivity_recyclerview)
-    public RecyclerView recyclerView;
+    public CalenderView recyclerView;
     
     private FinanceDataFragment fdf;
     private FinanceEventFragment fef;
@@ -92,9 +92,6 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.finance_calenda_list);
         ViewUtils.inject(this);
-        LinearLayoutManager llm=new LinearLayoutManager(mContext);
-        llm.setOrientation(LinearLayoutManager.HORIZONTAL);
-        recyclerView.setLayoutManager(llm);
         setCalenders();
         setCalenderData(System.currentTimeMillis());
         initLineWidth();
@@ -110,17 +107,18 @@ public class FinanceCalenActivity extends BaseActivity implements FinanceCalenVi
     		CalenderBeans.add(new CalenderBean(date, week, url));
     		
 		}
-    	CalenderBeans.get(CalenderBeans.size()-3).isChecked=true;
-    	calendarAdapter.notifyDataSetChanged();
-    	recyclerView.scrollToPosition(CalenderBeans.size()-3);
+//    	CalenderBeans.get(CalenderBeans.size()-3).isChecked=true;
+//    	calendarAdapter.notifyDataSetChanged();
+    	recyclerView.setData(CalenderBeans);
+    	recyclerView.setCurrentItem(CalenderBeans.size()-3);
 	}
 
 	private void setCalenders(){
     	CalenderBeans=new ArrayList<>();
     
-    	calendarAdapter=new CalendarAdapter(CalenderBeans, this);
+//    	calendarAdapter=new CalendarAdapter(CalenderBeans, this);
     	
-    	recyclerView.setAdapter(calendarAdapter);
+//    	recyclerView.setAdapter(calendarAdapter);
 //    	recyclerView.getLayoutManager().smoothScrollToPosition(recyclerView, null, calendarAdapter.getItemCount() - 1);
     	
     }

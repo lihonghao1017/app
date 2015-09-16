@@ -5,7 +5,7 @@
     android:orientation="vertical" >
 
     <include layout="@layout/layout_title" />
-     <android.support.v7.widget.RecyclerView
+     <com.jin91.preciousmetal.ui.service.CalenderView
         android:id="@+id/FinanceCalenActivity_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="45dp"
