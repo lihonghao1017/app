@@ -85,7 +85,13 @@
                 android:src="@mipmap/live_arrows" />
         </LinearLayout>
     </RelativeLayout>
-
+ <FrameLayout
+        android:id="@+id/fl_room_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+         android:layout_above="@+id/in_comment_bottom"
+        android:layout_below="@id/liveRoom_tab"
+        android:orientation="vertical" /> 
     <!--
     <FrameLayout
         android:id="@+id/liveRoom_container"
@@ -95,7 +101,7 @@
     </FrameLayout>
     -->
 
-    <android.support.v4.widget.SwipeRefreshLayout
+   <!--  <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipeRereshLayout"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -109,7 +115,7 @@
             android:layout_height="fill_parent"
             layout="@layout/expand_listview" />
     </android.support.v4.widget.SwipeRefreshLayout>
-
+ -->
     <include
         android:id="@+id/in_comment_bottom"
         android:layout_width="wrap_content"
@@ -117,10 +123,6 @@
         android:layout_alignParentBottom="true"
         layout="@layout/direct_play_comment_layout" />
 
-    <FrameLayout
-        android:id="@+id/fl_price_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" />
+  
 
 </RelativeLayout>

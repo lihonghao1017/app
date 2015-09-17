@@ -11,6 +11,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.Selection;
 import android.text.TextUtils;
@@ -103,7 +104,7 @@ public class ServiceDetailActivity extends BaseActivity implements ServiceView {
     public TextView tv_title_title;
 
     private PlayAdapter adapter;
-    private List<BaseFragment> fragments;
+    private List<Fragment> fragments;
     private Room room;
     private int screenWidthSix;
     private int currentIndex;
@@ -122,7 +123,11 @@ public class ServiceDetailActivity extends BaseActivity implements ServiceView {
     @ViewInject(R.id.emoGrideView)
     EmoGridView emoGrideView;
     private boolean textChanged;
-
+    public ArrayList<DirectPlay> mAllList = new ArrayList<>();
+    public ArrayList<DirectPlay> mBaiyinList = new ArrayList<>();
+    public ArrayList<DirectPlay> mHuangjinList = new ArrayList<>();
+    public ArrayList<DirectPlay> mTongLvList = new ArrayList<>();
+    public ArrayList<DirectPlay> mShiyouList = new ArrayList<>();
     protected LoadingDialog loadingDialog;
 
     protected String replyType; // 回复的类型 // 2--回复或者交流 1 提问

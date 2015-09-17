@@ -40,7 +40,7 @@ public class StickyNavLayout extends LinearLayout {
 
     private float mLastY;
     private boolean mDragging;
-    private List<BaseFragment> mList;
+    private List<Fragment> mList;
     private int bottomViewHeight;
     private int bottom = 1;
 
@@ -232,7 +232,7 @@ public class StickyNavLayout extends LinearLayout {
         }
     }
 
-    public void setmList(List<BaseFragment> list) {
+    public void setmList(List<Fragment> list) {
         this.mList = list;
     }
 

@@ -11,7 +11,7 @@ import android.view.View;
 public abstract class BaseFragment extends Fragment {
 
 
-    protected Context mContext;
+    public Context mContext;
 
     @Override
     public void onViewCreated(View view,  Bundle savedInstanceState) {

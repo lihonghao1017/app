@@ -31,15 +31,17 @@ public abstract class BasePlayFragment<T> extends BaseFragment implements PlayVi
 //    @ViewInject(R.id.swipeRereshLayout)
 //    SwipeRefreshLayout swipeRereshLayout;
 
-    protected EmptyLayout emptyLayout;
-    protected PlayPresenter presenter;
-    protected String startId = "0"; // 开始的id;
-    protected String roomId;
-    protected Handler refreshHandler = new Handler(); // 自动刷新的handler
-    protected boolean threadStart = true; // 线程是否开始
-    protected boolean isVisable; // 这个窗体是否可见
-    protected boolean isAutoRefresh; // 是否自动刷新
-    protected  ServiceDetailActivity detailActivity;
+	public EmptyLayout emptyLayout;
+    public PlayPresenter presenter;
+    public String startId = "0"; // 开始的id;
+    public String roomId;
+    public Handler refreshHandler = new Handler(); // 自动刷新的handler
+    public boolean threadStart = true; // 线程是否开始
+    public boolean isVisable; // 这个窗体是否可见
+    public boolean isAutoRefresh; // 是否自动刷新
+    public  ServiceDetailActivity detailActivity;
+    public boolean isUseNempt;
+    public boolean isUserShu;
     public BasePlayFragment() {
     }
 
@@ -56,7 +58,9 @@ public abstract class BasePlayFragment<T> extends BaseFragment implements PlayVi
 
     @Override
     public void initialize() {
-        emptyLayout = new EmptyLayout(mContext,  ((FrameLayout)getActivity().findViewById(R.id.fl_price_content)));
+    	if(!isUseNempt){
+    		emptyLayout = new EmptyLayout(getActivity(),  ((FrameLayout)getActivity().findViewById(R.id.fl_price_content)));
+    	}
         presenter = new PlayPresenterImpl<T>(this, roomId);
     }
 
@@ -157,11 +161,15 @@ public abstract class BasePlayFragment<T> extends BaseFragment implements PlayVi
     @Override
     public void setRefreshComplete() {
     	
-    	    SwipeRefreshLayout swipeRereshLayout;
-    	    ((ExpandListView)getActivity().findViewById(R.id.id_stickynavlayout_innerscrollview)).setRefreshFootComplet();
+//    	    SwipeRefreshLayout swipeRereshLayout;
+    	if(!isUserShu){
+    		((ExpandListView)getActivity().findViewById(R.id.id_stickynavlayout_innerscrollview)).setRefreshFootComplet();
     	    ((SwipeRefreshLayout)getActivity().findViewById(R.id.swipeRereshLayout)).setRefreshing(false);
         threadStart = false;
         startThreadGetList();
+    	}
+    	    
+        
 
     }
 

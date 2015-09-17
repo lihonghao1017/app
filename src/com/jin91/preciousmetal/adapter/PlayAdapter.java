@@ -16,14 +16,14 @@ import java.util.List;
  * Created by lijinhua on 2015/5/18.
  */
 public class PlayAdapter extends PagerAdapter implements LazyViewPager.OnPageChangeListener{
-    private List<BaseFragment> fragments; // 每个Fragment对应一个Page
+    private List<Fragment> fragments; // 每个Fragment对应一个Page
     private FragmentManager fragmentManager;
     private LazyViewPager viewPager; // viewPager对象
     private int currentPageIndex = 0; // 当前page索引（切换之前）
 
     private OnExtraPageChangeListener onExtraPageChangeListener; // ViewPager切换页面时的额外功能添加接口
 
-    public PlayAdapter(FragmentManager fragmentManager, LazyViewPager viewPager , List<BaseFragment> fragments) {
+    public PlayAdapter(FragmentManager fragmentManager, LazyViewPager viewPager , List<Fragment> fragments) {
         this.fragments = fragments;
         this.fragmentManager = fragmentManager;
         this.viewPager = viewPager;
