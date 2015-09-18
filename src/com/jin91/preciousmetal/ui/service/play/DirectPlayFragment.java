@@ -18,7 +18,6 @@ import android.widget.TextView;
 import com.jin91.preciousmetal.R;
 import com.jin91.preciousmetal.common.api.entity.DirectPlay;
 import com.jin91.preciousmetal.common.util.Logger;
-import com.jin91.preciousmetal.ui.service.AllRomeFragment;
 import com.jin91.preciousmetal.ui.service.ServiceDetailActivity;
 import com.jin91.preciousmetal.util.InputUtil;
 import com.lidroid.xutils.ViewUtils;
@@ -109,9 +108,8 @@ public class DirectPlayFragment extends Fragment implements
 //		isUseNempt=true;
 		initialize();
 		fm=this.getChildFragmentManager();
-		onClick(all_tv);
-//		ft=fm.beginTransaction();
-//		ft.replace(R.id.fl_room_container, room01).commit();
+		ft=fm.beginTransaction();
+		ft.replace(R.id.fl_room_container, room01).commit();
 	}
 
 	public void initialize() {
@@ -124,9 +122,6 @@ public class DirectPlayFragment extends Fragment implements
 		room04=new AllRomeFragment(3);
 		room05=new AllRomeFragment(4);
 	}
-
-	
-
 
 	@Override
 	public void onResume() {

@@ -228,7 +228,7 @@ public class NewsPresenterImpl implements NewsPresenter {
         for (Element element : hrefss) {
             String date = element.ownText();
             date = date.replace('/', '-');
-            date = date.substring(1, date.length() - 1);
+            date = date.substring(1, date.length());
             Element link = element.select("a").first();
             String title = link.text();
             String linkHref = link.attr("href");
