@@ -129,7 +129,7 @@ public class ServiceDetailActivity extends BaseActivity implements ServiceView {
     public ArrayList<DirectPlay> mTongLvList = new ArrayList<>();
     public ArrayList<DirectPlay> mShiyouList = new ArrayList<>();
     protected LoadingDialog loadingDialog;
-
+public int roomIndex;
     protected String replyType; // 回复的类型 // 2--回复或者交流 1 提问
     protected String replyToId; // 回复的id  如果是交流传0,回复传回复的id,提问的时候不传
     /////////////////////////////////////////////
@@ -371,9 +371,10 @@ public class ServiceDetailActivity extends BaseActivity implements ServiceView {
     }
 
     /**
+     * @param <T>
      * @param allData
      */
-    public void setNewMsgCount(AllData<Object> allData) {
+    public <T> void setNewMsgCount(AllData<T> allData) {
         switch (currentIndex) {
             case 0: // 不设置第一个设置其他五个
                 rbNetTelecast.setSubscriptText(0);
@@ -738,5 +739,10 @@ public class ServiceDetailActivity extends BaseActivity implements ServiceView {
             }
         });
     }
+
+//	public void setNewMsgCount(AllData<DirectPlay> alldata) {
+//		// TODO Auto-generated method stub
+//		
+//	}
 
 }

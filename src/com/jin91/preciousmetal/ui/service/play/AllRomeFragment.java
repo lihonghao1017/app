@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -20,6 +21,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.google.gson.reflect.TypeToken;
 import com.jin91.preciousmetal.R;
@@ -248,10 +250,10 @@ public class AllRomeFragment extends Fragment implements OnClickListener {
 								return;
 							}
 							// 设置新的消息
-							// view.setNewMsgCount(liveRoom.Alldata);
+							activity.setNewMsgCount(liveRoom.Alldata);
 							if (liveRoom.Alldata.Table == null
 									|| liveRoom.Alldata.Table.size() == 0) {
-								if (isShowLoading) {
+								if (isShowLoading&&getData(index).size()==0) {
 									emptyLayout.showEmpty();
 								}
 								return;
@@ -318,5 +320,6 @@ public class AllRomeFragment extends Fragment implements OnClickListener {
 					}
 				});
 	}
+	
 
 }

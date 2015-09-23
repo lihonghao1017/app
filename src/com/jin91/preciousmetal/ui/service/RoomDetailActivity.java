@@ -1,12 +1,16 @@
 package com.jin91.preciousmetal.ui.service;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import org.json.JSONException;import org.json.JSONObject;
 
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -140,10 +144,11 @@ public class RoomDetailActivity extends BaseActivity {
 									bangding_bt.setText("解除绑定");
 									break;
 								case 2:
-
+									Toast.makeText(RoomDetailActivity.this,
+											"未登录", 1000).show();
 									break;
 								case 3:
-
+									getNotify();
 									break;
 								default:
 									break;
@@ -209,6 +214,15 @@ public class RoomDetailActivity extends BaseActivity {
 		} else {
 			Toast.makeText(this, "请登录！！！", 1000).show();
 		}
+	}
+
+	public void getNotify(){
+		  AlertDialog.Builder builder = new Builder(this);
+		builder.setMessage("不是实盘账户");
+		builder.setTitle("温馨提示");
+		builder.setIcon(null);
+		builder.setNegativeButton("确认",null);
+		builder.show();
 	}
 
 }
