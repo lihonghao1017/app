@@ -23,6 +23,7 @@ import com.jin91.preciousmetal.common.api.ServiceApi;
 import com.jin91.preciousmetal.common.api.base.ResultCallback;
 import com.jin91.preciousmetal.common.api.entity.Room;
 import com.jin91.preciousmetal.common.api.entity.User;
+import com.jin91.preciousmetal.customview.CustomDialog;
 import com.jin91.preciousmetal.customview.GlideCircleTransform;
 import com.jin91.preciousmetal.ui.PreciousMetalAplication;
 import com.jin91.preciousmetal.ui.base.BaseActivity;
@@ -215,14 +216,26 @@ public class RoomDetailActivity extends BaseActivity {
 			Toast.makeText(this, "请登录！！！", 1000).show();
 		}
 	}
-
+	CustomDialog customDialog;
 	public void getNotify(){
-		  AlertDialog.Builder builder = new Builder(this);
-		builder.setMessage("不是实盘账户");
-		builder.setTitle("温馨提示");
-		builder.setIcon(null);
-		builder.setNegativeButton("确认",null);
-		builder.show();
+		if(customDialog==null){
+			customDialog = new CustomDialog(mContext, new CustomDialog.CustomDialogListener() {
+	            @Override
+	            public void customButtonListener(int postion) {
+	                if (postion == 2) {
+	                	customDialog.dismiss();
+	                	customDialog=null;
+	                }
+	            }
+	        }, false, true);
+	          customDialog.setTvDialogTitle("温馨提示");
+	          customDialog.setTvDialogContent("不是实盘账户");
+	          customDialog.setTvOkText("确定");
+	          customDialog.setHideTvCancel();
+	          customDialog.show();
+			
+		}
+		
 	}
 
 }
