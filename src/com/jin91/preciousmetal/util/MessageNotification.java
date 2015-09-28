@@ -32,7 +32,7 @@ public class MessageNotification {
     private SharedPreferences sp;
     private MessageNotification(Context context) {
         mContext = context;
-        sp=context.getSharedPreferences("MsgSetting", Context.MODE_PRIVATE);
+       
         mNotificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
     }
 
@@ -54,6 +54,7 @@ public class MessageNotification {
      */
     public void showNofiy(String direction, String title, String text, String time,Intent intent) {
         Notification notification = null;
+        sp=mContext.getSharedPreferences("MsgSetting", Context.MODE_PRIVATE);
         notifyId++;
         if (Build.VERSION.SDK_INT >= 16) {
             notification = new Notification.Builder(mContext).setTicker(title).setSmallIcon(R.mipmap.notify).setWhen(System.currentTimeMillis()).build();

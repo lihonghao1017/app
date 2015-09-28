@@ -140,7 +140,7 @@ public class ListViewDialog extends Dialog {
                 holder.ivListdialogSelected.setVisibility(View.INVISIBLE);
             }
             holder.tvListdialogItem.setText(mList.get(position).key);
-            if(mList.get(position).key.equals("均匀线"))
+            if(mList.get(position).key.equals("平均线"))
             holder.tvListdialogItem.setOnClickListener(new View.OnClickListener() {
 				
 				@Override

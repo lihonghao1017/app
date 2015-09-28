@@ -57,7 +57,7 @@ public class RoomDetailActivity extends BaseActivity {
 	@ViewInject(R.id.RoomDetailActivity_bangding)
 	public Button bangding_bt;
 	private String roomId;
-
+	String userId = "";
 	public static void actionLaunch(Context context, Room room) {
 		Intent intent = new Intent(context, RoomDetailActivity.class);
 		intent.putExtra("room", room);
@@ -69,7 +69,12 @@ public class RoomDetailActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.room_detail);
 		ViewUtils.inject(this);
+		if (PreciousMetalAplication.getINSTANCE().user != null) {
+			User user = PreciousMetalAplication.getINSTANCE().user;
+			userId = user.ID;
+		}
 		initialize();
+		initBundingStatu();
 	}
 
 	@Override
@@ -92,6 +97,26 @@ public class RoomDetailActivity extends BaseActivity {
 			break;
 		}
 	}
+	private void initBundingStatu(){
+		if (userId.equals("")) return;
+		ServiceApi.getBundingRomes("RoomDetailActivity", userId,new ResultCallback() {
+			
+			@Override
+			public void onException(VolleyError e) {
+//				Toast.makeText(RoomDetailActivity.this,
+//						"请求" + e.getMessage(), 1000).show();
+			}
+			
+			@Override
+			public void onEntitySuccess(String json) {
+				if(json.contains(roomId)){
+					bangding_bt.setText("解除绑定");
+				}else {
+					bangding_bt.setText("绑定");
+				}
+			}
+		});
+	}
 
 	@Override
 	public void initialize() {
@@ -111,13 +136,7 @@ public class RoomDetailActivity extends BaseActivity {
 	}
 
 	private void bangding() {
-		String userId = "";
-
-		if (PreciousMetalAplication.getINSTANCE().user != null) {
-			User user = PreciousMetalAplication.getINSTANCE().user;
-			userId = user.ID;
-
-		}
+		
 		if (!userId.equals("")) {
 			ServiceApi.getRoomBangding("RoomDetailActivity", userId, roomId,
 					new ResultCallback() {
@@ -165,13 +184,6 @@ public class RoomDetailActivity extends BaseActivity {
 	}
 
 	private void unBangding() {
-		String userId = "";
-
-		if (PreciousMetalAplication.getINSTANCE().user != null) {
-			User user = PreciousMetalAplication.getINSTANCE().user;
-			userId = user.ID;
-
-		}
 		if (!userId.equals("")) {
 			ServiceApi.getRoomUnBangding("RoomDetailActivity", userId, roomId,
 					new ResultCallback() {
@@ -179,7 +191,7 @@ public class RoomDetailActivity extends BaseActivity {
 						@Override
 						public void onException(VolleyError e) {
 							Toast.makeText(RoomDetailActivity.this,
-									"绑定失败：" + e.getMessage(), 1000).show();
+									"解除绑定失败：" + e.getMessage(), 1000).show();
 						}
 
 						@Override
@@ -190,12 +202,12 @@ public class RoomDetailActivity extends BaseActivity {
 								switch (status) {
 								case 0:
 									Toast.makeText(RoomDetailActivity.this,
-											"绑定失败：" + obj.getString("Error"),
+											"解除绑定失败：" + obj.getString("Error"),
 											1000).show();
 									break;
 								case 1:
 									Toast.makeText(RoomDetailActivity.this,
-											"绑定成功", 1000).show();
+											"解除绑定", 1000).show();
 									bangding_bt.setText("绑定");
 									break;
 								case 2:
@@ -233,9 +245,6 @@ public class RoomDetailActivity extends BaseActivity {
 	          customDialog.setTvOkText("确定");
 	          customDialog.setHideTvCancel();
 	          customDialog.show();
-			
 		}
-		
 	}
-
 }

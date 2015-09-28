@@ -176,7 +176,7 @@ public class PriceDetailPreImpl implements PriceDetailPre {
         if (list == null) {
             list = new ArrayList<>();
         }
-        list.add(new ListDialogEntity("均匀线", 0));
+        list.add(new ListDialogEntity("平均线", 0));
         list.add(new ListDialogEntity("BOLL布林线", 1));
         list.add(new ListDialogEntity("MACD指标", 2));
         list.add(new ListDialogEntity("KDJ随机指标", 3));
