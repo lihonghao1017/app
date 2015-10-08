@@ -180,6 +180,7 @@ public class PriceDetailActivity extends BaseActivity implements
 	private int indicatorBottom = INDICATOR_MACD;
 	private Price currentPrice;// 当前的价格
 	private String titleName;
+	private SharedPreferences sp ;
 
 	/**
 	 * @param context
@@ -254,6 +255,9 @@ public class PriceDetailActivity extends BaseActivity implements
 		setTimeOrKChart();// 默认是K线
 		presenter.getPrice(TAG, true, tradeCode);
 		processCycle(cyclePosition);
+		
+		sp = getSharedPreferences("Price",
+				Context.MODE_PRIVATE);
 	}
 
 	@OnClick({ R.id.tv_title_back, R.id.tv_title_option, R.id.tv_cycle,
@@ -880,13 +884,13 @@ public class PriceDetailActivity extends BaseActivity implements
 					+ MathUtil.keep2Decimal(ohlcEntity.getHigh() / AxisCalc));
 			tvTipLow.setText(getString(R.string.price_chart_low)
 					+ MathUtil.keep2Decimal(ohlcEntity.getLow() / AxisCalc));
-			tvTipInd5.setText(getString(R.string.price_chart_maFirst)
+			tvTipInd5.setText("MA"+sp.getString("N1", "5")+":"
 					+ MathUtil.keep2Decimal(maFir.getValue() / AxisCalc));
-			tvTipInd10.setText(getString(R.string.price_chart_maMid)
+			tvTipInd10.setText("MA"+sp.getString("N2", "10")+":"
 					+ MathUtil.keep2Decimal(maMid.getValue() / AxisCalc));
-			tvTipInd20.setText(getString(R.string.price_chart_maLast)
+			tvTipInd20.setText("MA"+sp.getString("N3", "20")+":"
 					+ MathUtil.keep2Decimal(maLast.getValue() / AxisCalc));
-			tvTipInd60.setText(getString(R.string.price_chart_maLastL)
+			tvTipInd60.setText("MA"+sp.getString("N4", "60")+":"
 					+ MathUtil.keep2Decimal(maLastL.getValue() / AxisCalc));
 			// ###########################
 			if (currentIndex > 0) {

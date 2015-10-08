@@ -89,6 +89,10 @@ public class RoomDetailActivity extends BaseActivity {
 			finish();
 			break;
 		case R.id.RoomDetailActivity_bangding:
+			String bangdingStatu=bangding_bt.getText().toString();
+			if(bangdingStatu==null||bangdingStatu.equals("")){
+				return;
+			}
 			if (bangding_bt.getText().toString().equals("绑定")) {
 				bangding();
 			} else {
@@ -162,6 +166,7 @@ public class RoomDetailActivity extends BaseActivity {
 									Toast.makeText(RoomDetailActivity.this,
 											"绑定成功", 1000).show();
 									bangding_bt.setText("解除绑定");
+									ServiceFragment.refreshRoomList();
 									break;
 								case 2:
 									Toast.makeText(RoomDetailActivity.this,
@@ -209,6 +214,7 @@ public class RoomDetailActivity extends BaseActivity {
 									Toast.makeText(RoomDetailActivity.this,
 											"解除绑定", 1000).show();
 									bangding_bt.setText("绑定");
+									ServiceFragment.refreshRoomList();
 									break;
 								case 2:
 

@@ -52,12 +52,14 @@ public class AllRomeFragment extends Fragment implements OnClickListener {
 	private DirectPlayAdapter adapter;
 	private static final String action = "getlivedata";
 	private int index;
-	private String startId = "o";
+	private String startId = "0";
 	// private PlayPresenter presenter;
 	SharedPreferences preferences;
 	private String userId;
 	public String roomId;
 	EmptyLayout emptyLayout;
+	    SharedPreferences.Editor editor;
+	
 	private String replyType="1"; // 回复的类型 // 2--回复或者交流 1 提问
 	private String replyToId=""; // 回复的id 如果是交流传0,回复传回复的id,提问的时候不传
 	@Override
@@ -110,7 +112,9 @@ public class AllRomeFragment extends Fragment implements OnClickListener {
 		View v = inflater.inflate(R.layout.rome_frgament, null);
 		ViewUtils.inject(this, v);
 		preferences = PreciousMetalAplication.getContext()
-				.getSharedPreferences("0", Context.MODE_PRIVATE);
+				.getSharedPreferences(roomId, Context.MODE_PRIVATE);
+		editor=preferences.edit();
+		startId= preferences.getString("liveid", "0");
 		emptyLayout = new EmptyLayout(getActivity(), fl_price_content);
 		emptyLayout.setEmptyButtonClickListener(this);
 		emptyLayout.setErrorButtonClickListener(this);
@@ -193,7 +197,7 @@ public class AllRomeFragment extends Fragment implements OnClickListener {
 		}
 
 		startId = list.get(0).ID;
-		// presenter.setLiveid(startId);
+		editor.putString("liveid", startId).commit();
 		getData(index).clear();
 		getData(index).addAll(list);
 		adapter.notifyDataSetChanged();

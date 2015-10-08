@@ -23,6 +23,9 @@
     <style name="Text.Gray.Smail" parent="Text">
         <item name="android:textSize">12.0sp</item>
     </style>
+    <style name="Text.Gray.Smail.new" parent="Text">
+        <item name="android:textSize">9.0sp</item>
+    </style>
 
     <style name="Text.Gray.Min.Smail" parent="Text">
         <item name="android:textSize">9.0sp</item>

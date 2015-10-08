@@ -334,17 +334,17 @@ public int roomIndex;
      * 获取行情
      */
     private void contiunePrice() {
-//        if (timer == null) {
-//            timer = new Timer();
-//            timer.schedule(new TimerTask() {
-//                @Override
-//                public void run() {
-//                    if (!threadStart && isVisable) {
-//                        presenter.getPriceNotice(TAG);
-//                    }
-//                }
-//            }, 0, Constants.PRICE_INTERVAL);
-//        }
+        if (timer == null) {
+            timer = new Timer();
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    if (!threadStart && isVisable) {
+                        presenter.getPriceNotice(TAG);
+                    }
+                }
+            }, 0, Constants.PRICE_INTERVAL);
+        }
     }
 
     /**
@@ -740,9 +740,5 @@ public int roomIndex;
         });
     }
 
-//	public void setNewMsgCount(AllData<DirectPlay> alldata) {
-//		// TODO Auto-generated method stub
-//		
-//	}
 
 }

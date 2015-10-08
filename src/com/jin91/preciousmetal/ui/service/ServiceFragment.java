@@ -60,7 +60,7 @@ public class ServiceFragment extends BaseFragment implements ServiceView {
     LinearLayout ll_current_line;
 
 
-    ServicePresenter presenter;
+    static ServicePresenter presenter;
     ServiceAdapter adapter;
     List<Room> mList;
     CustomDialog customDialog;
@@ -93,7 +93,7 @@ public class ServiceFragment extends BaseFragment implements ServiceView {
     /**
      * 刷新播间绑定的状态
      */
-    public void refreshRoomList() {
+    public static void refreshRoomList() {
         String userId = "";
         if (PreciousMetalAplication.getINSTANCE().user != null) {
             User user = PreciousMetalAplication.getINSTANCE().user;
@@ -147,6 +147,7 @@ public class ServiceFragment extends BaseFragment implements ServiceView {
     @Override
     public void onResume() {
         super.onResume();
+        android.util.Log.e("LLL", "onResume()");
         if (mList != null && mList.size() == 0) {
             String userId = "";
             if (PreciousMetalAplication.INSTANCE.user != null) {

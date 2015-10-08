@@ -29,7 +29,7 @@ public class MessageNotification {
     private Context mContext;
     private static MessageNotification dNM;
     private int notifyId;
-    private SharedPreferences sp;
+//    private SharedPreferences sp;
     private MessageNotification(Context context) {
         mContext = context;
        
@@ -54,7 +54,7 @@ public class MessageNotification {
      */
     public void showNofiy(String direction, String title, String text, String time,Intent intent) {
         Notification notification = null;
-        sp=mContext.getSharedPreferences("MsgSetting", Context.MODE_PRIVATE);
+        SharedPreferences sp=mContext.getSharedPreferences("MsgSetting", Context.MODE_PRIVATE);
         notifyId++;
         if (Build.VERSION.SDK_INT >= 16) {
             notification = new Notification.Builder(mContext).setTicker(title).setSmallIcon(R.mipmap.notify).setWhen(System.currentTimeMillis()).build();
@@ -69,16 +69,16 @@ public class MessageNotification {
         	long[] vibrate = {0, 500};
         	notification.vibrate = vibrate;
 		}
-        String packageName = null;
-        try {
-            packageName = mContext.getPackageManager().getPackageInfo(mContext.getPackageName(), 0).packageName;
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-            Logger.i("notify", "发送通知==>设置声音异常" + e.toString());
-            notification.defaults = Notification.DEFAULT_ALL;
-        }
+//        String packageName = null;
+//        try {
+//            packageName = mContext.getPackageManager().getPackageInfo(mContext.getPackageName(), 0).packageName;
+//        } catch (PackageManager.NameNotFoundException e) {
+//            e.printStackTrace();
+//            Logger.i("notify", "发送通知==>设置声音异常" + e.toString());
+//            notification.defaults = Notification.DEFAULT_ALL;
+//        }
         if (sp.getBoolean("shengyin", true)) {
-        	notification.sound = Uri.parse("android.resource://" + packageName + "/raw/notification_ring");
+        	notification.sound = Uri.parse("android.resource://" + "com.jin91.preciousmetal" + "/raw/notification_ring");
 		}
         RemoteViews contentView = new RemoteViews(mContext.getPackageName(), R.layout.notify);
         contentView.setTextViewText(R.id.tv_notify_title, title);

@@ -307,30 +307,30 @@
             <TextView
                 android:id="@+id/tv_tip_ind5"
                 android:text="MA5:"
-                style="@style/Text.Gray.Smail"
+                style="@style/Text.Gray.Min.Smail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/tv_tip_ind10"
                 android:text="MA10:"
-                android:layout_marginLeft="11dp"
-                style="@style/Text.Gray.Smail"
+                android:layout_marginLeft="8dp"
+                style="@style/Text.Gray.Min.Smail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/tv_tip_ind20"
                 android:text="MA20:"
-                android:layout_marginLeft="11dp"
-                style="@style/Text.Gray.Smail"
+                android:layout_marginLeft="8dp"
+                style="@style/Text.Gray.Min.Smail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
              <TextView
                 android:id="@+id/tv_tip_ind60"
                 android:text="MA60:"
-                android:layout_marginLeft="11dp"
-                style="@style/Text.Gray.Smail"
+                android:layout_marginLeft="8dp"
+                style="@style/Text.Gray.Min.Smail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
