@@ -110,8 +110,6 @@ public class SettingActivity extends BaseActivity {
     }
     public void shareDialog(final Activity activity) {
         if (dialog == null) {
-
-
             int[] nameList = {R.string.wechat_friend, R.string.friends, R.string.sina_weibo, R.string.QQ_weibo};
             int[] iconList = {R.drawable.share_wefriends_selector, R.drawable.share_fricircle_selector, R.drawable.share_sina_selector, R.drawable.share_qqweibo_selector};
             dialog = new ShareDailog(activity, iconList, nameList, new ShareDailog.OnClickLinstener() {
@@ -123,7 +121,6 @@ public class SettingActivity extends BaseActivity {
                     shareModel.content_title = "值得信赖的贵金属投资顾问";
                     dialog.dismiss();
                     switch (position) {
-
                         case 0: // 微信好友
                             shareModel.weixin_type = 0;
                             WXEntryActivity.actionLaunch(activity, shareModel);

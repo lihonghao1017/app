@@ -53,6 +53,7 @@ public class ShareSinaActivity extends Activity implements IWeiboHandler.Respons
             mWeiboShareAPI.handleWeiboResponse(getIntent(), this);
         }
         shareSina();
+        shareModel=null;
     }
 
     public void initSina() {
