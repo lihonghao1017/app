@@ -203,6 +203,13 @@ public class RoomDetailActivity extends BaseActivity {
 						public void onEntitySuccess(String json) {
 							try {
 								JSONObject obj = new JSONObject(json);
+								String as=obj.optString("SurplusTime");
+								if (as!=null&&!as.equals("")) {
+									Toast.makeText(RoomDetailActivity.this,
+											"距可解绑日期剩余时间：" + as,
+											1000).show();
+									return;
+								}
 								int status = obj.getInt("status");
 								switch (status) {
 								case 0:
